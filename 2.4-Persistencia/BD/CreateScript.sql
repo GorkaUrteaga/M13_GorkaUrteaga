@@ -2,12 +2,12 @@
 
 CREATE TABLE Client
 (
-    id int(6) auto_increment primary key,
+    id int(6) primary key,
     nif char(9) not null,
     nom varchar(40) not null,
     cognom1 varchar(20),
-    cognom2 varchar(20)
-    
+    cognom2 varchar(20),
+    password varchar(200) not null
 );
 
 CREATE TABLE Tipus_Passi_Express
@@ -19,7 +19,7 @@ CREATE TABLE Tipus_Passi_Express
 
 CREATE TABLE Passi_Express
 (
-    id int(6) auto_increment primary key,
+    id int(6) primary key,
     client int(6) not null,
     tipus varchar(40) not null,
     data Date not null,
@@ -30,10 +30,10 @@ CREATE TABLE Passi_Express
 
 CREATE TABLE Entrada
 (
-    id int(6) auto_increment primary key,
+    id int(6) primary key,
     client int(6) not null,
     data Date not null,
-    dies_valiesa int(1),
+    dies_valiesa int(1) not null,
     preu Decimal(5,2)  not null,
     categoria ENUM('ADULT','SENIOR','DISCAPACITAT'),
     FOREIGN KEY (client) REFERENCES Client(id)
@@ -43,7 +43,7 @@ CREATE TABLE Parc
 (
     codi int(6) primary key,
     nom varchar(40) not null,
-    url_foto varchar(200) not null
+    url_foto varchar(500) not null
     
 );
 
@@ -62,10 +62,10 @@ CREATE TABLE Atraccio
     parc int(6) not null,
     zona int(6) not null,
     capacitat_maxima_ronda int(3) not null,
-    descripcio_html varchar(400) not null,
+    descripcio_html varchar(400),
     nom varchar(40) not null,
     temps_per_ronda int(3) not null,
-    url_foto varchar(200) not null,
+    url_foto varchar(500) not null,
     clients_en_cua int(3) not null,
     alsada_minima_amb_acompanyant int(2) not null,
     alsada_minima int(2) not null,
@@ -108,24 +108,31 @@ CREATE TABLE Entrada_Parc
     FOREIGN KEY (parc) REFERENCES Parc(codi)
 );
 
+CREATE TABLE Tipus_Passi
+(
+    id int(1) primary key,
+    tipus varchar(20) not null
+);
+
 CREATE TABLE Info_Utilitzacio
 (
     passi int(6),
     atraccio int(3),
     numero_usos int(3) not null,
-    tipus_passi ENUM('UN_SOL_US','ILIMITAT','UN_SOL_US_1AFILA','ILIMITAT_I_UN_SOL_US_1AFILA'),
+    tipus_passi int(1) not null,
     PRIMARY KEY (passi,atraccio),
     FOREIGN KEY (passi) REFERENCES Passi_Express(id),
-    FOREIGN KEY (atraccio) REFERENCES Atraccio(codi)
+    FOREIGN KEY (atraccio) REFERENCES Atraccio(codi),
+    FOREIGN KEY (tipus_passi) REFERENCES Tipus_Passi(id)
 );
 
 CREATE TABLE Tipus_Passi_Atraccio
 (
     tipus_passi_express int(6),
     atraccio int(3),
-    tipus_passi ENUM('UN_SOL_US','ILIMITAT','UN_SOL_US_1AFILA','ILIMITAT_I_UN_SOL_US_1AFILA'),
+    tipus_passi int(1) not null,
     PRIMARY KEY (tipus_passi_express,atraccio),
     FOREIGN KEY (tipus_passi_express) REFERENCES Passi_Express(id),
-    FOREIGN KEY (atraccio) REFERENCES Atraccio(codi)
-
+    FOREIGN KEY (atraccio) REFERENCES Atraccio(codi),
+    FOREIGN KEY (tipus_passi) REFERENCES Tipus_Passi(id)
 );
