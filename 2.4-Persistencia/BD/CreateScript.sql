@@ -31,7 +31,7 @@ CREATE TABLE Passi_Express
 CREATE TABLE Entrada
 (
     id int(6) primary key,
-    client int(6) not null,
+    client int(6),
     data Date not null,
     dies_valiesa int(1) not null,
     preu Decimal(5,2)  not null,
@@ -89,9 +89,10 @@ CREATE TABLE Incidencia
 
 CREATE TABLE Preus
 (
-    parc1_id int(1) primary key,
-    parc2_id int(1),
-    parc3_id int(1),
+    id int(2) primary key,
+    parc1_id int(1) not null,
+    parc2_id int(1) not null,
+    parc3_id int(1) not null,
     num_dies int(2) not null,
     preu_adult numeric(10,2) not null,
     preu_nen_senior numeric(10,2) not null,

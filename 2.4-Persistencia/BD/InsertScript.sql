@@ -36,3 +36,20 @@ VALUES(1,4,'Polynesia');
 
 INSERT INTO Atraccio
 VALUES(1,1,1,10,null,'Buffalo Rodeo',5,'https://s3-eu-west-1.amazonaws.com/portaventura-world-production-files/wilson_cms/images/images/000/000/722/medium/PA21703i_LR.jpg',10,140,150,'OPERATIVA');
+
+INSERT INTO Atraccio
+VALUES(2,1,2,20,null,'Hurakan Condor',10,'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Hurakan_Condor_desde_abajo.jpg/300px-Hurakan_Condor_desde_abajo.jpg',55,155,155,'ATURADA_TEMPORALMENT');
+
+/* PREUS */
+
+INSERT INTO Preus
+VALUES(1,1,0,0,1,50,44,25);
+
+INSERT INTO Preus
+VALUES(2,1,3,0,1,57,50,29);
+
+INSERT INTO Preus
+VALUES(3,1,3,0,3,90,79,45);
+
+INSERT INTO Preus
+VALUES(4,1,2,3,3,95,83,48);
