@@ -35,21 +35,75 @@ VALUES(1,4,'Polynesia');
 /* ATRACCIONS */
 
 INSERT INTO Atraccio
-VALUES(1,1,1,10,null,'Buffalo Rodeo',5,'https://s3-eu-west-1.amazonaws.com/portaventura-world-production-files/wilson_cms/images/images/000/000/722/medium/PA21703i_LR.jpg',10,140,150,'OPERATIVA');
+VALUES(1,1,1,10,null,'Buffalo Rodeo',5,'https://s3-eu-west-1.amazonaws.com/portaventura-world-production-files/wilson_cms/images/images/000/000/725/landscape_small/PA21707i_LR.jpg',10,140,150,'OPERATIVA');
 
 INSERT INTO Atraccio
-VALUES(2,1,2,20,null,'Hurakan Condor',10,'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Hurakan_Condor_desde_abajo.jpg/300px-Hurakan_Condor_desde_abajo.jpg',55,155,155,'ATURADA_TEMPORALMENT');
+VALUES(2,1,2,20,null,'Hurakan Condor',10,'https://s3-eu-west-1.amazonaws.com/portaventura-world-production-files/wilson_cms/images/images/000/000/496/landscape_small/Generales-M%C3%A9xico_0713.jpg',55,155,155,'ATURADA_TEMPORALMENT');
+
+INSERT INTO Atraccio
+VALUES(3,1,2,15,null,'Tren de la Mina',5,'https://s3-eu-west-1.amazonaws.com/portaventura-world-production-files/wilson_cms/images/images/000/001/765/landscape_small/PAP-MEX_ATR_DIAB_ONR_0615_010.jpg',100,140,145,'ATURADA_TEMPORALMENT');
 
 /* PREUS */
 
+-- 1 DIA 1 PARC
 INSERT INTO Preus
 VALUES(1,1,0,0,1,50,44,25);
+INSERT INTO Preus
+VALUES(2,2,0,0,1,50,44,25);
+INSERT INTO Preus
+VALUES(3,3,0,0,1,50,44,25);
+
+-- 1 DIA 2 PARCS
+INSERT INTO Preus
+VALUES(4,1,2,0,1,57,50,29);
+INSERT INTO Preus
+VALUES(5,1,3,0,1,57,50,29);
+INSERT INTO Preus
+VALUES(6,2,3,0,1,57,50,29);
+
+-- 1 DIA 3 PARCS
+INSERT INTO Preus
+VALUES(7,1,2,3,1,61,54,33);
+
+-- 2 DIES 1 PARC
+INSERT INTO Preus
+VALUES(8,1,0,0,2,57,50,29);
+INSERT INTO Preus
+VALUES(9,2,0,0,2,57,50,29);
+INSERT INTO Preus
+VALUES(10,3,0,0,2,57,50,29);
+
+
+
+-- 2 DIES 2 PARCS
+INSERT INTO Preus
+VALUES(11,1,2,0,2,70,61,35);
+INSERT INTO Preus
+VALUES(12,1,3,0,2,70,61,35);
+INSERT INTO Preus
+VALUES(13,2,3,0,2,70,61,35);
+
+-- 2 DIES 3 PARCS
+INSERT INTO Preus
+VALUES(14,1,2,3,2,75,66,40);
+
+-- 3 DIES 1 PARC
+INSERT INTO Preus
+VALUES(15,1,0,0,3,61,54,33);
+INSERT INTO Preus
+VALUES(16,2,0,0,3,61,54,33);
+INSERT INTO Preus
+VALUES(17,3,0,0,3,61,54,33);
+
+-- 3 DIES 2 PARCS
+INSERT INTO Preus
+VALUES(18,1,2,0,3,75,66,40);
+INSERT INTO Preus
+VALUES(19,1,3,0,3,75,66,40);
+INSERT INTO Preus
+VALUES(20,2,3,0,3,75,66,40);
+
+-- 3 DIES 3 PARCS
 
 INSERT INTO Preus
-VALUES(2,1,3,0,1,57,50,29);
-
-INSERT INTO Preus
-VALUES(3,1,3,0,3,90,79,45);
-
-INSERT INTO Preus
-VALUES(4,1,2,3,3,95,83,48);
+VALUES(21,1,2,3,3,95,83,48);

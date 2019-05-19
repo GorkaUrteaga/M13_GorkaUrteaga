@@ -11,6 +11,7 @@ namespace VendaEntradesDM.DB
     {
         public static int GetSeguentCodi()
         {
+            int codi;
             using (DBConnection context = new DBConnection())
             {
                 using (var connexio = context.Database.GetDbConnection()) // <== NOTA IMPORTANT: requereix ==>using Microsoft.EntityFrameworkCore;
@@ -23,34 +24,16 @@ namespace VendaEntradesDM.DB
                     {
                         consulta.CommandText = "select ifnull(max(id),0)+1 from entrada";
 
-                        return Convert.ToInt32(consulta.ExecuteScalar());
+                        codi = Convert.ToInt32(consulta.ExecuteScalar());
                     }
                 }
             }
-        }
-
-        public static int GetEntrada(int id)
-        {
-            using (DBConnection context = new DBConnection())
-            {
-                using (var connexio = context.Database.GetDbConnection()) // <== NOTA IMPORTANT: requereix ==>using Microsoft.EntityFrameworkCore;
-                {
-                    // Obrir la connexió a la BD
-                    connexio.Open();
-
-                    // Crear una consulta SQL
-                    using (var consulta = connexio.CreateCommand())
-                    {
-                        consulta.CommandText = "select ifnull(max(id),0)+1 from entrada";
-
-                        return Convert.ToInt32(consulta.ExecuteScalar());
-                    }
-                }
-            }
+            return codi;
         }
 
         public static bool InsertEntrada(Entrada e)
         {
+            bool totOk = true;
             using (DBConnection context = new DBConnection())
             {
                 using (var connexio = context.Database.GetDbConnection()) // <== NOTA IMPORTANT: requereix ==>using Microsoft.EntityFrameworkCore;
@@ -69,16 +52,16 @@ namespace VendaEntradesDM.DB
 
                         consulta.CommandText = "insert into entrada values (@IdParam, null, @DataParam, @DiesValidesaParam, @PreuParam, @CategoriaParam )";
                         int filesInserides = consulta.ExecuteNonQuery();
-                        if (filesInserides != 1) return false;
+                        if (filesInserides != 1) totOk = false;
 
                         // desem els canvis de tota la transacció
                         transaccio.Commit();
                         // Creem un object de departament nou.
-                        return true;
+                        
                     }
                 }
             }
-
+            return totOk;
         }
 
 

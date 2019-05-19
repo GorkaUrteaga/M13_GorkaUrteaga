@@ -78,7 +78,7 @@ namespace UWP_VendaEntrades.Views
             //Fiquem el datapicker que només pugui comprar entrades pel futur.
             dtaEntrada.MinYear = new DateTimeOffset(DateTime.Today);
 
-            int[] dies = { 1, 2, 3, 4, 5, 6, 7 };
+            int[] dies = { 1, 2, 3};
             cboNumeroDies.ItemsSource = dies;
             cboNumeroDies.SelectedIndex = 0;
         }
@@ -125,18 +125,23 @@ namespace UWP_VendaEntrades.Views
                 }
                 int numDies = (int)cboNumeroDies.SelectedItem;
                 List<int> codiParcs = new List<int>(numTotalParcs);
+
                 Console.WriteLine("Num parcs:" + numTotalParcs);
-                //Inicialitzem sempre i després afegim els codis dels parcs seleccionats.
-                for (int i = 0; i < numTotalParcs; i++)
+
+                //Afegim els ids dels parcs per buscar el preu.
+                for (int i = 0; i < parcsSelected.Count; i++)
+                {
+                    codiParcs.Add(((ParcUI)parcsSelected[i]).ElParc.Codi);
+                }
+                codiParcs.Sort();
+                //Després afegim els 0 necessaris.
+                for (int i = codiParcs.Count-1; i < numTotalParcs; i++)
                 {
                     codiParcs.Add(0);
                 }
 
-                for (int i = 0; i < parcsSelected.Count; i++)
-                {
-                    codiParcs[i] = ((ParcUI)parcsSelected[i]).ElParc.Codi;
-                }
-
+                //Per defecte obté els parcs en ordre de selecció.
+                
                 if(idSeguentEntrada == 0)
                 {
                     idSeguentEntrada = EntradaDB.GetSeguentCodi();

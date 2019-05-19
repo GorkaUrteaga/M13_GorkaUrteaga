@@ -14,7 +14,7 @@
                 <view:EntradaUI x:Name="viewEntrades" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></view:EntradaUI>
             </PivotItem>
             <PivotItem Header="Passis">
-                
+                <view:PassiUI x:Name="viewPassis" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></view:PassiUI>
             </PivotItem>
         </Pivot>
     </StackPanel>

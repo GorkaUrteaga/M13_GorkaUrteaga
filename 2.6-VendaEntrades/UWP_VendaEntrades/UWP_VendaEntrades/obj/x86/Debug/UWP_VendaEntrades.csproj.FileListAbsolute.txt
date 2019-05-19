@@ -360,3 +360,13 @@ F:\1.DAM2\M13(Projecte)\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_Venda
 F:\1.DAM2\M13(Projecte)\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\bin\x86\Debug\Microsoft.Toolkit.Uwp.UI.Controls.DataGrid.pdb
 F:\1.DAM2\M13(Projecte)\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\obj\x86\Debug\Microsoft.Toolkit.Uwp.UI.Controls.DataGrid\en-US\Microsoft.Toolkit.Uwp.UI.Controls.Properties.Resources.resw
 F:\1.DAM2\M13(Projecte)\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\obj\x86\Debug\Microsoft.Toolkit.Uwp.UI.Controls.DataGrid.pri.xml
+F:\1.DAM2\M13(Projecte)\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\bin\x86\Debug\Views\PassiUI.xbf
+F:\1.DAM2\M13(Projecte)\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\obj\x86\Debug\Views\PassiUI.g.i.cs
+F:\1.DAM2\M13(Projecte)\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\obj\x86\Debug\Views\PassiUI.g.cs
+F:\1.DAM2\M13(Projecte)\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\obj\x86\Debug\Views\PassiUI.xaml
+F:\1.DAM2\M13(Projecte)\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\obj\x86\Debug\Views\PassiUI.xbf
+F:\1.DAM2\M13(Projecte)\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\obj\x86\Debug\CDs\AfegirClientCD.g.i.cs
+F:\1.DAM2\M13(Projecte)\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\obj\x86\Debug\CDs\AfegirClientCD.g.cs
+F:\1.DAM2\M13(Projecte)\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\obj\x86\Debug\CDs\AfegirClientCD.xaml
+F:\1.DAM2\M13(Projecte)\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\obj\x86\Debug\CDs\AfegirClientCD.xbf
+F:\1.DAM2\M13(Projecte)\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\bin\x86\Debug\CDs\AfegirClientCD.xbf
