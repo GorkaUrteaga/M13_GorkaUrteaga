@@ -45,6 +45,7 @@ namespace VendaEntradesDM.DB
 
         public static int GetNumParcs()
         {
+            int numParcs = 0;
             using (DBConnection context = new DBConnection())
             {
                 using (var connexio = context.Database.GetDbConnection()) // <== NOTA IMPORTANT: requereix ==>using Microsoft.EntityFrameworkCore;
@@ -58,10 +59,11 @@ namespace VendaEntradesDM.DB
 
                         consulta.CommandText = "select count(*) from parc";
 
-                        return Convert.ToInt32(consulta.ExecuteScalar());
+                        numParcs = Convert.ToInt32(consulta.ExecuteScalar());
                     }
                 }
             }
+            return numParcs;
         }
 
         public static String GetNomParc(int codi)

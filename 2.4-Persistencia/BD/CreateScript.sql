@@ -12,7 +12,8 @@ CREATE TABLE Client
 
 CREATE TABLE Tipus_Passi_Express
 (
-    nom varchar(40) primary key,
+    id int(6) primary key,
+    nom varchar(40),
     preu_per_dia DECIMAL(5,2) not null
 
 );
@@ -21,10 +22,10 @@ CREATE TABLE Passi_Express
 (
     id int(6) primary key,
     client int(6) not null,
-    tipus varchar(40) not null,
+    tipus int(6) not null,
     data Date not null,
     FOREIGN KEY (client) REFERENCES Client(id),
-    FOREIGN KEY (tipus) REFERENCES Tipus_Passi_Express(nom)
+    FOREIGN KEY (tipus) REFERENCES Tipus_Passi_Express(id)
 
 );
 
@@ -109,10 +110,10 @@ CREATE TABLE Entrada_Parc
     FOREIGN KEY (parc) REFERENCES Parc(codi)
 );
 
-CREATE TABLE Tipus_Passi
+CREATE TABLE Tipus_Acces
 (
     id int(1) primary key,
-    tipus varchar(20) not null
+    tipus varchar(30) not null
 );
 
 CREATE TABLE Info_Utilitzacio
@@ -120,20 +121,20 @@ CREATE TABLE Info_Utilitzacio
     passi int(6),
     atraccio int(3),
     numero_usos int(3) not null,
-    tipus_passi int(1) not null,
+    tipus_acces int(1) not null,
     PRIMARY KEY (passi,atraccio),
     FOREIGN KEY (passi) REFERENCES Passi_Express(id),
     FOREIGN KEY (atraccio) REFERENCES Atraccio(codi),
-    FOREIGN KEY (tipus_passi) REFERENCES Tipus_Passi(id)
+    FOREIGN KEY (tipus_acces) REFERENCES Tipus_Acces(id)
 );
 
 CREATE TABLE Tipus_Passi_Atraccio
 (
     tipus_passi_express int(6),
     atraccio int(3),
-    tipus_passi int(1) not null,
+    tipus_acces int(1) not null,
     PRIMARY KEY (tipus_passi_express,atraccio),
-    FOREIGN KEY (tipus_passi_express) REFERENCES Passi_Express(id),
+    FOREIGN KEY (tipus_passi_express) REFERENCES Tipus_Passi_Express(id),
     FOREIGN KEY (atraccio) REFERENCES Atraccio(codi),
-    FOREIGN KEY (tipus_passi) REFERENCES Tipus_Passi(id)
+    FOREIGN KEY (tipus_acces) REFERENCES Tipus_Acces(id)
 );

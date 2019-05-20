@@ -7,8 +7,8 @@
     xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    d:DesignHeight="300"
-    d:DesignWidth="400"
+    d:DesignHeight="800"
+    d:DesignWidth="1400"
     Loaded="UserControl_Loaded">
 
     <Grid>
@@ -18,26 +18,28 @@
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
+            <RowDefinition Height="350" />
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="250"/>
+            <RowDefinition Height="0.1*"/>
         </Grid.RowDefinitions>
 
         <StackPanel Margin="10">
             <StackPanel HorizontalAlignment="Left" Orientation="Horizontal" Margin="0,0,0,30">
-                <TextBlock Text="Tipus Passi:" Margin="0,0,10,0"/>
-                <ComboBox x:Name="cboTipusPassi" Width="100"/>
+                <TextBlock Text="Tipus Passi:" Margin="0,0,10,0" FontSize="20"/>
+                <ComboBox x:Name="cboTipusPassi" Width="100" SelectionChanged="cboTipusPassi_SelectionChanged"/>
             </StackPanel>
             <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" Orientation="Horizontal">
-                <TextBlock Text="Data:" Margin="0,0,10,0"/>
-                <DatePicker x:Name="dtaData"/>
+                <TextBlock Text="Data:" Margin="0,0,65,0" FontSize="20"/>
+                <DatePicker x:Name="dtaPassi"/>
             </StackPanel>
         </StackPanel>
 
-        <ListView x:Name="lsvAtraccions" Grid.Column="1"/>
+        <ListView x:Name="lsvAtraccions" Grid.Column="1" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
         <StackPanel Grid.Column="2">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button x:Name="btnAfegirClient" Content="Afegir" HorizontalAlignment="Center" Click="btnAfegirClient_Click"/>
-                <Button x:Name="btnEliminarClient" Content="Eliminar" HorizontalAlignment="Center"/>
+                <Button x:Name="btnAfegirClient" Content="Afegir Client" HorizontalAlignment="Center" Click="btnAfegirClient_Click"/>
+                <Button x:Name="btnEliminarClient" Content="Esborrar Client" HorizontalAlignment="Center" Click="btnEliminarClient_Click"/>
             </StackPanel>
             <controls:DataGrid x:Name="dgrClients" IsReadOnly="True" HorizontalAlignment="Stretch" AutoGenerateColumns="False">
                 <controls:DataGrid.Columns >
@@ -61,5 +63,35 @@
             </controls:DataGrid>
         </StackPanel>
 
+        <StackPanel Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" Orientation="Horizontal">
+            <Button x:Name="btnAfegirPassi" Content="Afegir Passi" Margin="0,0,20,0" VerticalAlignment="Center" Click="btnAfegirPassi_Click"/>
+            <Button x:Name="btnEliminarPassi" Content="Esborrar Passi" Margin="20,0,0,0" VerticalAlignment="Center" Click="btnEliminarPassi_Click"/>
+        </StackPanel>
+
+        <TextBlock x:Name="tbkErrors" Grid.Column="2" Grid.Row="1" FontSize="20" Foreground="Red"/>
+
+        <controls:DataGrid x:Name="dgrPassis" IsReadOnly="True" HorizontalAlignment="Stretch" AutoGenerateColumns="False" Grid.Row="2" Grid.ColumnSpan="3" SelectionChanged="dgrPassis_SelectionChanged">
+            <controls:DataGrid.Columns >
+                <controls:DataGridTextColumn
+                        Header="Id" 
+                        Width="Auto"
+                        Binding="{Binding Id}" />
+                <controls:DataGridTextColumn
+                        Header="Data"
+                        Width="Auto"
+                        Binding="{Binding Data}"/>
+                <controls:DataGridTextColumn
+                        Header="Tipus Passi" 
+                        Width="1*"
+                        Binding="{Binding TipusPassi}" />
+                <controls:DataGridTextColumn 
+                        Header="Preu" 
+                        Width="1*"
+                        Binding="{Binding Preu}"/>
+            </controls:DataGrid.Columns>
+        </controls:DataGrid>
+
+        <Button x:Name="btnComprarPassis" Content="Comprar Passis" Click="btnComprarPassis_Click" Grid.Row="3" HorizontalAlignment="Stretch"/>
+        <TextBlock x:Name="tbkTotal" FontWeight="Bold" Grid.Row="3" Grid.Column="2" HorizontalAlignment="Right" TextAlignment="Left" Text="Total: "/>
     </Grid>
 </UserControl>

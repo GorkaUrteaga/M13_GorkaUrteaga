@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using VendaEntradesDM.DB;
 using VendaEntradesDM.Models;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -22,6 +24,7 @@ namespace UWP_VendaEntrades.CDs
     public sealed partial class AfegirClientCD : ContentDialog
     {
         public Client clientInserit;
+        private static TextInfo ti = new CultureInfo("es-ES", false).TextInfo;
         public AfegirClientCD()
         {
             this.InitializeComponent();
@@ -32,7 +35,13 @@ namespace UWP_VendaEntrades.CDs
             //Fem previes comprovacions.
             if (ComprovacionsClient())
             {
-                clientInserit = new Client(0, tbxNIF.Text, tbxNom.Text, tbxCognom1.Text, tbxCognom2.Text);
+                //Si el tenim a la BD el carreguem ja i no cal crear-lo de nou.
+                clientInserit = ClientDB.GetClient(ti.ToTitleCase(tbxNIF.Text));
+                
+                if (clientInserit == null)
+                {
+                    clientInserit = new Client(0, tbxNIF.Text, tbxNom.Text, tbxCognom1.Text, tbxCognom2.Text, null);
+                }
             }
             else
             {
@@ -59,7 +68,6 @@ namespace UWP_VendaEntrades.CDs
                 IndicarError(tbxCognom1);
                 totOk = false;
             }
-
 
             return totOk;
         }

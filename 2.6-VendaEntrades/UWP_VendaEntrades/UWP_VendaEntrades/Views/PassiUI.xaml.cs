@@ -25,6 +25,10 @@ namespace UWP_VendaEntrades.Views
     {
         private ObservableCollection<Client> clientsPassis;
         private int idSeguentClient = 0;
+        private Client clientSeleccionat = null;
+        private int idSeguentPassi = 0;
+        private int idTipusPassiSeleccionat = -1;
+        private IEnumerable<TipusPassi> llTipusPassi;
 
         public PassiUI()
         {
@@ -35,23 +39,30 @@ namespace UWP_VendaEntrades.Views
         {
             CarregarTipusPassis();
             RegenerarClients();
+            dtaPassi.MinYear = new DateTimeOffset(DateTime.Today);
         }
 
         private void RegenerarClients()
         {
             clientsPassis = new ObservableCollection<Client>();
+            RefrescarDataGridClients();
         }
 
         private void CarregarTipusPassis()
         {
-            
+            llTipusPassi = TipusPassiDB.GetTipusPassis();
+
+            foreach (TipusPassi tp in llTipusPassi)
+            {
+                cboTipusPassi.Items.Add(tp.ToString());
+            }
+
         }
 
         private void btnAfegirClient_Click(object sender, RoutedEventArgs e)
         {
             //Obrim un quadre de dialeg on l'usuari introduira les dades.
             AfegirClientAsync();
-
         }
 
         private async System.Threading.Tasks.Task AfegirClientAsync()
@@ -74,8 +85,16 @@ namespace UWP_VendaEntrades.Views
                 //Intentem inserir el client sempre comprovant que no existeixi ja.
                 if (!clientsPassis.Contains(cd.clientInserit))
                 {
-                    cd.clientInserit.Id = idSeguentClient;
+                    if(cd.clientInserit.Id == 0)
+                    {
+                        cd.clientInserit.Id = idSeguentClient;
+                    }
+                    else
+                    {
+                        idSeguentClient--;
+                    }
                     clientsPassis.Add(cd.clientInserit);
+                    RefrescarDataGridClients();
                 }
                 else
                 {
@@ -83,6 +102,14 @@ namespace UWP_VendaEntrades.Views
                     idSeguentClient--;
                 }
             }
+        }
+
+        private void RefrescarDataGridClients()
+        {
+            dgrClients.ItemsSource = null;
+            dgrClients.ItemsSource = clientsPassis;
+            dgrClients.SelectedIndex = clientsPassis.Count - 1;
+            clientSeleccionat = (Client)dgrClients.SelectedItem;
         }
 
         private async void ClientJaExistentDialog()
@@ -95,6 +122,124 @@ namespace UWP_VendaEntrades.Views
             };
 
             await ClientExistentDialog.ShowAsync();
+        }
+
+        private void btnEliminarClient_Click(object sender, RoutedEventArgs e)
+        {
+            if(dgrClients.SelectedIndex != -1)
+            {
+                clientsPassis.Remove((Client)dgrClients.SelectedItem);
+                RefrescarDataGridClients();
+            }
+        }
+
+        private void cboTipusPassi_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            //Escull un tipus i mostrem les atraccions i el seu tipus d'access.
+            idTipusPassiSeleccionat = cboTipusPassi.SelectedIndex+1;
+
+            IEnumerable<TipusPassiAtraccio> llTipusPassiAtraccio;
+            llTipusPassiAtraccio = TipusPassiAtraccioDB.GetTipusPassiAtraccio(idTipusPassiSeleccionat);
+
+            foreach (TipusPassiAtraccio tp in llTipusPassiAtraccio)
+            {
+                TipusPassiAtraccioUI tpa = new TipusPassiAtraccioUI();
+                tpa.ElTipusPassiAtraccio = tp;
+                lsvAtraccions.Items.Add(tpa);
+            }
+
+        }
+
+        private void btnAfegirPassi_Click(object sender, RoutedEventArgs e)
+        {
+            if (ComprovacionsPassi())
+            {
+                if (idSeguentPassi == 0)
+                {
+                    idSeguentPassi = PassiDB.GetSeguentCodi();
+                }
+                else
+                {
+                    idSeguentPassi++;
+                }
+                TipusPassi tp = llTipusPassi.ElementAt(idTipusPassiSeleccionat-1);
+                Passi p = new Passi(idSeguentPassi, dtaPassi.Date.Date, tp.Id,tp.Nom,tp.PreuPerDia);
+                clientSeleccionat.AddPassi(p);
+
+                RefrescarDataGridPassisClient();
+
+            }
+        }
+
+        private void RefrescarDataGridPassisClient()
+        {
+            dgrPassis.ItemsSource = null;
+            if (clientSeleccionat != null)
+            {
+                decimal total = 0;
+                dgrPassis.ItemsSource = clientSeleccionat.GetPassis();
+                IEnumerable<Passi> passis = clientSeleccionat.GetPassis();
+                foreach(Passi p in passis)
+                {
+                    total += p.Preu;
+                }
+                tbkTotal.Text = "Total: " + total;
+            }
+        }
+
+        private bool ComprovacionsPassi()
+        {
+            bool totOk = true;
+
+            if(idTipusPassiSeleccionat < 0)
+            {
+                tbkErrors.Text = "S'ha de seleccionar el tipus de passi.";
+                totOk = false;
+            }
+            if(clientSeleccionat == null)
+            {
+                tbkErrors.Text = "S'ha de seleccionar el client al que li assignarem aquest passi.";
+                totOk = false;
+            }
+
+            if (totOk) tbkErrors.Text = "";
+
+            return totOk;
+        }
+
+        private void dgrPassis_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if(dgrClients.SelectedIndex != -1)
+            {
+                clientSeleccionat = (Client)dgrClients.SelectedItem;
+            }
+        }
+
+        private void btnEliminarPassi_Click(object sender, RoutedEventArgs e)
+        {
+            if(clientSeleccionat != null && dgrPassis.SelectedIndex != -1)
+            {
+                Passi p = (Passi)dgrPassis.SelectedItem;
+                clientSeleccionat.RemovePassi(p);
+            }
+        }
+
+        private void btnComprarPassis_Click(object sender, RoutedEventArgs e)
+        {
+            foreach (Client cli in clientsPassis)
+            {
+                if (!ClientDB.ExisteixClient(cli.Id))
+                {
+                    ClientDB.InsertClient(cli);
+                }
+                
+                foreach(Passi p in cli.GetPassis())
+                {
+                    PassiDB.InsertPassi(cli.Id, p);
+                }
+            }
+            RegenerarClients();
+            RefrescarDataGridPassisClient();
         }
     }
 }

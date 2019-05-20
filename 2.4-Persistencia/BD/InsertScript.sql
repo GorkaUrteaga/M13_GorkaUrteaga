@@ -43,6 +43,47 @@ VALUES(2,1,2,20,null,'Hurakan Condor',10,'https://s3-eu-west-1.amazonaws.com/por
 INSERT INTO Atraccio
 VALUES(3,1,2,15,null,'Tren de la Mina',5,'https://s3-eu-west-1.amazonaws.com/portaventura-world-production-files/wilson_cms/images/images/000/001/765/landscape_small/PAP-MEX_ATR_DIAB_ONR_0615_010.jpg',100,140,145,'ATURADA_TEMPORALMENT');
 
+/* TIPUS ACCES */
+
+INSERT INTO Tipus_Acces
+VALUES(1,'UN_SOL_US');
+
+INSERT INTO Tipus_Acces
+VALUES(2,'ILIMITAT');
+
+INSERT INTO Tipus_Acces
+VALUES(3,'UN_SOL_US_1aFila');
+
+INSERT INTO Tipus_Acces
+VALUES(4,'ILIMITAT_I_UN_SOL_US_1aFILA');
+
+/* TIPUS PASSI EXPRESS */
+INSERT INTO Tipus_Passi_Express
+VALUES (1,'GOLD',30);
+
+INSERT INTO Tipus_Passi_Express
+VALUES (2,'PLATINUM',50);
+
+/* TIPUS PASSI ATRACCIO */
+
+INSERT INTO Tipus_Passi_Atraccio
+VALUES (1,1,1);
+
+INSERT INTO Tipus_Passi_Atraccio
+VALUES (1,2,2);
+
+INSERT INTO Tipus_Passi_Atraccio
+VALUES (1,3,2);
+
+INSERT INTO Tipus_Passi_Atraccio
+VALUES (2,1,3);
+
+INSERT INTO Tipus_Passi_Atraccio
+VALUES (2,2,4);
+
+INSERT INTO Tipus_Passi_Atraccio
+VALUES (2,3,2);
+
 /* PREUS */
 
 -- 1 DIA 1 PARC

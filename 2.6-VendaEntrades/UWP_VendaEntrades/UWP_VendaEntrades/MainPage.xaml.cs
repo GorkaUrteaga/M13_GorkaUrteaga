@@ -40,7 +40,7 @@ namespace UWP_VendaEntrades
             {
                 frmPrincipal.Navigate(typeof(PassisPage), null);
                 navMenu.SelectedItem = nviPassis;
-                tbkTitol.Text = "Passis";
+                tbkTitol.Text = "Tipus Passi";
             }
         }
 

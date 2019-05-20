@@ -6,6 +6,9 @@
     <RootPropertyPathName Name="Categoria" />
     <RootPropertyPathName Name="DiesValidesa" />
     <RootPropertyPathName Name="Id" />
+    <RootPropertyPathName Name="Tipus" />
+    <RootPropertyPathName Name="TipusPassi" />
+    <RootPropertyPathName Name="Data" />
     <RootPropertyPathName Name="GetCognoms" />
     <RootPropertyPathName Name="Nom" />
     <RootPropertyPathName Name="Nif" />
@@ -33,6 +36,7 @@
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
       <RootProperty Name="Header" />
+      <RootProperty Name="Margin" />
     </RootType>
     <RootType FullName="UWP_VendaEntrades.CDs.AfegirClientCD" />
     <RootType FullName="Windows.UI.Xaml.Controls.Page">
@@ -96,16 +100,14 @@
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="FontSize" />
       <RootProperty Name="Foreground" />
-      <RootProperty Name="Text" />
       <RootProperty Name="FontWeight" />
       <RootProperty Name="TextAlignment" />
+      <RootProperty Name="Text" />
       <RootProperty Name="Margin" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.ScrollViewer">
-      <RootProperty Name="Content" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Frame" />
     <RootType FullName="UWP_VendaEntrades.MainPage" />
+    <RootType FullName="UWP_VendaEntrades.Views.ModificacioTipusPassiUI" />
     <RootType FullName="UWP_VendaEntrades.PassisPage" />
     <RootType FullName="Windows.UI.Xaml.Controls.UserControl">
       <RootProperty Name="Content" />
@@ -124,6 +126,11 @@
       <RootProperty Name="VerticalAlignment" />
       <RootEvent Name="Click" />
     </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.ScrollViewer">
+      <RootProperty Name="Content" />
+      <RootMethod Name="GetVerticalScrollBarVisibility" />
+      <RootMethod Name="SetVerticalScrollBarVisibility" />
+    </RootType>
     <RootType FullName="Microsoft.Toolkit.Uwp.UI.Controls.DataGrid">
       <RootProperty Name="IsReadOnly" />
       <RootProperty Name="HorizontalAlignment" />
@@ -131,13 +138,16 @@
       <RootProperty Name="Margin" />
       <RootProperty Name="MaxHeight" />
       <RootProperty Name="Columns" />
+      <RootEvent Name="SelectionChanged" />
     </RootType>
     <RootType FullName="Microsoft.Toolkit.Uwp.UI.Controls.DataGridTextColumn">
       <RootProperty Name="Header" />
       <RootProperty Name="Width" />
       <RootProperty Name="Binding" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Data.Binding" />
+    <RootType FullName="Windows.UI.Xaml.Data.Binding">
+      <RootProperty Name="Mode" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ListView">
       <RootProperty Name="ItemTemplate" />
       <RootProperty Name="SelectionMode" />
@@ -148,13 +158,18 @@
     <RootType FullName="Windows.UI.Xaml.Controls.ComboBox">
       <RootProperty Name="Margin" />
       <RootProperty Name="Width" />
+      <RootProperty Name="SelectedItem" />
+      <RootEvent Name="SelectionChanged" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.DatePicker" />
+    <RootType FullName="Windows.UI.Xaml.Controls.DatePicker">
+      <RootProperty Name="Margin" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Image">
       <RootProperty Name="Height" />
       <RootProperty Name="Width" />
       <RootProperty Name="HorizontalAlignment" />
     </RootType>
     <RootType FullName="UWP_VendaEntrades.Views.ParcUI" />
+    <RootType FullName="UWP_VendaEntrades.Views.TipusPassiAtraccioUI" />
   </Roots.RootTypes>
 </Roots>

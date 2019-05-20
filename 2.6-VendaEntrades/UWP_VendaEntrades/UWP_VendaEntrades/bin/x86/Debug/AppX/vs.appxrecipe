@@ -19,7 +19,7 @@
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
     <LayoutDir>F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\bin\x86\Debug\AppX</LayoutDir>
-    <RegisteredManifestChecksum>FF9B534E5AC556BC69BE4F138086B29AC61E88D05D40C65B96012E35863039BD</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>683E4331C92937EDC1AF35AF8FA1F87665B37FA189982C08FBA54B0A5F4BC40C</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>aa408791-bb0b-496b-891a-8ab0ac28c7d2_1.0.0.0_x86__0vgw9ezemy9je</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>aa408791-bb0b-496b-891a-8ab0ac28c7d2_0vgw9ezemy9je!App</RegisteredUserModeAppID>
     <RegisteredPackageID>aa408791-bb0b-496b-891a-8ab0ac28c7d2</RegisteredPackageID>
@@ -31,13 +31,13 @@
     <AppXManifest Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2019-05-17T18:11:12.280</Modified>
+      <Modified>2019-05-20T18:29:36.663</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\bin\x86\Debug\UWP_VendaEntrades.exe">
       <PackagePath>entrypoint\UWP_VendaEntrades.exe</PackagePath>
-      <Modified>2019-05-17T18:11:11.489</Modified>
+      <Modified>2019-05-20T18:29:35.865</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Gorka\.nuget\packages\bouncycastle.netcore\1.8.3\lib\netstandard2.0\BouncyCastle.Crypto.dll">
       <PackagePath>BouncyCastle.Crypto.dll</PackagePath>
@@ -805,11 +805,207 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\VendaEntradesDM\bin\Debug\netstandard2.0\VendaEntradesDM.dll">
       <PackagePath>VendaEntradesDM.dll</PackagePath>
-      <Modified>2019-05-17T18:11:05.750</Modified>
+      <Modified>2019-05-20T18:25:53.409</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\Properties\Default.rd.xml">
-      <PackagePath>Properties\Default.rd.xml</PackagePath>
-      <Modified>2019-05-15T14:51:20.931</Modified>
+    <AppxPackagedFile Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\Assets\LargeTile.scale-100.png">
+      <PackagePath>Assets\LargeTile.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2019-05-20T17:47:22.971</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\Assets\LargeTile.scale-125.png">
+      <PackagePath>Assets\LargeTile.scale-125.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2019-05-20T17:47:23.003</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\Assets\LargeTile.scale-150.png">
+      <PackagePath>Assets\LargeTile.scale-150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2019-05-20T17:47:23.048</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\Assets\LargeTile.scale-200.png">
+      <PackagePath>Assets\LargeTile.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2019-05-20T17:47:23.118</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\Assets\LargeTile.scale-400.png">
+      <PackagePath>Assets\LargeTile.scale-400.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2019-05-20T17:48:00.017</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\Assets\SmallTile.scale-100.png">
+      <PackagePath>Assets\SmallTile.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2019-05-20T17:47:22.502</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\Assets\SmallTile.scale-125.png">
+      <PackagePath>Assets\SmallTile.scale-125.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2019-05-20T17:47:22.519</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\Assets\SmallTile.scale-150.png">
+      <PackagePath>Assets\SmallTile.scale-150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2019-05-20T17:47:22.533</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\Assets\SmallTile.scale-200.png">
+      <PackagePath>Assets\SmallTile.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2019-05-20T17:47:22.548</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\Assets\SmallTile.scale-400.png">
+      <PackagePath>Assets\SmallTile.scale-400.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2019-05-20T17:47:59.623</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\Assets\SplashScreen.scale-100.png">
+      <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2019-05-20T17:47:23.754</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\Assets\SplashScreen.scale-125.png">
+      <PackagePath>Assets\SplashScreen.scale-125.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2019-05-20T17:47:23.810</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\Assets\SplashScreen.scale-150.png">
+      <PackagePath>Assets\SplashScreen.scale-150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2019-05-20T17:47:23.869</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\Assets\SplashScreen.scale-400.png">
+      <PackagePath>Assets\SplashScreen.scale-400.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2019-05-20T17:48:00.490</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\Assets\Square150x150Logo.scale-100.png">
+      <PackagePath>Assets\Square150x150Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2019-05-20T17:47:22.594</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\Assets\Square150x150Logo.scale-125.png">
+      <PackagePath>Assets\Square150x150Logo.scale-125.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2019-05-20T17:47:22.611</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\Assets\Square150x150Logo.scale-150.png">
+      <PackagePath>Assets\Square150x150Logo.scale-150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2019-05-20T17:47:22.629</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\Assets\Square150x150Logo.scale-400.png">
+      <PackagePath>Assets\Square150x150Logo.scale-400.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2019-05-20T17:47:59.686</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\Assets\Square44x44Logo.altform-unplated_targetsize-16.png">
+      <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-16.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2019-05-20T17:47:23.627</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\Assets\Square44x44Logo.altform-unplated_targetsize-256.png">
+      <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-256.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2019-05-20T17:48:00.144</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\Assets\Square44x44Logo.altform-unplated_targetsize-32.png">
+      <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-32.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2019-05-20T17:47:23.655</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\Assets\Square44x44Logo.altform-unplated_targetsize-48.png">
+      <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-48.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2019-05-20T17:47:23.669</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\Assets\Square44x44Logo.scale-100.png">
+      <PackagePath>Assets\Square44x44Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2019-05-20T17:47:23.371</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\Assets\Square44x44Logo.scale-125.png">
+      <PackagePath>Assets\Square44x44Logo.scale-125.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2019-05-20T17:47:23.385</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\Assets\Square44x44Logo.scale-150.png">
+      <PackagePath>Assets\Square44x44Logo.scale-150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2019-05-20T17:47:23.398</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\Assets\Square44x44Logo.scale-400.png">
+      <PackagePath>Assets\Square44x44Logo.scale-400.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2019-05-20T17:48:00.043</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\Assets\Square44x44Logo.targetsize-16.png">
+      <PackagePath>Assets\Square44x44Logo.targetsize-16.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2019-05-20T17:47:23.455</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\Assets\Square44x44Logo.targetsize-24.png">
+      <PackagePath>Assets\Square44x44Logo.targetsize-24.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2019-05-20T17:47:23.547</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\Assets\Square44x44Logo.targetsize-256.png">
+      <PackagePath>Assets\Square44x44Logo.targetsize-256.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2019-05-20T17:48:00.091</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\Assets\Square44x44Logo.targetsize-32.png">
+      <PackagePath>Assets\Square44x44Logo.targetsize-32.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2019-05-20T17:47:23.560</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\Assets\Square44x44Logo.targetsize-48.png">
+      <PackagePath>Assets\Square44x44Logo.targetsize-48.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2019-05-20T17:47:23.574</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\Assets\StoreLogo.scale-100.png">
+      <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2019-05-20T17:47:24.345</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\Assets\StoreLogo.scale-125.png">
+      <PackagePath>Assets\StoreLogo.scale-125.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2019-05-20T17:47:24.357</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\Assets\StoreLogo.scale-150.png">
+      <PackagePath>Assets\StoreLogo.scale-150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2019-05-20T17:47:24.374</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\Assets\StoreLogo.scale-200.png">
+      <PackagePath>Assets\StoreLogo.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2019-05-20T17:47:24.390</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\Assets\StoreLogo.scale-400.png">
+      <PackagePath>Assets\StoreLogo.scale-400.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2019-05-20T17:48:00.527</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\Assets\Wide310x150Logo.scale-100.png">
+      <PackagePath>Assets\Wide310x150Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2019-05-20T17:47:22.751</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\Assets\Wide310x150Logo.scale-125.png">
+      <PackagePath>Assets\Wide310x150Logo.scale-125.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2019-05-20T17:47:22.773</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\Assets\Wide310x150Logo.scale-150.png">
+      <PackagePath>Assets\Wide310x150Logo.scale-150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2019-05-20T17:47:22.806</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\Assets\Wide310x150Logo.scale-400.png">
+      <PackagePath>Assets\Wide310x150Logo.scale-400.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2019-05-20T17:47:59.787</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
@@ -818,68 +1014,75 @@
     <AppxPackagedFile Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-10-16T07:29:45.673</Modified>
+      <Modified>2019-05-20T17:47:23.961</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-10-16T07:29:45.673</Modified>
+      <Modified>2019-05-20T17:47:22.655</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-10-16T07:29:45.673</Modified>
+      <Modified>2019-05-20T17:47:23.413</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-10-16T07:29:45.673</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\Assets\StoreLogo.png">
-      <PackagePath>Assets\StoreLogo.png</PackagePath>
-      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-10-16T07:29:45.673</Modified>
+      <Modified>2019-05-20T17:47:23.643</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-10-16T07:29:45.673</Modified>
+      <Modified>2019-05-20T17:47:22.839</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\Properties\Default.rd.xml">
+      <PackagePath>Properties\Default.rd.xml</PackagePath>
+      <Modified>2019-05-15T14:51:20.931</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\bin\x86\Debug\UWP_VendaEntrades.xr.xml">
       <PackagePath>UWP_VendaEntrades.xr.xml</PackagePath>
-      <Modified>2019-05-17T15:58:26.147</Modified>
+      <Modified>2019-05-20T18:29:35.495</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2019-05-17T18:11:11.165</Modified>
+      <Modified>2019-05-20T18:29:35.540</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\bin\x86\Debug\CDs\AfegirClientCD.xbf">
       <PackagePath>CDs\AfegirClientCD.xbf</PackagePath>
-      <Modified>2019-05-17T18:11:11.205</Modified>
+      <Modified>2019-05-20T18:29:35.607</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\bin\x86\Debug\VentesPage.xbf">
       <PackagePath>VentesPage.xbf</PackagePath>
-      <Modified>2019-05-17T18:11:11.206</Modified>
+      <Modified>2019-05-20T18:29:35.609</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2019-05-17T18:11:11.208</Modified>
+      <Modified>2019-05-20T18:29:35.611</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\bin\x86\Debug\TipusPassisPage.xbf">
       <PackagePath>TipusPassisPage.xbf</PackagePath>
-      <Modified>2019-05-17T18:11:11.210</Modified>
+      <Modified>2019-05-20T18:29:35.613</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\bin\x86\Debug\Views\EntradaUI.xbf">
       <PackagePath>Views\EntradaUI.xbf</PackagePath>
-      <Modified>2019-05-17T18:11:11.163</Modified>
+      <Modified>2019-05-20T18:29:35.535</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\bin\x86\Debug\Views\ModificacioTipusPassiUI.xbf">
+      <PackagePath>Views\ModificacioTipusPassiUI.xbf</PackagePath>
+      <Modified>2019-05-20T18:29:35.615</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\bin\x86\Debug\Views\ParcUI.xbf">
       <PackagePath>Views\ParcUI.xbf</PackagePath>
-      <Modified>2019-05-17T18:11:11.212</Modified>
+      <Modified>2019-05-20T18:29:35.617</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\bin\x86\Debug\Views\PassiUI.xbf">
       <PackagePath>Views\PassiUI.xbf</PackagePath>
-      <Modified>2019-05-17T18:11:11.212</Modified>
+      <Modified>2019-05-20T18:29:35.618</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\bin\x86\Debug\Views\TipusPassiAtraccioUI.xbf">
+      <PackagePath>Views\TipusPassiAtraccioUI.xbf</PackagePath>
+      <Modified>2019-05-20T18:29:35.620</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.17134.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -900,11 +1103,11 @@
     <AppxPackagedFile Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2019-05-17T15:58:45.934</Modified>
+      <Modified>2019-05-20T18:09:45.655</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\bin\x86\Debug\Core\UWP_VendaEntrades.exe">
       <PackagePath>UWP_VendaEntrades.exe</PackagePath>
-      <Modified>2019-05-17T18:11:12.272</Modified>
+      <Modified>2019-05-20T18:29:36.655</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

@@ -7,8 +7,8 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
     mc:Ignorable="d"
-    d:DesignHeight="300"
-    d:DesignWidth="400"
+    d:DesignHeight="600"
+    d:DesignWidth="800"
     Loaded="UserControl_Loaded">
 
     <Grid>
@@ -38,7 +38,8 @@
             <TextBlock Text="Categoria:" Margin="10" FontSize="20" Grid.Row="1"/>
             <ComboBox x:Name="cboNumeroDies" Margin="10" Grid.Column="1" Width="100"/>
             <ComboBox x:Name="cboCategories" Margin="10" Width="100" Grid.Row="1" Grid.Column="1"/>
-            <DatePicker x:Name="dtaEntrada" Grid.Row="2"/>
+            <TextBlock Text="Data:" Margin="10" FontSize="20" Grid.Row="2"/>
+            <DatePicker x:Name="dtaEntrada" Margin="10" Grid.Row="2" Grid.Column="1"/>
         </Grid>
 
         <Grid x:Name="grdSuperiorDret" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">

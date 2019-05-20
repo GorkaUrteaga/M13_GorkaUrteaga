@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Source>F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\Assets\splashImage.jpg</Source>
+    <SmallTileSource>F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\Assets\splashImage.jpg</SmallTileSource>
+    <MediumTileSource>F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\Assets\splashImage.jpg</MediumTileSource>
+    <WideTileSource>F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\Assets\splashImage.jpg</WideTileSource>
+    <LargeTileSource>F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\Assets\splashImage.jpg</LargeTileSource>
+    <AppIconSource>F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\Assets\splashImage.jpg</AppIconSource>
+    <SplashScreenSource>F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\Assets\splashImage.jpg</SplashScreenSource>
+    <PackageLogoSource>F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\Assets\splashImage.jpg</PackageLogoSource>
+  </PropertyGroup>
+</Project>

@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Globalization;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -13,17 +15,31 @@ namespace VendaEntradesDM.Models
         private String cognom1;
         private String cognom2;
         private String password;
+        private ObservableCollection<Passi> passis;
+
+        private static TextInfo ti = new CultureInfo("es-ES",false).TextInfo;
 
         private const int PASSWORD_LEN = 10;
 
-        public Client(int id, string nif, string nom, string cognom1, string cognom2)
+        public Client(int id, string nif, string nom, string cognom1, string cognom2, string password)
         {
             Id = id;
-            Nif = nif;
-            Nom = nom;
-            Cognom1 = cognom1;
+            Nif = nif.ToUpper();
+            Nom = ti.ToTitleCase(nom.ToLower());
+            Cognom1 = ti.ToTitleCase(cognom1.ToLower());
+            if(cognom2 != null)
+            {
+                cognom2 = ti.ToTitleCase(cognom2.ToLower());
+            }
             Cognom2 = cognom2;
-            Password = GenerarPassword();
+            if (password == null)
+            {
+                password = GenerarPassword();
+            }
+            Password = password;
+
+            passis = new ObservableCollection<Passi>();
+            
         }
 
         private string GenerarPassword()
@@ -65,7 +81,30 @@ namespace VendaEntradesDM.Models
         public string Cognom2 { get => cognom2; set => cognom2 = value; }
         public string Password { get => password; set => password = value; }
 
+        public void AddPassi(Passi p)
+        {
+            passis.Add(p);
+        }
 
+        public void RemovePassi(Passi p)
+        {
+            passis.Remove(p);
+        }
 
+        public String GetCognoms
+        {
+            get
+            {
+                string str = cognom1;
+
+                if (cognom2 != null) str += " " + cognom2;
+                return str;
+            }
+        }
+
+        public IEnumerable<Passi> GetPassis()
+        {
+            return passis;
+        }
     }
 }

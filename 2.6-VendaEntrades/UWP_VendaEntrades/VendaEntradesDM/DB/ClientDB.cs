@@ -33,6 +33,7 @@ namespace VendaEntradesDM.DB
 
         public static Client GetClient(String nif)
         {
+            Client c = null;
             using (DBConnection context = new DBConnection())
             {
                 using (var connexio = context.Database.GetDbConnection()) // <== NOTA IMPORTANT: requereix ==>using Microsoft.EntityFrameworkCore;
@@ -45,12 +46,37 @@ namespace VendaEntradesDM.DB
                     {
                         DBUtils.CrearParametre("NifParam", nif, consulta);
 
-                        consulta.CommandText = @"select Id,Nom,Cognom1,Cognom2 from client where nif =@NifParam";
+                        consulta.CommandText = @"select Id,Nom,Cognom1,Cognom2, password from client where nif =@NifParam";
 
+                        var reader = consulta.ExecuteReader();
+                        while (reader.Read())
+                        {
+
+                            int id = reader.GetInt32(reader.GetOrdinal("ID"));
+                            string nom = reader.GetString(reader.GetOrdinal("NOM"));
+                            string cognom1 = reader.GetString(reader.GetOrdinal("COGNOM1"));
+
+                            string cognom2 = null;
+
+                            string password = null;
+
+                            if (reader.GetString(reader.GetOrdinal("COGNOM1")) != null)
+                            {
+                                cognom2 = reader.GetString(reader.GetOrdinal("COGNOM2"));
+                            }
+
+                            if (reader.GetString(reader.GetOrdinal("PASSWORD")) != null)
+                            {
+                                password = reader.GetString(reader.GetOrdinal("PASSWORD"));
+                            }
+                            c = new Client(id, nif, nom, cognom1, cognom2, password);
+                        }
                         
+
                     }
                 }
             }
+            return c;
         }
 
         public static void InsertClient(Client c)
@@ -92,5 +118,29 @@ namespace VendaEntradesDM.DB
 
         }
 
+        public static bool ExisteixClient(int id)
+        {
+            bool existeix;
+            using (DBConnection context = new DBConnection())
+            {
+                using (var connexio = context.Database.GetDbConnection()) // <== NOTA IMPORTANT: requereix ==>using Microsoft.EntityFrameworkCore;
+                {
+                    // Obrir la connexió a la BD
+                    connexio.Open();
+                    DbTransaction transaccio = connexio.BeginTransaction();
+                    // Crear una consulta SQL
+                    using (var consulta = connexio.CreateCommand())
+                    {
+
+                        DBUtils.CrearParametre("IdParam", id, consulta);
+
+                        consulta.CommandText = @"select count(*) from client where id = @IdParam";
+
+                        existeix = Convert.ToInt32(consulta.ExecuteScalar())==1;
+                    }
+                }
+            }
+            return existeix;
+        }
     }
 }

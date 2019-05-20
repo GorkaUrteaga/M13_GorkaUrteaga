@@ -213,7 +213,7 @@ namespace UWP_VendaEntrades.UWP_VendaEntrades_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[48];
+            _typeNameTable = new string[51];
             _typeNameTable[0] = "UWP_VendaEntrades.CDs.AfegirClientCD";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.ContentDialog";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.ContentControl";
@@ -223,47 +223,50 @@ namespace UWP_VendaEntrades.UWP_VendaEntrades_XamlTypeInfo
             _typeNameTable[6] = "UWP_VendaEntrades.EntradesPage";
             _typeNameTable[7] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[8] = "UWP_VendaEntrades.MainPage";
-            _typeNameTable[9] = "UWP_VendaEntrades.PassisPage";
-            _typeNameTable[10] = "Microsoft.Toolkit.Uwp.UI.Controls.DataGrid";
-            _typeNameTable[11] = "Windows.UI.Xaml.Controls.Control";
-            _typeNameTable[12] = "Boolean";
-            _typeNameTable[13] = "System.Collections.ObjectModel.ObservableCollection`1<Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn>";
-            _typeNameTable[14] = "System.Collections.ObjectModel.Collection`1<Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn>";
-            _typeNameTable[15] = "Object";
-            _typeNameTable[16] = "Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn";
-            _typeNameTable[17] = "Windows.UI.Xaml.DependencyObject";
-            _typeNameTable[18] = "Double";
-            _typeNameTable[19] = "Windows.UI.Xaml.Style";
-            _typeNameTable[20] = "Windows.UI.Xaml.Data.Binding";
-            _typeNameTable[21] = "Int32";
-            _typeNameTable[22] = "System.Nullable`1<Microsoft.Toolkit.Uwp.UI.Controls.DataGridSortDirection>";
-            _typeNameTable[23] = "System.ValueType";
-            _typeNameTable[24] = "Windows.UI.Xaml.Visibility";
-            _typeNameTable[25] = "Microsoft.Toolkit.Uwp.UI.Controls.DataGridLength";
-            _typeNameTable[26] = "Windows.UI.Xaml.Media.Brush";
-            _typeNameTable[27] = "Microsoft.Toolkit.Uwp.UI.Controls.DataGridClipboardCopyMode";
-            _typeNameTable[28] = "System.Enum";
-            _typeNameTable[29] = "Microsoft.Toolkit.Uwp.UI.Controls.DataGridGridLinesVisibility";
-            _typeNameTable[30] = "Microsoft.Toolkit.Uwp.UI.Controls.DataGridHeadersVisibility";
-            _typeNameTable[31] = "Windows.UI.Xaml.Controls.ScrollBarVisibility";
-            _typeNameTable[32] = "Windows.UI.Xaml.Controls.IncrementalLoadingTrigger";
-            _typeNameTable[33] = "System.Collections.IEnumerable";
-            _typeNameTable[34] = "Windows.UI.Xaml.DataTemplate";
-            _typeNameTable[35] = "Microsoft.Toolkit.Uwp.UI.Controls.DataGridRowDetailsVisibilityMode";
-            _typeNameTable[36] = "Microsoft.Toolkit.Uwp.UI.Controls.DataGridSelectionMode";
-            _typeNameTable[37] = "String";
-            _typeNameTable[38] = "System.Collections.ObjectModel.ObservableCollection`1<Windows.UI.Xaml.Style>";
-            _typeNameTable[39] = "System.Collections.ObjectModel.Collection`1<Windows.UI.Xaml.Style>";
-            _typeNameTable[40] = "System.Collections.IList";
-            _typeNameTable[41] = "Microsoft.Toolkit.Uwp.UI.Controls.DataGridTextColumn";
-            _typeNameTable[42] = "Microsoft.Toolkit.Uwp.UI.Controls.DataGridBoundColumn";
-            _typeNameTable[43] = "Windows.UI.Xaml.Media.FontFamily";
-            _typeNameTable[44] = "Windows.UI.Text.FontStyle";
-            _typeNameTable[45] = "Windows.UI.Text.FontWeight";
-            _typeNameTable[46] = "UWP_VendaEntrades.Views.ParcUI";
-            _typeNameTable[47] = "VendaEntradesDM.Models.Parc";
+            _typeNameTable[9] = "UWP_VendaEntrades.Views.ModificacioTipusPassiUI";
+            _typeNameTable[10] = "UWP_VendaEntrades.PassisPage";
+            _typeNameTable[11] = "Microsoft.Toolkit.Uwp.UI.Controls.DataGrid";
+            _typeNameTable[12] = "Windows.UI.Xaml.Controls.Control";
+            _typeNameTable[13] = "Boolean";
+            _typeNameTable[14] = "System.Collections.ObjectModel.ObservableCollection`1<Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn>";
+            _typeNameTable[15] = "System.Collections.ObjectModel.Collection`1<Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn>";
+            _typeNameTable[16] = "Object";
+            _typeNameTable[17] = "Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn";
+            _typeNameTable[18] = "Windows.UI.Xaml.DependencyObject";
+            _typeNameTable[19] = "Double";
+            _typeNameTable[20] = "Windows.UI.Xaml.Style";
+            _typeNameTable[21] = "Windows.UI.Xaml.Data.Binding";
+            _typeNameTable[22] = "Int32";
+            _typeNameTable[23] = "System.Nullable`1<Microsoft.Toolkit.Uwp.UI.Controls.DataGridSortDirection>";
+            _typeNameTable[24] = "System.ValueType";
+            _typeNameTable[25] = "Windows.UI.Xaml.Visibility";
+            _typeNameTable[26] = "Microsoft.Toolkit.Uwp.UI.Controls.DataGridLength";
+            _typeNameTable[27] = "Windows.UI.Xaml.Media.Brush";
+            _typeNameTable[28] = "Microsoft.Toolkit.Uwp.UI.Controls.DataGridClipboardCopyMode";
+            _typeNameTable[29] = "System.Enum";
+            _typeNameTable[30] = "Microsoft.Toolkit.Uwp.UI.Controls.DataGridGridLinesVisibility";
+            _typeNameTable[31] = "Microsoft.Toolkit.Uwp.UI.Controls.DataGridHeadersVisibility";
+            _typeNameTable[32] = "Windows.UI.Xaml.Controls.ScrollBarVisibility";
+            _typeNameTable[33] = "Windows.UI.Xaml.Controls.IncrementalLoadingTrigger";
+            _typeNameTable[34] = "System.Collections.IEnumerable";
+            _typeNameTable[35] = "Windows.UI.Xaml.DataTemplate";
+            _typeNameTable[36] = "Microsoft.Toolkit.Uwp.UI.Controls.DataGridRowDetailsVisibilityMode";
+            _typeNameTable[37] = "Microsoft.Toolkit.Uwp.UI.Controls.DataGridSelectionMode";
+            _typeNameTable[38] = "String";
+            _typeNameTable[39] = "System.Collections.ObjectModel.ObservableCollection`1<Windows.UI.Xaml.Style>";
+            _typeNameTable[40] = "System.Collections.ObjectModel.Collection`1<Windows.UI.Xaml.Style>";
+            _typeNameTable[41] = "System.Collections.IList";
+            _typeNameTable[42] = "Microsoft.Toolkit.Uwp.UI.Controls.DataGridTextColumn";
+            _typeNameTable[43] = "Microsoft.Toolkit.Uwp.UI.Controls.DataGridBoundColumn";
+            _typeNameTable[44] = "Windows.UI.Xaml.Media.FontFamily";
+            _typeNameTable[45] = "Windows.UI.Text.FontStyle";
+            _typeNameTable[46] = "Windows.UI.Text.FontWeight";
+            _typeNameTable[47] = "UWP_VendaEntrades.Views.ParcUI";
+            _typeNameTable[48] = "VendaEntradesDM.Models.Parc";
+            _typeNameTable[49] = "UWP_VendaEntrades.Views.TipusPassiAtraccioUI";
+            _typeNameTable[50] = "VendaEntradesDM.Models.TipusPassiAtraccio";
 
-            _typeTable = new global::System.Type[48];
+            _typeTable = new global::System.Type[51];
             _typeTable[0] = typeof(global::UWP_VendaEntrades.CDs.AfegirClientCD);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.ContentDialog);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.ContentControl);
@@ -273,45 +276,48 @@ namespace UWP_VendaEntrades.UWP_VendaEntrades_XamlTypeInfo
             _typeTable[6] = typeof(global::UWP_VendaEntrades.EntradesPage);
             _typeTable[7] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[8] = typeof(global::UWP_VendaEntrades.MainPage);
-            _typeTable[9] = typeof(global::UWP_VendaEntrades.PassisPage);
-            _typeTable[10] = typeof(global::Microsoft.Toolkit.Uwp.UI.Controls.DataGrid);
-            _typeTable[11] = typeof(global::Windows.UI.Xaml.Controls.Control);
-            _typeTable[12] = typeof(global::System.Boolean);
-            _typeTable[13] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn>);
-            _typeTable[14] = typeof(global::System.Collections.ObjectModel.Collection<global::Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn>);
-            _typeTable[15] = typeof(global::System.Object);
-            _typeTable[16] = typeof(global::Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn);
-            _typeTable[17] = typeof(global::Windows.UI.Xaml.DependencyObject);
-            _typeTable[18] = typeof(global::System.Double);
-            _typeTable[19] = typeof(global::Windows.UI.Xaml.Style);
-            _typeTable[20] = typeof(global::Windows.UI.Xaml.Data.Binding);
-            _typeTable[21] = typeof(global::System.Int32);
-            _typeTable[22] = typeof(global::System.Nullable<global::Microsoft.Toolkit.Uwp.UI.Controls.DataGridSortDirection>);
-            _typeTable[23] = typeof(global::System.ValueType);
-            _typeTable[24] = typeof(global::Windows.UI.Xaml.Visibility);
-            _typeTable[25] = typeof(global::Microsoft.Toolkit.Uwp.UI.Controls.DataGridLength);
-            _typeTable[26] = typeof(global::Windows.UI.Xaml.Media.Brush);
-            _typeTable[27] = typeof(global::Microsoft.Toolkit.Uwp.UI.Controls.DataGridClipboardCopyMode);
-            _typeTable[28] = typeof(global::System.Enum);
-            _typeTable[29] = typeof(global::Microsoft.Toolkit.Uwp.UI.Controls.DataGridGridLinesVisibility);
-            _typeTable[30] = typeof(global::Microsoft.Toolkit.Uwp.UI.Controls.DataGridHeadersVisibility);
-            _typeTable[31] = typeof(global::Windows.UI.Xaml.Controls.ScrollBarVisibility);
-            _typeTable[32] = typeof(global::Windows.UI.Xaml.Controls.IncrementalLoadingTrigger);
-            _typeTable[33] = typeof(global::System.Collections.IEnumerable);
-            _typeTable[34] = typeof(global::Windows.UI.Xaml.DataTemplate);
-            _typeTable[35] = typeof(global::Microsoft.Toolkit.Uwp.UI.Controls.DataGridRowDetailsVisibilityMode);
-            _typeTable[36] = typeof(global::Microsoft.Toolkit.Uwp.UI.Controls.DataGridSelectionMode);
-            _typeTable[37] = typeof(global::System.String);
-            _typeTable[38] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::Windows.UI.Xaml.Style>);
-            _typeTable[39] = typeof(global::System.Collections.ObjectModel.Collection<global::Windows.UI.Xaml.Style>);
-            _typeTable[40] = typeof(global::System.Collections.IList);
-            _typeTable[41] = typeof(global::Microsoft.Toolkit.Uwp.UI.Controls.DataGridTextColumn);
-            _typeTable[42] = typeof(global::Microsoft.Toolkit.Uwp.UI.Controls.DataGridBoundColumn);
-            _typeTable[43] = typeof(global::Windows.UI.Xaml.Media.FontFamily);
-            _typeTable[44] = typeof(global::Windows.UI.Text.FontStyle);
-            _typeTable[45] = typeof(global::Windows.UI.Text.FontWeight);
-            _typeTable[46] = typeof(global::UWP_VendaEntrades.Views.ParcUI);
-            _typeTable[47] = typeof(global::VendaEntradesDM.Models.Parc);
+            _typeTable[9] = typeof(global::UWP_VendaEntrades.Views.ModificacioTipusPassiUI);
+            _typeTable[10] = typeof(global::UWP_VendaEntrades.PassisPage);
+            _typeTable[11] = typeof(global::Microsoft.Toolkit.Uwp.UI.Controls.DataGrid);
+            _typeTable[12] = typeof(global::Windows.UI.Xaml.Controls.Control);
+            _typeTable[13] = typeof(global::System.Boolean);
+            _typeTable[14] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn>);
+            _typeTable[15] = typeof(global::System.Collections.ObjectModel.Collection<global::Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn>);
+            _typeTable[16] = typeof(global::System.Object);
+            _typeTable[17] = typeof(global::Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn);
+            _typeTable[18] = typeof(global::Windows.UI.Xaml.DependencyObject);
+            _typeTable[19] = typeof(global::System.Double);
+            _typeTable[20] = typeof(global::Windows.UI.Xaml.Style);
+            _typeTable[21] = typeof(global::Windows.UI.Xaml.Data.Binding);
+            _typeTable[22] = typeof(global::System.Int32);
+            _typeTable[23] = typeof(global::System.Nullable<global::Microsoft.Toolkit.Uwp.UI.Controls.DataGridSortDirection>);
+            _typeTable[24] = typeof(global::System.ValueType);
+            _typeTable[25] = typeof(global::Windows.UI.Xaml.Visibility);
+            _typeTable[26] = typeof(global::Microsoft.Toolkit.Uwp.UI.Controls.DataGridLength);
+            _typeTable[27] = typeof(global::Windows.UI.Xaml.Media.Brush);
+            _typeTable[28] = typeof(global::Microsoft.Toolkit.Uwp.UI.Controls.DataGridClipboardCopyMode);
+            _typeTable[29] = typeof(global::System.Enum);
+            _typeTable[30] = typeof(global::Microsoft.Toolkit.Uwp.UI.Controls.DataGridGridLinesVisibility);
+            _typeTable[31] = typeof(global::Microsoft.Toolkit.Uwp.UI.Controls.DataGridHeadersVisibility);
+            _typeTable[32] = typeof(global::Windows.UI.Xaml.Controls.ScrollBarVisibility);
+            _typeTable[33] = typeof(global::Windows.UI.Xaml.Controls.IncrementalLoadingTrigger);
+            _typeTable[34] = typeof(global::System.Collections.IEnumerable);
+            _typeTable[35] = typeof(global::Windows.UI.Xaml.DataTemplate);
+            _typeTable[36] = typeof(global::Microsoft.Toolkit.Uwp.UI.Controls.DataGridRowDetailsVisibilityMode);
+            _typeTable[37] = typeof(global::Microsoft.Toolkit.Uwp.UI.Controls.DataGridSelectionMode);
+            _typeTable[38] = typeof(global::System.String);
+            _typeTable[39] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::Windows.UI.Xaml.Style>);
+            _typeTable[40] = typeof(global::System.Collections.ObjectModel.Collection<global::Windows.UI.Xaml.Style>);
+            _typeTable[41] = typeof(global::System.Collections.IList);
+            _typeTable[42] = typeof(global::Microsoft.Toolkit.Uwp.UI.Controls.DataGridTextColumn);
+            _typeTable[43] = typeof(global::Microsoft.Toolkit.Uwp.UI.Controls.DataGridBoundColumn);
+            _typeTable[44] = typeof(global::Windows.UI.Xaml.Media.FontFamily);
+            _typeTable[45] = typeof(global::Windows.UI.Text.FontStyle);
+            _typeTable[46] = typeof(global::Windows.UI.Text.FontWeight);
+            _typeTable[47] = typeof(global::UWP_VendaEntrades.Views.ParcUI);
+            _typeTable[48] = typeof(global::VendaEntradesDM.Models.Parc);
+            _typeTable[49] = typeof(global::UWP_VendaEntrades.Views.TipusPassiAtraccioUI);
+            _typeTable[50] = typeof(global::VendaEntradesDM.Models.TipusPassiAtraccio);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -351,33 +357,35 @@ namespace UWP_VendaEntrades.UWP_VendaEntrades_XamlTypeInfo
         private object Activate_5_EntradaUI() { return new global::UWP_VendaEntrades.Views.EntradaUI(); }
         private object Activate_6_EntradesPage() { return new global::UWP_VendaEntrades.EntradesPage(); }
         private object Activate_8_MainPage() { return new global::UWP_VendaEntrades.MainPage(); }
-        private object Activate_9_PassisPage() { return new global::UWP_VendaEntrades.PassisPage(); }
-        private object Activate_10_DataGrid() { return new global::Microsoft.Toolkit.Uwp.UI.Controls.DataGrid(); }
-        private object Activate_13_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn>(); }
-        private object Activate_14_Collection() { return new global::System.Collections.ObjectModel.Collection<global::Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn>(); }
-        private object Activate_38_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::Windows.UI.Xaml.Style>(); }
-        private object Activate_39_Collection() { return new global::System.Collections.ObjectModel.Collection<global::Windows.UI.Xaml.Style>(); }
-        private object Activate_41_DataGridTextColumn() { return new global::Microsoft.Toolkit.Uwp.UI.Controls.DataGridTextColumn(); }
-        private object Activate_46_ParcUI() { return new global::UWP_VendaEntrades.Views.ParcUI(); }
-        private void VectorAdd_13_ObservableCollection(object instance, object item)
+        private object Activate_9_ModificacioTipusPassiUI() { return new global::UWP_VendaEntrades.Views.ModificacioTipusPassiUI(); }
+        private object Activate_10_PassisPage() { return new global::UWP_VendaEntrades.PassisPage(); }
+        private object Activate_11_DataGrid() { return new global::Microsoft.Toolkit.Uwp.UI.Controls.DataGrid(); }
+        private object Activate_14_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn>(); }
+        private object Activate_15_Collection() { return new global::System.Collections.ObjectModel.Collection<global::Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn>(); }
+        private object Activate_39_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::Windows.UI.Xaml.Style>(); }
+        private object Activate_40_Collection() { return new global::System.Collections.ObjectModel.Collection<global::Windows.UI.Xaml.Style>(); }
+        private object Activate_42_DataGridTextColumn() { return new global::Microsoft.Toolkit.Uwp.UI.Controls.DataGridTextColumn(); }
+        private object Activate_47_ParcUI() { return new global::UWP_VendaEntrades.Views.ParcUI(); }
+        private object Activate_49_TipusPassiAtraccioUI() { return new global::UWP_VendaEntrades.Views.TipusPassiAtraccioUI(); }
+        private void VectorAdd_14_ObservableCollection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn>)instance;
             var newItem = (global::Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_14_Collection(object instance, object item)
+        private void VectorAdd_15_Collection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn>)instance;
             var newItem = (global::Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_38_ObservableCollection(object instance, object item)
+        private void VectorAdd_39_ObservableCollection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::Windows.UI.Xaml.Style>)instance;
             var newItem = (global::Windows.UI.Xaml.Style)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_39_Collection(object instance, object item)
+        private void VectorAdd_40_Collection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::Windows.UI.Xaml.Style>)instance;
             var newItem = (global::Windows.UI.Xaml.Style)item;
@@ -445,16 +453,23 @@ namespace UWP_VendaEntrades.UWP_VendaEntrades_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 9:   //  UWP_VendaEntrades.PassisPage
-                userType = new global::UWP_VendaEntrades.UWP_VendaEntrades_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_9_PassisPage;
+            case 9:   //  UWP_VendaEntrades.Views.ModificacioTipusPassiUI
+                userType = new global::UWP_VendaEntrades.UWP_VendaEntrades_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.UserControl"));
+                userType.Activator = Activate_9_ModificacioTipusPassiUI;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 10:   //  Microsoft.Toolkit.Uwp.UI.Controls.DataGrid
+            case 10:   //  UWP_VendaEntrades.PassisPage
+                userType = new global::UWP_VendaEntrades.UWP_VendaEntrades_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_10_PassisPage;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 11:   //  Microsoft.Toolkit.Uwp.UI.Controls.DataGrid
                 userType = new global::UWP_VendaEntrades.UWP_VendaEntrades_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Control"));
-                userType.Activator = Activate_10_DataGrid;
+                userType.Activator = Activate_11_DataGrid;
                 userType.AddMemberName("IsReadOnly");
                 userType.AddMemberName("AutoGenerateColumns");
                 userType.AddMemberName("Columns");
@@ -504,33 +519,33 @@ namespace UWP_VendaEntrades.UWP_VendaEntrades_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 11:   //  Windows.UI.Xaml.Controls.Control
+            case 12:   //  Windows.UI.Xaml.Controls.Control
                 xamlType = new global::UWP_VendaEntrades.UWP_VendaEntrades_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 12:   //  Boolean
+            case 13:   //  Boolean
                 xamlType = new global::UWP_VendaEntrades.UWP_VendaEntrades_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 13:   //  System.Collections.ObjectModel.ObservableCollection`1<Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn>
+            case 14:   //  System.Collections.ObjectModel.ObservableCollection`1<Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn>
                 userType = new global::UWP_VendaEntrades.UWP_VendaEntrades_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Collections.ObjectModel.Collection`1<Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn>"));
-                userType.CollectionAdd = VectorAdd_13_ObservableCollection;
+                userType.CollectionAdd = VectorAdd_14_ObservableCollection;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 14:   //  System.Collections.ObjectModel.Collection`1<Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn>
+            case 15:   //  System.Collections.ObjectModel.Collection`1<Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn>
                 userType = new global::UWP_VendaEntrades.UWP_VendaEntrades_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_14_Collection;
-                userType.CollectionAdd = VectorAdd_14_Collection;
+                userType.Activator = Activate_15_Collection;
+                userType.CollectionAdd = VectorAdd_15_Collection;
                 xamlType = userType;
                 break;
 
-            case 15:   //  Object
+            case 16:   //  Object
                 xamlType = new global::UWP_VendaEntrades.UWP_VendaEntrades_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 16:   //  Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn
+            case 17:   //  Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn
                 userType = new global::UWP_VendaEntrades.UWP_VendaEntrades_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
                 userType.AddMemberName("ActualWidth");
                 userType.AddMemberName("CanUserReorder");
@@ -554,53 +569,53 @@ namespace UWP_VendaEntrades.UWP_VendaEntrades_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 17:   //  Windows.UI.Xaml.DependencyObject
+            case 18:   //  Windows.UI.Xaml.DependencyObject
                 xamlType = new global::UWP_VendaEntrades.UWP_VendaEntrades_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 18:   //  Double
+            case 19:   //  Double
                 xamlType = new global::UWP_VendaEntrades.UWP_VendaEntrades_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 19:   //  Windows.UI.Xaml.Style
+            case 20:   //  Windows.UI.Xaml.Style
                 xamlType = new global::UWP_VendaEntrades.UWP_VendaEntrades_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 20:   //  Windows.UI.Xaml.Data.Binding
+            case 21:   //  Windows.UI.Xaml.Data.Binding
                 xamlType = new global::UWP_VendaEntrades.UWP_VendaEntrades_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 21:   //  Int32
+            case 22:   //  Int32
                 xamlType = new global::UWP_VendaEntrades.UWP_VendaEntrades_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 22:   //  System.Nullable`1<Microsoft.Toolkit.Uwp.UI.Controls.DataGridSortDirection>
+            case 23:   //  System.Nullable`1<Microsoft.Toolkit.Uwp.UI.Controls.DataGridSortDirection>
                 userType = new global::UWP_VendaEntrades.UWP_VendaEntrades_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 23:   //  System.ValueType
+            case 24:   //  System.ValueType
                 userType = new global::UWP_VendaEntrades.UWP_VendaEntrades_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
                 xamlType = userType;
                 break;
 
-            case 24:   //  Windows.UI.Xaml.Visibility
+            case 25:   //  Windows.UI.Xaml.Visibility
                 xamlType = new global::UWP_VendaEntrades.UWP_VendaEntrades_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 25:   //  Microsoft.Toolkit.Uwp.UI.Controls.DataGridLength
+            case 26:   //  Microsoft.Toolkit.Uwp.UI.Controls.DataGridLength
                 userType = new global::UWP_VendaEntrades.UWP_VendaEntrades_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
                 userType.CreateFromStringMethod = x => (global::System.Object)global::Microsoft.Toolkit.Uwp.UI.Controls.DataGridLength.ConvertFromString(x);
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 26:   //  Windows.UI.Xaml.Media.Brush
+            case 27:   //  Windows.UI.Xaml.Media.Brush
                 xamlType = new global::UWP_VendaEntrades.UWP_VendaEntrades_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 27:   //  Microsoft.Toolkit.Uwp.UI.Controls.DataGridClipboardCopyMode
+            case 28:   //  Microsoft.Toolkit.Uwp.UI.Controls.DataGridClipboardCopyMode
                 userType = new global::UWP_VendaEntrades.UWP_VendaEntrades_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
                 userType.AddEnumValue("None", global::Microsoft.Toolkit.Uwp.UI.Controls.DataGridClipboardCopyMode.None);
                 userType.AddEnumValue("ExcludeHeader", global::Microsoft.Toolkit.Uwp.UI.Controls.DataGridClipboardCopyMode.ExcludeHeader);
@@ -608,12 +623,12 @@ namespace UWP_VendaEntrades.UWP_VendaEntrades_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 28:   //  System.Enum
+            case 29:   //  System.Enum
                 userType = new global::UWP_VendaEntrades.UWP_VendaEntrades_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
                 xamlType = userType;
                 break;
 
-            case 29:   //  Microsoft.Toolkit.Uwp.UI.Controls.DataGridGridLinesVisibility
+            case 30:   //  Microsoft.Toolkit.Uwp.UI.Controls.DataGridGridLinesVisibility
                 userType = new global::UWP_VendaEntrades.UWP_VendaEntrades_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
                 userType.AddEnumValue("None", global::Microsoft.Toolkit.Uwp.UI.Controls.DataGridGridLinesVisibility.None);
                 userType.AddEnumValue("Horizontal", global::Microsoft.Toolkit.Uwp.UI.Controls.DataGridGridLinesVisibility.Horizontal);
@@ -622,7 +637,7 @@ namespace UWP_VendaEntrades.UWP_VendaEntrades_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 30:   //  Microsoft.Toolkit.Uwp.UI.Controls.DataGridHeadersVisibility
+            case 31:   //  Microsoft.Toolkit.Uwp.UI.Controls.DataGridHeadersVisibility
                 userType = new global::UWP_VendaEntrades.UWP_VendaEntrades_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
                 userType.AddEnumValue("None", global::Microsoft.Toolkit.Uwp.UI.Controls.DataGridHeadersVisibility.None);
                 userType.AddEnumValue("Column", global::Microsoft.Toolkit.Uwp.UI.Controls.DataGridHeadersVisibility.Column);
@@ -631,25 +646,25 @@ namespace UWP_VendaEntrades.UWP_VendaEntrades_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 31:   //  Windows.UI.Xaml.Controls.ScrollBarVisibility
+            case 32:   //  Windows.UI.Xaml.Controls.ScrollBarVisibility
                 xamlType = new global::UWP_VendaEntrades.UWP_VendaEntrades_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 32:   //  Windows.UI.Xaml.Controls.IncrementalLoadingTrigger
+            case 33:   //  Windows.UI.Xaml.Controls.IncrementalLoadingTrigger
                 xamlType = new global::UWP_VendaEntrades.UWP_VendaEntrades_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 33:   //  System.Collections.IEnumerable
+            case 34:   //  System.Collections.IEnumerable
                 userType = new global::UWP_VendaEntrades.UWP_VendaEntrades_XamlTypeInfo.XamlUserType(this, typeName, type, null);
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 34:   //  Windows.UI.Xaml.DataTemplate
+            case 35:   //  Windows.UI.Xaml.DataTemplate
                 xamlType = new global::UWP_VendaEntrades.UWP_VendaEntrades_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 35:   //  Microsoft.Toolkit.Uwp.UI.Controls.DataGridRowDetailsVisibilityMode
+            case 36:   //  Microsoft.Toolkit.Uwp.UI.Controls.DataGridRowDetailsVisibilityMode
                 userType = new global::UWP_VendaEntrades.UWP_VendaEntrades_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
                 userType.AddEnumValue("VisibleWhenSelected", global::Microsoft.Toolkit.Uwp.UI.Controls.DataGridRowDetailsVisibilityMode.VisibleWhenSelected);
                 userType.AddEnumValue("Visible", global::Microsoft.Toolkit.Uwp.UI.Controls.DataGridRowDetailsVisibilityMode.Visible);
@@ -657,40 +672,40 @@ namespace UWP_VendaEntrades.UWP_VendaEntrades_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 36:   //  Microsoft.Toolkit.Uwp.UI.Controls.DataGridSelectionMode
+            case 37:   //  Microsoft.Toolkit.Uwp.UI.Controls.DataGridSelectionMode
                 userType = new global::UWP_VendaEntrades.UWP_VendaEntrades_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
                 userType.AddEnumValue("Extended", global::Microsoft.Toolkit.Uwp.UI.Controls.DataGridSelectionMode.Extended);
                 userType.AddEnumValue("Single", global::Microsoft.Toolkit.Uwp.UI.Controls.DataGridSelectionMode.Single);
                 xamlType = userType;
                 break;
 
-            case 37:   //  String
+            case 38:   //  String
                 xamlType = new global::UWP_VendaEntrades.UWP_VendaEntrades_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 38:   //  System.Collections.ObjectModel.ObservableCollection`1<Windows.UI.Xaml.Style>
+            case 39:   //  System.Collections.ObjectModel.ObservableCollection`1<Windows.UI.Xaml.Style>
                 userType = new global::UWP_VendaEntrades.UWP_VendaEntrades_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Collections.ObjectModel.Collection`1<Windows.UI.Xaml.Style>"));
-                userType.CollectionAdd = VectorAdd_38_ObservableCollection;
+                userType.CollectionAdd = VectorAdd_39_ObservableCollection;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 39:   //  System.Collections.ObjectModel.Collection`1<Windows.UI.Xaml.Style>
+            case 40:   //  System.Collections.ObjectModel.Collection`1<Windows.UI.Xaml.Style>
                 userType = new global::UWP_VendaEntrades.UWP_VendaEntrades_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_39_Collection;
-                userType.CollectionAdd = VectorAdd_39_Collection;
+                userType.Activator = Activate_40_Collection;
+                userType.CollectionAdd = VectorAdd_40_Collection;
                 xamlType = userType;
                 break;
 
-            case 40:   //  System.Collections.IList
+            case 41:   //  System.Collections.IList
                 userType = new global::UWP_VendaEntrades.UWP_VendaEntrades_XamlTypeInfo.XamlUserType(this, typeName, type, null);
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 41:   //  Microsoft.Toolkit.Uwp.UI.Controls.DataGridTextColumn
+            case 42:   //  Microsoft.Toolkit.Uwp.UI.Controls.DataGridTextColumn
                 userType = new global::UWP_VendaEntrades.UWP_VendaEntrades_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGridBoundColumn"));
-                userType.Activator = Activate_41_DataGridTextColumn;
+                userType.Activator = Activate_42_DataGridTextColumn;
                 userType.AddMemberName("FontFamily");
                 userType.AddMemberName("FontSize");
                 userType.AddMemberName("FontStyle");
@@ -699,7 +714,7 @@ namespace UWP_VendaEntrades.UWP_VendaEntrades_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 42:   //  Microsoft.Toolkit.Uwp.UI.Controls.DataGridBoundColumn
+            case 43:   //  Microsoft.Toolkit.Uwp.UI.Controls.DataGridBoundColumn
                 userType = new global::UWP_VendaEntrades.UWP_VendaEntrades_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn"));
                 userType.AddMemberName("Binding");
                 userType.AddMemberName("ClipboardContentBinding");
@@ -708,11 +723,11 @@ namespace UWP_VendaEntrades.UWP_VendaEntrades_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 43:   //  Windows.UI.Xaml.Media.FontFamily
+            case 44:   //  Windows.UI.Xaml.Media.FontFamily
                 xamlType = new global::UWP_VendaEntrades.UWP_VendaEntrades_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 44:   //  Windows.UI.Text.FontStyle
+            case 45:   //  Windows.UI.Text.FontStyle
                 userType = new global::UWP_VendaEntrades.UWP_VendaEntrades_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
                 userType.AddEnumValue("Normal", global::Windows.UI.Text.FontStyle.Normal);
                 userType.AddEnumValue("Oblique", global::Windows.UI.Text.FontStyle.Oblique);
@@ -720,21 +735,35 @@ namespace UWP_VendaEntrades.UWP_VendaEntrades_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 45:   //  Windows.UI.Text.FontWeight
+            case 46:   //  Windows.UI.Text.FontWeight
                 userType = new global::UWP_VendaEntrades.UWP_VendaEntrades_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 46:   //  UWP_VendaEntrades.Views.ParcUI
+            case 47:   //  UWP_VendaEntrades.Views.ParcUI
                 userType = new global::UWP_VendaEntrades.UWP_VendaEntrades_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.UserControl"));
-                userType.Activator = Activate_46_ParcUI;
+                userType.Activator = Activate_47_ParcUI;
                 userType.AddMemberName("ElParc");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 47:   //  VendaEntradesDM.Models.Parc
+            case 48:   //  VendaEntradesDM.Models.Parc
+                userType = new global::UWP_VendaEntrades.UWP_VendaEntrades_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.SetIsReturnTypeStub();
+                xamlType = userType;
+                break;
+
+            case 49:   //  UWP_VendaEntrades.Views.TipusPassiAtraccioUI
+                userType = new global::UWP_VendaEntrades.UWP_VendaEntrades_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.UserControl"));
+                userType.Activator = Activate_49_TipusPassiAtraccioUI;
+                userType.AddMemberName("ElTipusPassiAtraccio");
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 50:   //  VendaEntradesDM.Models.TipusPassiAtraccio
                 userType = new global::UWP_VendaEntrades.UWP_VendaEntrades_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
@@ -1513,6 +1542,16 @@ namespace UWP_VendaEntrades.UWP_VendaEntrades_XamlTypeInfo
             var that = (global::UWP_VendaEntrades.Views.ParcUI)instance;
             that.ElParc = (global::VendaEntradesDM.Models.Parc)Value;
         }
+        private object get_75_TipusPassiAtraccioUI_ElTipusPassiAtraccio(object instance)
+        {
+            var that = (global::UWP_VendaEntrades.Views.TipusPassiAtraccioUI)instance;
+            return that.ElTipusPassiAtraccio;
+        }
+        private void set_75_TipusPassiAtraccioUI_ElTipusPassiAtraccio(object instance, object Value)
+        {
+            var that = (global::UWP_VendaEntrades.Views.TipusPassiAtraccioUI)instance;
+            that.ElTipusPassiAtraccio = (global::VendaEntradesDM.Models.TipusPassiAtraccio)Value;
+        }
 
         private global::Windows.UI.Xaml.Markup.IXamlMember CreateXamlMember(string longMemberName)
         {
@@ -2013,6 +2052,13 @@ namespace UWP_VendaEntrades.UWP_VendaEntrades_XamlTypeInfo
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_74_ParcUI_ElParc;
                 xamlMember.Setter = set_74_ParcUI_ElParc;
+                break;
+            case "UWP_VendaEntrades.Views.TipusPassiAtraccioUI.ElTipusPassiAtraccio":
+                userType = (global::UWP_VendaEntrades.UWP_VendaEntrades_XamlTypeInfo.XamlUserType)GetXamlTypeByName("UWP_VendaEntrades.Views.TipusPassiAtraccioUI");
+                xamlMember = new global::UWP_VendaEntrades.UWP_VendaEntrades_XamlTypeInfo.XamlMember(this, "ElTipusPassiAtraccio", "VendaEntradesDM.Models.TipusPassiAtraccio");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_75_TipusPassiAtraccioUI_ElTipusPassiAtraccio;
+                xamlMember.Setter = set_75_TipusPassiAtraccioUI_ElTipusPassiAtraccio;
                 break;
             }
             return xamlMember;

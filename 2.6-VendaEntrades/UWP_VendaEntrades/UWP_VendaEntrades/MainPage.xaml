@@ -33,9 +33,9 @@
                     <TextBlock x:Name="tbkTitol" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Foreground="White"></TextBlock>
                 </Border>
             </NavigationView.Header>
-            <ScrollViewer>
-                <Frame x:Name="frmPrincipal"></Frame>
-            </ScrollViewer>
+            
+            <Frame x:Name="frmPrincipal"></Frame>
+            
         </NavigationView>
     </Grid>
 </Page>
