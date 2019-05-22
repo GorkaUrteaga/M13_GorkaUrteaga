@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="http://xmlns.jcp.org/xml/ns/persistence/orm"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence/orm
+          http://xmlns.jcp.org/xml/ns/persistence/orm_2_2.xsd"
+                 version="2.2">
+    <entity class="info.infomila.portaventura.classes.Atraccio" access="FIELD" metadata-complete="true">
+        <attributes>
+            <id name="codi">
+                <column precision="3"/>
+            </id>
+            <basic name="capacitatMaximaRonda" optional="false">
+                <column name="CAPACITAT_MAXIMA_RONDA" precision="3" nullable="false"/>
+            </basic>
+            <basic name="descripcioHTML">
+                <column name="DESCRIPCIO_HTML" length="400"/>
+            </basic>
+            <basic name="nom" optional="false">
+                <column length="40" nullable="false"/>
+            </basic>
+            <basic name="tempsPerRonda" optional="false">
+                <column name="TEMPS_PER_RONDA" precision="3" nullable="false"/>
+            </basic>         
+            <basic name="urlFoto" optional="false">
+                <column name="URL_FOTO" length="500" nullable="false"/>
+            </basic>   
+            <basic name="clientsEnCua" optional="false">
+                <column name="CLIENTS_EN_CUA" precision="3" nullable="false"/>
+            </basic>   
+            <basic name="alsadaMinimaAmbAcompanyant" optional="false">
+                <column name="ALSADA_MINIMA_AMB_ACOMPANYANT" precision="3" nullable="false"/>
+            </basic>   
+            <basic name="alsadaMinima" optional="false">
+                <column name="ALSADA_MINIMA" precision="3" nullable="false"/>
+            </basic>
+            <basic name="estatOperatiu" optional="false">
+                <column name="ESTAT_OPERATIU" nullable="false"/>
+            </basic>
+            
+            <many-to-one name="zona" fetch="LAZY" >
+                <join-column name="ZONA" insertable="false" updatable="false"/>
+                <foreign-key foreign-key-definition="FOREIGN KEY (ZONA) REFERENCES ZONA(NUMERO)"/>
+                <cascade>
+                    <cascade-persist/>
+                </cascade>
+            </many-to-one>
+            
+            <one-to-one name="incidencia" fetch="LAZY">
+                <join-column name="INCIDENCIA"/>
+                <foreign-key foreign-key-definition="FOREIGN KEY (INCIDENCIA) REFERENCES INCIDENCIA(NUM)"/>
+            </one-to-one>
+            
+            <element-collection name="incidencies">
+                <collection-table name="INCIDENCIA">
+                    <join-column name="ATRACCIO" nullable="false"/>
+                    <foreign-key foreign-key-definition="FOREIGN KEY (ATRACCIO) REFERENCES ATRACCIO(CODI)"/>
+                    <unique-constraint>
+                        <column-name>ATRACCIO</column-name>
+                        <column-name>NUM</column-name>
+                    </unique-constraint>
+                </collection-table>
+            </element-collection>
+            
+        </attributes>
+    </entity>
+
+</entity-mappings>

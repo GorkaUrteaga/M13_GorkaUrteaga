@@ -1,19 +1,51 @@
 package info.infomila.portaventura.classes;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.Basic;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.ForeignKey;
+import javax.persistence.Id;
+import javax.persistence.IdClass;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Transient;
 
 /**
  *
  * @author Gorka
  */
-public class Zona {
+@Entity
+@IdClass(ZonaParcFK.class)
+public class Zona implements Serializable{
 
     // ATRIBUTS
+    // Fa referencia a la id del parc.
+    @Id
+    @Column (name="PARC", columnDefinition="INT(6)")
+    private int parcId;
+    
+    @Id
+    @Column (columnDefinition="INT(2)")
     private int numero;
+    
+    @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST})
+    @JoinColumn(name = "PARC", insertable=false, updatable=false,
+            foreignKey = @ForeignKey(foreignKeyDefinition = "FOREIGN KEY (PARC) REFERENCES PARC(CODI)"))
+    private Parc parc;
+    
+    @Basic(optional = false)
+    @Column(length=40, nullable = false)
     private String nom;
     
-    private List<Atraccio> atraccions;    
+    //@OneToMany(mappedBy="zona")
+    @Transient
+    private List<Atraccio> atraccions; 
     
     // CONSTRUCTORS
     // Constructor per JPA

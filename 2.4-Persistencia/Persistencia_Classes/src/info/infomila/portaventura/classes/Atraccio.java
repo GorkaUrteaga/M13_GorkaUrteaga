@@ -1,29 +1,90 @@
 package info.infomila.portaventura.classes;
 
 import info.infomila.portaventura.enums.EstatOperatiu;
+import java.io.Serializable;
 import java.util.List;
 import java.util.Objects;
+import javax.persistence.Basic;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
+import javax.persistence.ForeignKey;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Transient;
 
 /**
  *
  * @author Gorka
  */
-public class Atraccio {
+@Entity
+public class Atraccio implements Serializable{
     
     // ATRIBUTS
-    private Zona zona;
+    @Id
+    @Column (columnDefinition="INT(3)")
     private int codi;
+    
+    /*@ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST})
+    @JoinColumn(name = "ZONA", insertable=false, updatable=false,
+            foreignKey = @ForeignKey(foreignKeyDefinition = "FOREIGN KEY (ZONA) REFERENCES ZONA(NUMERO)"))*/
+    @Transient
+    private Zona zona;
+    
+    /*@ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST})
+    @JoinColumn(name = "PARC", insertable=false, updatable=false,
+            foreignKey = @ForeignKey(foreignKeyDefinition = "FOREIGN KEY (PARC) REFERENCES ZONA(PARC)"))
+    private Parc parc;
+    */
+    @Basic(optional=false)
+    @Column (name="CAPACITAT_MAXIMA_RONDA",columnDefinition="INT(3)", nullable=false)
     private int capacitatMaximaRonda;
+    
+    @Basic(optional=false)
+    @Column (name="DESCRIPCIO_HTML",length=400, nullable=false)
     private String descripcioHTML;
+    
+    @Basic(optional=false)
+    @Column (length=40, nullable=false)
     private String nom;
+    
+    @Basic(optional=false)
+    @Column (name="TEMPS_PER_RONDA",columnDefinition="INT(3)", nullable=false)
     private int tempsPerRonda;
+    
+    @Basic(optional=false)
+    @Column (name="URL_FOTO", length=500, nullable=false)
     private String urlFoto;
+    
+    @Basic(optional=false)
+    @Column (name="CLIENTS_EN_CUA",columnDefinition="INT(3)", nullable=false)
     private int clientsEnCua;
+    
+    @Basic(optional=false)
+    @Column (name="ALSADA_MINIMA_AMB_ACOMPANYANT",columnDefinition="INT(3)", nullable=false)
     private int alsadaMinimaAmbAcompanyant;
+    
+    @Basic(optional=false)
+    @Column (name="ALSADA_MINIMA",columnDefinition="INT(3)", nullable=false)
     private int alsadaMinima;
     
+    @Basic
+    @Enumerated(EnumType.STRING)
     private EstatOperatiu estatOperatiu;
+    
+    @OneToMany(mappedBy="atraccio")
     private List<Incidencia> incidencies;
+    
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "INCIDENCIA",
+            foreignKey = @ForeignKey(foreignKeyDefinition = "FOREIGN KEY (INCIDENCIA) REFERENCES INCIDENCIA(NUM)"))
+    private Incidencia incidencia;
     
     //Falta potser algun atribut derivat d'una altre classe
     
@@ -36,6 +97,12 @@ public class Atraccio {
     
     
     // SETTERS
+
+    //incidencia actual
+    public void setIncidencia(Incidencia incidencia) {
+        this.incidencia = incidencia;
+    }
+    
     public void setZona(Zona zona) {
         if(zona == null){
             throw new RuntimeException("La zona és obligatoria.");
@@ -154,6 +221,10 @@ public class Atraccio {
 
     public EstatOperatiu getEstatOperatiu() {
         return estatOperatiu;
+    }
+    
+    public Incidencia getIncidencia() {
+        return incidencia;
     }
 
     @Override

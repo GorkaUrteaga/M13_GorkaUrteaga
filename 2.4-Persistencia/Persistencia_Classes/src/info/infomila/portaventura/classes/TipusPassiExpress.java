@@ -5,13 +5,14 @@
  */
 package info.infomila.portaventura.classes;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
 /**
  *
  * @author Gorka
  */
-public class TipusPassiExpress {
+public class TipusPassiExpress implements Serializable{
     private int id;
     private String nom;
     private BigDecimal preuPerDia;

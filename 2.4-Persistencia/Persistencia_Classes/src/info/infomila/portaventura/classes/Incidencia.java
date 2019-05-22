@@ -1,19 +1,39 @@
 package info.infomila.portaventura.classes;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 /**
  *
  * @author Gorka
  */
-public class Incidencia {
+@Entity
+public class Incidencia implements Serializable{
     
     // ATRIBUTS
+    @Id
+    @Column(columnDefinition="INT(3)")
     private int num;
+    
+    @Basic(optional=false)
+    @Column(name="DATA_INICI",columnDefinition="DATE",nullable=false)
     private Date dataInici;
+    
+    @Basic
+    @Column(name="DATA_FI",columnDefinition="DATE")
     private Date dataFi;
+    
+    @Basic
+    @Column(name="MISSATGE_ESTAT",length=200)
     private String missatgeEstat;
+    
+    @Basic(optional=false)
+    @Column(name="DATA_FI_PREVISTA",columnDefinition="DATE",nullable=false)
     private Date dataFiPrevista;
     
     // CONSTRUCTORS
@@ -22,7 +42,7 @@ public class Incidencia {
     protected Incidencia(){
     }
     
-    public Incidencia(int num, Date dataInici, String missatgeEstat, Date dataFiPrevista, Atraccio atraccio) {
+    public Incidencia(int num, Date dataInici, String missatgeEstat, Date dataFiPrevista) {
         this(num,dataInici,null,missatgeEstat,dataFiPrevista);
     }
 

@@ -1,0 +1,2 @@
+F:\1.DAM2\M13(Projecte)\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\VendaEntradesDM\bin\Debug\netstandard2.0\VendaEntradesDM.dll
+F:\1.DAM2\M13(Projecte)\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\bin\x86\Debug\UWP_VendaEntrades.exe

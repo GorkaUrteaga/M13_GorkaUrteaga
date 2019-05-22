@@ -5,13 +5,14 @@
  */
 package info.infomila.portaventura.classes;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  *
  * @author Gorka
  */
-public class PassiTipusAccesAtraccio {
+public class PassiTipusAccesAtraccio implements Serializable{
  
     private TipusPassiExpress tPassiExpress;
     private List<Atraccio> atraccions;

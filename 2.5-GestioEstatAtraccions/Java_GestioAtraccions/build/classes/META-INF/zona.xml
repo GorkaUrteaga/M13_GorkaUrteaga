@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="http://xmlns.jcp.org/xml/ns/persistence/orm"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence/orm
+          http://xmlns.jcp.org/xml/ns/persistence/orm_2_1.xsd"
+                 version="2.1">
+    <entity class="info.infomila.portaventura.classes.Zona" access="FIELD" metadata-complete="true">
+        <attributes>
+            <id name="numero">
+                <column precision="3"/>
+            </id>
+            <basic name="nom" optional="false">
+                <column length="40" nullable="false"/>
+            </basic>
+            
+            <!--<many-to-one name="zona" fetch="LAZY" >
+                <join-column name="ZONA" insertable="false" updatable="false"/>
+                <foreign-key foreign-key-definition="FOREIGN KEY (ZONA) REFERENCES ZONA(NUMERO)"/>
+                <cascade>
+                    <cascade-persist/>
+                </cascade>
+            </many-to-one>-->
+            
+        </attributes>
+    </entity>
+
+</entity-mappings>

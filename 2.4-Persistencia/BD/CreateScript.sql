@@ -14,7 +14,8 @@ CREATE TABLE Tipus_Passi_Express
 (
     id int(6) primary key,
     nom varchar(40),
-    preu_per_dia DECIMAL(5,2) not null
+    preu_per_dia DECIMAL(5,2) not null,
+    arxivat boolean not null
     
 );
 
@@ -25,7 +26,7 @@ CREATE TABLE Passi_Express
     tipus int(6) not null,
     data Date not null,
     FOREIGN KEY (client) REFERENCES Client(id),
-    FOREIGN KEY (tipus) REFERENCES Tipus_Passi_Express(id) ON DELETE CASCADE
+    FOREIGN KEY (tipus) REFERENCES Tipus_Passi_Express(id)
 
 );
 
@@ -50,43 +51,44 @@ CREATE TABLE Parc
 
 CREATE TABLE Zona
 (
+    numero int(2) primary key,
     parc int(6) not null,
-    numero int(2) not null,
     nom varchar(40) not null,
-    PRIMARY KEY(parc,numero),
     FOREIGN KEY (parc) REFERENCES Parc(codi)
 );
 
 CREATE TABLE Atraccio
 (
     codi int(3) primary key,
-    parc int(6) not null,
-    zona int(6) not null,
+    zona int(2) not null,
     capacitat_maxima_ronda int(3) not null,
     descripcio_html varchar(400),
     nom varchar(40) not null,
     temps_per_ronda int(3) not null,
     url_foto varchar(500) not null,
     clients_en_cua int(3) not null,
-    alsada_minima_amb_acompanyant int(2) not null,
-    alsada_minima int(2) not null,
+    alsada_minima_amb_acompanyant int(3) not null,
+    alsada_minima int(3) not null,
     estat_operatiu ENUM('OPERATIVA','AVARIADA','TANCADA','ATURADA_TEMPORALMENT'),
-    FOREIGN KEY (parc,zona) REFERENCES Zona(parc,numero)
+    incidencia int(6),
+    FOREIGN KEY (zona) REFERENCES Zona(numero)
     
 );
 
 CREATE TABLE Incidencia
 (
-    atraccio int(3),
-    num int(6),
+    num int(6) primary key,
+    atraccio int(3) not null,
     data_fi Date,
     data_inici Date not null,
     missatge_estat varchar(200),
     data_fi_prevista Date not null,
-    PRIMARY KEY (atraccio,num),
     FOREIGN KEY (atraccio) REFERENCES Atraccio(codi)
     
 );
+
+ALTER TABLE Atraccio
+ADD FOREIGN KEY (incidencia) REFERENCES Incidencia(num); 
 
 CREATE TABLE Preus
 (
@@ -134,7 +136,7 @@ CREATE TABLE Tipus_Passi_Atraccio
     atraccio int(3),
     tipus_acces int(1) not null,
     PRIMARY KEY (tipus_passi_express,atraccio),
-    FOREIGN KEY (tipus_passi_express) REFERENCES Tipus_Passi_Express(id) ON DELETE CASCADE,
+    FOREIGN KEY (tipus_passi_express) REFERENCES Tipus_Passi_Express(id),
     FOREIGN KEY (atraccio) REFERENCES Atraccio(codi),
     FOREIGN KEY (tipus_acces) REFERENCES Tipus_Acces(id)
 );

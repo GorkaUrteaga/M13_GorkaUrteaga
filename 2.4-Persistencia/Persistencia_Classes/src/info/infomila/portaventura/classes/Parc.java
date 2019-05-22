@@ -1,19 +1,35 @@
 package info.infomila.portaventura.classes;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 /**
  *
  * @author Gorka
  */
-public class Parc {
+@Entity
+public class Parc implements Serializable{
     
     // ATRIBUTS
+    @Id
+    @Column(columnDefinition="INT(6)")
     private int codi;
+    
+    @Basic(optional = false)
+    @Column(length=40, nullable = false)
     private String nom;
+    
+    @Basic(optional = false)
+    @Column(name="URL_FOTO", length=500, nullable = false)
     private String urlFoto;
     
+    @OneToMany(mappedBy="parc")
     private List<Zona> zones;
     
     // CONSTRUCTORS

@@ -26,7 +26,7 @@ namespace VendaEntradesDM.DB
                     using (var consulta = connexio.CreateCommand())
                     {
 
-                        consulta.CommandText = "select * from Tipus_Passi_Express";
+                        consulta.CommandText = "select * from Tipus_Passi_Express where arxivat = false";
 
                         var reader = consulta.ExecuteReader();
                         while (reader.Read()) // per cada Read() avancem una fila en els resultats de la consulta.
@@ -56,16 +56,17 @@ namespace VendaEntradesDM.DB
                     // Crear una consulta SQL
                     using (var consulta = connexio.CreateCommand())
                     {
-                        DbTransaction transaccio = connexio.BeginTransaction();
+
                         DBUtils.CrearParametre("IdParam", id, consulta);
 
-                        consulta.CommandText = @"delete from tipus_passi_express where id = @IdParam";
-                        
-                        int filesEsborrades = consulta.ExecuteNonQuery();
-                        if (filesEsborrades != 1) throw new Exception("");
+                        consulta.CommandText = @"update tipus_passi_express set arxivat = true where id = @IdParam";
 
-                        // desem els canvis de tota la transacció
-                        transaccio.Commit();
+                        int actualitzades = consulta.ExecuteNonQuery();
+                        if (actualitzades != 1)
+                        {
+                            throw new Exception("PUFFFFF");
+                        }
+
                     }
                 }
             }
@@ -166,7 +167,7 @@ namespace VendaEntradesDM.DB
                         DBUtils.CrearParametre("PreuPerDiaParam", tp.PreuPerDia, consulta);
 
                         consulta.CommandText = @"insert into tipus_passi_express 
-                                                values(@IdParam,@NomParam,@PreuPerDiaParam)";
+                                                values(@IdParam,@NomParam,@PreuPerDiaParam,false)";
 
                         int filesInserides = consulta.ExecuteNonQuery();
                         if (filesInserides != 1) throw new Exception("");

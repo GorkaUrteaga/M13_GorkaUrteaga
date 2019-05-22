@@ -1,5 +1,6 @@
 package info.infomila.portaventura.classes;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Date;
@@ -9,7 +10,7 @@ import java.util.List;
  *
  * @author Gorka
  */
-public class Entrada {
+public class Entrada implements Serializable{
     
     //Atributs
     private int id;

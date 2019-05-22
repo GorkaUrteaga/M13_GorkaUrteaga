@@ -8,13 +8,21 @@
 
 		<Feature Id="ProductFeature" Title="UWP_VendaEntrades.SetupProject" Level="1">
 			<ComponentGroupRef Id="ProductComponents" />
+      <ComponentGroupRef Id="CG_ProductShortcuts"/>
+      <ComponentGroupRef Id="CG_SHORCUT_DESKTOP"/>
 		</Feature>
+  
+    <UI>
+      <UIRef Id="WixUI_Mondo" />
+      <UIRef Id="WixUI_ErrorProgressText"/>
+    </UI>
+
 	</Product>
 
 	<Fragment>
     <Directory Id="TARGETDIR" Name="SourceDir">
       <Directory Id="ProgramFilesFolder">
-        <Directory Id="INSTALLDIR" Name="VendaEntrades" >
+        <Directory Id="INSTALLFOLDER" Name="VendaEntrades" >
         </Directory>
       </Directory>
 
@@ -30,11 +38,11 @@
 
 	<Fragment>
 		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
-      <!-- Arxiu executable de l'aplició ExpenseItDemo -->
+      <!-- Arxiu executable de l'aplició -->
       <Component Id="CmpMainExecutable">
         <File Id="FilVendaEntradesEXE" Name="VendaEntrades.exe" Source="$(var.UWP_VendaEntrades.TargetPath)"></File>
       </Component>
-      <!-- Arxiu dll de la llibraria EditBoxControlLibrary -->
+      <!-- Arxiu dll de la llibreria -->
       <Component Id="CmpVendaEntradesDLL">
         <File Id="FilVendaEntradesDMDLL" Name="VendaEntradesDM.dll"
               Source="$(var.VendaEntradesDM.TargetPath)"
@@ -43,7 +51,7 @@
       </Component>
 		</ComponentGroup>
 
-    <ComponentGroup Id="CG_ProductShortcuts" Directory="DIR_PMF_EXPENSE_IT">
+    <ComponentGroup Id="CG_ProductShortcuts" Directory="DIR_PMF_VENDA_ENTRADES">
       <Component Id="CMP_AccessDirecteExe_MenuInici" Guid="{94d0df5b-1329-4a25-a564-7f9a1c655e6f}">
 
         <!-- shorcut a l'executable -->

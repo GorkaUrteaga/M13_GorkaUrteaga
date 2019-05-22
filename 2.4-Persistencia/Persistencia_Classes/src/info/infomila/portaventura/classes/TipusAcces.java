@@ -5,11 +5,13 @@
  */
 package info.infomila.portaventura.classes;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Gorka
  */
-public enum TipusAcces {
+public enum TipusAcces implements Serializable{
     UN_SOL_US(1),
     ILIMITAT(2),
     UN_SOL_US_1aFILA(3),

@@ -1,0 +1,7 @@
+obj\Debug\Product.wixobj
+F:\1.DAM2\M13(Projecte)\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades.SetupProject\bin\Debug\cab1.cab
+F:\1.DAM2\M13(Projecte)\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades.SetupProject\bin\Debug\UWP_VendaEntrades.SetupProject.msi
+F:\1.DAM2\M13(Projecte)\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades.SetupProject\bin\Debug\UWP_VendaEntrades.SetupProject.wixpdb
+obj\Debug\UWP_VendaEntrades.SetupProject.wixproj.BindContentsFileListnull.txt
+obj\Debug\UWP_VendaEntrades.SetupProject.wixproj.BindOutputsFileListnull.txt
+obj\Debug\UWP_VendaEntrades.SetupProject.wixproj.BindBuiltOutputsFileListnull.txt

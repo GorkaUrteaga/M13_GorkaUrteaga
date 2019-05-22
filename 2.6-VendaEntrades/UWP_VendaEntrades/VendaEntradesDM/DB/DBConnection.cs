@@ -10,7 +10,7 @@ namespace VendaEntradesDM.Models
         
         protected override void OnConfiguring(DbContextOptionsBuilder optionBuilder)
         {
-            optionBuilder.UseMySQL(@"User Id=root;Host=127.0.0.1;Database=projecte;");
+            optionBuilder.UseMySQL(@"User Id=root;Host=127.0.0.1;Database=projecte;Password=root");
         }
     }
 }
