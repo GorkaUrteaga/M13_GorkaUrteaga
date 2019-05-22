@@ -23,7 +23,6 @@ namespace VendaEntradesDM.DB
                     // Crear una consulta SQL
                     using (var consulta = connexio.CreateCommand())
                     {
-
                         consulta.CommandText = "select * from tipus_acces";
 
                         var reader = consulta.ExecuteReader();
@@ -42,5 +41,39 @@ namespace VendaEntradesDM.DB
             }
             return llista;
         }
+
+        public static TipusAcces GetUnTipusAccesPerNom(string tipusAcces)
+        {
+            TipusAcces ta = null;
+
+            using (DBConnection context = new DBConnection())
+            {
+                using (var connexio = context.Database.GetDbConnection()) // <== NOTA IMPORTANT: requereix ==>using Microsoft.EntityFrameworkCore;
+                {
+                    // Obrir la connexió a la BD
+                    connexio.Open();
+
+                    // Crear una consulta SQL
+                    using (var consulta = connexio.CreateCommand())
+                    {
+                        DBUtils.CrearParametre("TipusParam", tipusAcces, consulta);
+                        consulta.CommandText = "select * from tipus_acces where tipus = @TipusParam";
+
+                        var reader = consulta.ExecuteReader();
+                        while (reader.Read()) // per cada Read() avancem una fila en els resultats de la consulta.
+                        {
+                            int codi = reader.GetInt32(reader.GetOrdinal("ID"));
+                            string tipus = reader.GetString(reader.GetOrdinal("TIPUS"));
+
+
+                            ta = new TipusAcces(codi, tipus);
+
+                        }
+                    }
+                }
+            }
+            return ta;
+        }
+
     }
 }

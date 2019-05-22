@@ -6,7 +6,6 @@
     <RootPropertyPathName Name="Categoria" />
     <RootPropertyPathName Name="DiesValidesa" />
     <RootPropertyPathName Name="Id" />
-    <RootPropertyPathName Name="Tipus" />
     <RootPropertyPathName Name="TipusPassi" />
     <RootPropertyPathName Name="Data" />
     <RootPropertyPathName Name="GetCognoms" />
@@ -37,6 +36,7 @@
     <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
       <RootProperty Name="Header" />
       <RootProperty Name="Margin" />
+      <RootEvent Name="TextChanged" />
     </RootType>
     <RootType FullName="UWP_VendaEntrades.CDs.AfegirClientCD" />
     <RootType FullName="Windows.UI.Xaml.Controls.Page">
@@ -73,6 +73,8 @@
       <RootMethod Name="SetRow" />
       <RootMethod Name="GetColumnSpan" />
       <RootMethod Name="SetColumnSpan" />
+      <RootMethod Name="GetRowSpan" />
+      <RootMethod Name="SetRowSpan" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.NavigationView">
       <RootProperty Name="IsSettingsVisible" />
@@ -145,12 +147,12 @@
       <RootProperty Name="Width" />
       <RootProperty Name="Binding" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Data.Binding">
-      <RootProperty Name="Mode" />
-    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Data.Binding" />
     <RootType FullName="Windows.UI.Xaml.Controls.ListView">
       <RootProperty Name="ItemTemplate" />
       <RootProperty Name="SelectionMode" />
+      <RootProperty Name="Margin" />
+      <RootEvent Name="SelectionChanged" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.DataTemplate">
       <RootProperty Name="Template" />
@@ -158,7 +160,7 @@
     <RootType FullName="Windows.UI.Xaml.Controls.ComboBox">
       <RootProperty Name="Margin" />
       <RootProperty Name="Width" />
-      <RootProperty Name="SelectedItem" />
+      <RootProperty Name="HorizontalAlignment" />
       <RootEvent Name="SelectionChanged" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.DatePicker">

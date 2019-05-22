@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Data.Common;
 using System.Text;
 using VendaEntradesDM.Models;
 
@@ -47,5 +48,62 @@ namespace VendaEntradesDM.DB
             return llista;
         }
 
+        public static void UpdateTipusPassiAtraccio(TipusPassiAtraccio tpa, int IdTipusAcces)
+        {
+            using (DBConnection context = new DBConnection())
+            {
+                using (var connexio = context.Database.GetDbConnection()) // <== NOTA IMPORTANT: requereix ==>using Microsoft.EntityFrameworkCore;
+                {
+                    // Obrir la connexió a la BD
+                    connexio.Open();
+                    // Crear una consulta SQL
+                    using (var consulta = connexio.CreateCommand())
+                    {
+
+                        DBUtils.CrearParametre("IdTipusPassiParam", tpa.IdTipusPassi, consulta);
+                        DBUtils.CrearParametre("IdAtraccioParam", tpa.IdAtraccio, consulta);
+                        DBUtils.CrearParametre("TipusAccesParam", IdTipusAcces, consulta);
+
+                        consulta.CommandText = @"update tipus_passi_atraccio set tipus_acces = @TipusAccesParam where tipus_passi_express = @IdTipusPassiParam and atraccio = @IdAtraccioParam";
+
+                        int actualitzades = consulta.ExecuteNonQuery();
+                        if (actualitzades != 1)
+                        {
+                            throw new Exception("PUFFFFF");
+                        }
+
+                    }
+                }
+            }
+        }
+
+        public static void InsertTipusPassiAtraccio(TipusPassiAtraccio tpa, int IdTipusAcces)
+        {
+            using (DBConnection context = new DBConnection())
+            {
+                using (var connexio = context.Database.GetDbConnection()) // <== NOTA IMPORTANT: requereix ==>using Microsoft.EntityFrameworkCore;
+                {
+                    // Obrir la connexió a la BD
+                    connexio.Open();
+                    // Crear una consulta SQL
+                    using (var consulta = connexio.CreateCommand())
+                    {
+                        DbTransaction transaccio = connexio.BeginTransaction();
+                        DBUtils.CrearParametre("IdTipusPassiParam", tpa.IdTipusPassi, consulta);
+                        DBUtils.CrearParametre("IdAtraccioParam", tpa.IdAtraccio, consulta);
+                        DBUtils.CrearParametre("IdTipusAccesParam", IdTipusAcces, consulta);
+
+                        consulta.CommandText = @"insert into tipus_passi_atraccio 
+                                                values(@IdTipusPassiParam,@IdAtraccioParam,@IdTipusAccesParam)";
+
+                        int filesInserides = consulta.ExecuteNonQuery();
+                        if (filesInserides != 1) throw new Exception("");
+
+                        // desem els canvis de tota la transacció
+                        transaccio.Commit();
+                    }
+                }
+            }
+        }
     }
 }

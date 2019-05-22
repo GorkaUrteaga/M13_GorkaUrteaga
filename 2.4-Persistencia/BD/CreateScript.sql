@@ -15,7 +15,7 @@ CREATE TABLE Tipus_Passi_Express
     id int(6) primary key,
     nom varchar(40),
     preu_per_dia DECIMAL(5,2) not null
-
+    
 );
 
 CREATE TABLE Passi_Express
@@ -25,7 +25,7 @@ CREATE TABLE Passi_Express
     tipus int(6) not null,
     data Date not null,
     FOREIGN KEY (client) REFERENCES Client(id),
-    FOREIGN KEY (tipus) REFERENCES Tipus_Passi_Express(id)
+    FOREIGN KEY (tipus) REFERENCES Tipus_Passi_Express(id) ON DELETE CASCADE
 
 );
 
@@ -134,7 +134,7 @@ CREATE TABLE Tipus_Passi_Atraccio
     atraccio int(3),
     tipus_acces int(1) not null,
     PRIMARY KEY (tipus_passi_express,atraccio),
-    FOREIGN KEY (tipus_passi_express) REFERENCES Tipus_Passi_Express(id),
+    FOREIGN KEY (tipus_passi_express) REFERENCES Tipus_Passi_Express(id) ON DELETE CASCADE,
     FOREIGN KEY (atraccio) REFERENCES Atraccio(codi),
     FOREIGN KEY (tipus_acces) REFERENCES Tipus_Acces(id)
 );

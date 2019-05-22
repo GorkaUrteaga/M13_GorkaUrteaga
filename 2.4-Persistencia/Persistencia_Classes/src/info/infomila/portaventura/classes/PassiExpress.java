@@ -1,6 +1,7 @@
 package info.infomila.portaventura.classes;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  *
@@ -11,7 +12,7 @@ public class PassiExpress {
     private int id;
     private Date data;
     
-    
+    private TipusPassiExpress tipusPassi;
     
     
 }

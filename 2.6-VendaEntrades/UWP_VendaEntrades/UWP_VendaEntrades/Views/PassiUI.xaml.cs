@@ -29,6 +29,7 @@ namespace UWP_VendaEntrades.Views
         private int idSeguentPassi = 0;
         private int idTipusPassiSeleccionat = -1;
         private IEnumerable<TipusPassi> llTipusPassi;
+        private IEnumerable<TipusPassiAtraccio> llTipusPassiAtraccio;
 
         public PassiUI()
         {
@@ -138,7 +139,6 @@ namespace UWP_VendaEntrades.Views
             //Escull un tipus i mostrem les atraccions i el seu tipus d'access.
             idTipusPassiSeleccionat = cboTipusPassi.SelectedIndex+1;
 
-            IEnumerable<TipusPassiAtraccio> llTipusPassiAtraccio;
             llTipusPassiAtraccio = TipusPassiAtraccioDB.GetTipusPassiAtraccio(idTipusPassiSeleccionat);
 
             foreach (TipusPassiAtraccio tp in llTipusPassiAtraccio)
@@ -235,9 +235,20 @@ namespace UWP_VendaEntrades.Views
                 
                 foreach(Passi p in cli.GetPassis())
                 {
+                    //A part també hem d'inserir a la taula de Info_Utilitzacio
                     PassiDB.InsertPassi(cli.Id, p);
+                    TipusPassi tp = llTipusPassi.ElementAt(cboTipusPassi.SelectedIndex);
+                    foreach(TipusPassiAtraccio tpa in llTipusPassiAtraccio)
+                    {
+                        TipusAcces ta = TipusAccesDB.GetUnTipusAccesPerNom(tpa.TipusAcces);
+                        InfoUtilitzacio iu = new InfoUtilitzacio(p.Id, tpa.IdAtraccio, 0,ta.Id);
+                        InfoUtilitzacioDB.InsertInfoUtilitzacio(iu);
+                    }
+                    
                 }
             }
+
+            
             RegenerarClients();
             RefrescarDataGridPassisClient();
         }

@@ -6,31 +6,32 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    d:DesignHeight="300"
-    d:DesignWidth="400"
+    d:DesignHeight="1000"
+    d:DesignWidth="1200"
     Loaded="UserControl_Loaded">
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="0.5*"/>
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
-            <RowDefinition Height="10*"/>
-            <RowDefinition Height="10*"/>
+            <RowDefinition Height="300"/>
+            <RowDefinition Height="325"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
 
         <TextBlock x:Name="tbkModificacio" FontSize="20" Text="CREACIO" Grid.Column="1" HorizontalAlignment="Center"/>
         <TextBlock FontSize="20" Text="TIPUS PASSI" HorizontalAlignment="Center"/>
-        <Grid Grid.Column="1" Grid.Row="1">
+        <Grid Grid.Column="1" Grid.Row="1" VerticalAlignment="Center">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
                 <RowDefinition Height="1*"/>
                 <RowDefinition Height="1*"/>
                 <RowDefinition Height="1*"/>
@@ -41,13 +42,26 @@
             <TextBox x:Name="txbNomTipusPassi" Margin="10" Grid.Column="1"/>
 
             <TextBlock Text="Preu per dia:" FontSize="20" Margin="10" Grid.Row="1"/>
-            <TextBox x:Name="txbPreuPerDia" Margin="10" Grid.Row="1" Grid.Column="1"/>
-            
-            <TextBlock Text="Tipus Acces:" FontSize="20" Margin="10" Grid.Row="2"/>
-            <ComboBox x:Name="cboTipusAcces" Width="100" Margin="10" Grid.Column="1" Grid.Row="2" />
-            <Button x:Name="btnAplicarTipusAcces" Content="Aplicar Tipus Acces"  Grid.Row="3" Grid.Column="1"/>
+            <TextBox x:Name="txbPreuPerDia" Margin="10" Grid.Row="1" Grid.Column="1" TextChanged="txbPreuPerDia_TextChanged"/>
 
+            <TextBlock Text="Tipus Acces:" FontSize="20" Margin="10" Grid.Row="2"/>
+            <ComboBox x:Name="cboTipusAcces" HorizontalAlignment="Stretch" Margin="10" Grid.Column="1" Grid.Row="2" />
+            <Button x:Name="btnAplicarTipusAccesAtotes" Content="Aplicar a totes" Margin="10" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Stretch" Click="btnAplicarTipusAccesAtotes_Click"/>
+            <Button x:Name="btnAplicarTipusAcces" Content="Aplicar" Margin="10" Grid.Row="3" HorizontalAlignment="Stretch" Click="btnAplicarTipusAcces_Click"/>
+            <TextBlock x:Name="tbkErrors" FontSize="20" Foreground="Red" Grid.Row="4" Grid.ColumnSpan="2"/>
         </Grid>
-        
+
+        <ListView x:Name="lsvTipusPassi"  Grid.Row="1" Grid.RowSpan="2" SelectionChanged="lsvTipusPassi_SelectionChanged"/>
+        <TextBlock Text="ATRACCIONS" Grid.Column="2" FontSize="20" HorizontalAlignment="Center"/>
+
+        <ListView x:Name="lsvAtraccions" ScrollViewer.VerticalScrollBarVisibility="Auto" Margin="10"  Grid.Row="1" Grid.RowSpan="2" Grid.Column="2"/>
+
+        <Button x:Name="btnEsborrarTipusPassi" Content="Esborrar Tipus" Grid.Row="3" HorizontalAlignment="Stretch" Margin="10" Click="btnEsborrarTipusPassi_Click"/>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="1">
+            <Button x:Name="btnNouTipusPassi" Content="Nou Tipus Passi" HorizontalAlignment="Center" Click="btnNouTipusPassi_Click" Margin="10"/>
+            <Button x:Name="btnGuardarTipusPasi" Content="Guardar Tipus Passi" HorizontalAlignment="Center" Click="btnGuardarTipusPasi_Click" Margin="10"/>
+        </StackPanel>
+
     </Grid>
 </UserControl>

@@ -27,7 +27,7 @@
         <StackPanel Margin="10">
             <StackPanel HorizontalAlignment="Left" Orientation="Horizontal" Margin="0,0,0,30">
                 <TextBlock Text="Tipus Passi:" Margin="0,0,10,0" FontSize="20"/>
-                <ComboBox x:ConnectionId='13' x:Name="cboTipusPassi" Width="100"                                                  />
+                <ComboBox x:ConnectionId='13' x:Name="cboTipusPassi"                                                   Width="200"/>
             </StackPanel>
             <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" Orientation="Horizontal">
                 <TextBlock Text="Data:" Margin="0,0,65,0" FontSize="20"/>

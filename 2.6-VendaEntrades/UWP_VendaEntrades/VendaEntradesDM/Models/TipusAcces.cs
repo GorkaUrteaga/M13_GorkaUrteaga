@@ -17,5 +17,11 @@ namespace VendaEntradesDM.Models
 
         public int Id { get => id; set => id = value; }
         public string Tipus { get => tipus; set => tipus = value; }
+
+        public string ToString()
+        {
+            return Tipus;
+        }
+
     }
 }

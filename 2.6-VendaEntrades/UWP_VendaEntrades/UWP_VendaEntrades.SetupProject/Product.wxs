@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product Id="220c4a8e-a19e-44d3-872f-3004de12bed9" Name="UWP_VendaEntrades.SetupProject" Language="1033" Version="1.0.0.0" Manufacturer="Gorka Urteaga" UpgradeCode="db079c72-916b-4a65-b233-c72b32696ad2">
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+		<MediaTemplate />
+
+		<Feature Id="ProductFeature" Title="UWP_VendaEntrades.SetupProject" Level="1">
+			<ComponentGroupRef Id="ProductComponents" />
+		</Feature>
+	</Product>
+
+	<Fragment>
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="INSTALLDIR" Name="VendaEntrades" >
+        </Directory>
+      </Directory>
+
+      <!-- Posem una referència al menú d'inici-->
+      <Directory Id="ProgramMenuFolder">
+        <Directory Id="DIR_PMF_VENDA_ENTRADES" Name="Venda Entrades App"></Directory>
+      </Directory>
+
+      <Directory Id="DesktopFolder"></Directory>
+
+    </Directory>
+	</Fragment>
+
+	<Fragment>
+		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+      <!-- Arxiu executable de l'aplició ExpenseItDemo -->
+      <Component Id="CmpMainExecutable">
+        <File Id="FilVendaEntradesEXE" Name="VendaEntrades.exe" Source="$(var.UWP_VendaEntrades.TargetPath)"></File>
+      </Component>
+      <!-- Arxiu dll de la llibraria EditBoxControlLibrary -->
+      <Component Id="CmpVendaEntradesDLL">
+        <File Id="FilVendaEntradesDMDLL" Name="VendaEntradesDM.dll"
+              Source="$(var.VendaEntradesDM.TargetPath)"
+              Assembly=".net"
+              ></File>
+      </Component>
+		</ComponentGroup>
+
+    <ComponentGroup Id="CG_ProductShortcuts" Directory="DIR_PMF_EXPENSE_IT">
+      <Component Id="CMP_AccessDirecteExe_MenuInici" Guid="{94d0df5b-1329-4a25-a564-7f9a1c655e6f}">
+
+        <!-- shorcut a l'executable -->
+        <Shortcut Id="SHR_EXE"
+                  Name="ExpenseIt"
+                  Description="The best expense application in the world!"
+                  Target="[INSTALLFOLDER]ExpenseItDemo.exe"
+                  />
+        <!-- shorcut per desinstal·lar -->
+        <Shortcut Id="SHR_UNINSTALLL"
+                  Name="Unistall ExpenseIt"
+                  Description="Uninstall ExpenseIt asap"
+                  Target="[System64Folder]msiexec.exe"
+                  Arguments="/x [ProductCode]" />
+
+        <RemoveFolder Id="RemoveMyShorcutsDir" On="uninstall"/>
+
+        <RegistryValue Root="HKCU"
+                       Key="Software\MilaEnterprises\ExpenseIt"
+                       Name="installed"
+                       Type="integer"
+                       Value="1"
+                       KeyPath="yes" />
+
+      </Component>
+    </ComponentGroup>
+
+    <!-- Enllaç directe a l'escriptori: useu Directory="DesktopFolder" que ja és reconegut per WIX -->
+    <ComponentGroup Id="CG_SHORCUT_DESKTOP" Directory="DesktopFolder">
+      <Component Id="CMP_SHORCUT_DESKTOP_EXE"  Guid="{ab9ddb01-bab3-4ed7-914b-2eb613bbc365}">
+        <Shortcut Id="SHC_DESKTOP_EXE"
+                 Name="Venda Entrades App"
+                 Description="Venda Entrades PortAventura"
+                 Target="[INSTALLFOLDER]VendaEntrades.exe"
+                   />
+        <RegistryValue Root="HKCU"
+                       Key="Software\MilaEnterprises\ExpenseIt"
+                      Name="installedDesktop"
+                      Type="integer"
+                      Value="1"
+                      KeyPath="yes" />
+
+      </Component>
+    </ComponentGroup>
+
+
+
+  </Fragment>
+</Wix>
