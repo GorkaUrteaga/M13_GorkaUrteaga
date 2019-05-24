@@ -1,12 +1,19 @@
 package info.infomila.portaventura.classes;
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Objects;
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.ForeignKey;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Transient;
 
 /**
  *
@@ -19,6 +26,11 @@ public class Incidencia implements Serializable{
     @Id
     @Column(columnDefinition="INT(3)")
     private int num;
+    
+    @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST})
+    @JoinColumn(name = "ATRACCIO", insertable=false, updatable=false,
+            foreignKey = @ForeignKey(foreignKeyDefinition = "FOREIGN KEY (ATRACCIO) REFERENCES ATRACCIO(CODI)"))
+    private Atraccio atraccio;
     
     @Basic(optional=false)
     @Column(name="DATA_INICI",columnDefinition="DATE",nullable=false)
@@ -36,22 +48,26 @@ public class Incidencia implements Serializable{
     @Column(name="DATA_FI_PREVISTA",columnDefinition="DATE",nullable=false)
     private Date dataFiPrevista;
     
+    //@Transient
+    //private static int seguentNumero;
+    
     // CONSTRUCTORS
     
     //Constructor per JPA
     protected Incidencia(){
     }
     
-    public Incidencia(int num, Date dataInici, String missatgeEstat, Date dataFiPrevista) {
-        this(num,dataInici,null,missatgeEstat,dataFiPrevista);
+    public Incidencia(int num, Atraccio atraccio, Date dataInici, String missatgeEstat, Date dataFiPrevista) {
+        this(num,atraccio,dataInici,null,missatgeEstat,dataFiPrevista);
     }
 
-    public Incidencia(int num, Date dataInici, Date dataFi, String missatgeEstat, Date dataFiPrevista) {
+    public Incidencia(int num, Atraccio atraccio, Date dataInici, Date dataFi, String missatgeEstat, Date dataFiPrevista) {
         setNum(num);
         setDataInici(dataInici);
         setDataFi(dataFi);
         setMissatgeEstat(missatgeEstat);
         setDataFiPrevista(dataFiPrevista);
+        setAtraccio(atraccio);
     }
 
     // SETTERS
@@ -63,11 +79,24 @@ public class Incidencia implements Serializable{
         this.num = num;
     }
 
+    public void setAtraccio(Atraccio atraccio) {
+        if(atraccio == null){
+            throw new RuntimeException("La atraccio és obligatoria.");
+        }
+
+        this.atraccio = atraccio;
+    }
+    
     public void setDataFi(Date dataFi) {
-        if(dataFi.before(dataInici)){
+        if(dataFi != null && dataFi.before(dataInici)){
             throw new RuntimeException("La data fi no pot ser anterior a la data d'inici.");
         }
-        this.dataFi = (Date)dataFi.clone();
+        if(dataFi!=null){
+            this.dataFi = (Date)dataFi.clone();
+        }else{
+            this.dataFi = null;
+        }
+        
     }
 
     public void setDataInici(Date dataInici) {
@@ -91,6 +120,8 @@ public class Incidencia implements Serializable{
         this.dataFiPrevista = (Date) dataFiPrevista.clone();
     }
     
+    
+    
     // GETTERS
     public int getNum() {
         return num;
@@ -112,6 +143,10 @@ public class Incidencia implements Serializable{
         return dataFi;
     }
 
+    public Atraccio getAtraccio() {
+        return atraccio;
+    }
+    
     @Override
     public int hashCode() {
         int hash = 3;
@@ -139,8 +174,17 @@ public class Incidencia implements Serializable{
 
     @Override
     public String toString() {
-        return "Incidencia{" + "num=" + num + ", dataInici=" + dataInici + ", dataFi=" + dataFi + ", missatgeEstat=" + missatgeEstat + ", dataFiPrevista=" + dataFiPrevista + '}';
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String str = num + "-Data inici:" + dataInici +", Data Fi Prevista:" + sdf.format(dataFiPrevista);
+        if(dataFi!=null){
+            str+=" (TANCADA)";
+        }else{
+            str+=" (OBERTA)";
+        }
+        return str; 
     }
+
+
 
     
     

@@ -69,7 +69,7 @@ CREATE TABLE Atraccio
     clients_en_cua int(3) not null,
     alsada_minima_amb_acompanyant int(3) not null,
     alsada_minima int(3) not null,
-    estat_operatiu ENUM('OPERATIVA','AVARIADA','TANCADA','ATURADA_TEMPORALMENT'),
+    estat_operatiu ENUM('OPERATIVA','AVARIADA','TANCADA','ATURADA_TEMPORALMENT') not null,
     incidencia int(6),
     FOREIGN KEY (zona) REFERENCES Zona(numero)
     
@@ -79,16 +79,16 @@ CREATE TABLE Incidencia
 (
     num int(6) primary key,
     atraccio int(3) not null,
-    data_fi Date,
-    data_inici Date not null,
+    data_fi Datetime,
+    data_inici Datetime not null,
     missatge_estat varchar(200),
-    data_fi_prevista Date not null,
+    data_fi_prevista Datetime not null,
     FOREIGN KEY (atraccio) REFERENCES Atraccio(codi)
     
 );
 
 ALTER TABLE Atraccio
-ADD FOREIGN KEY (incidencia) REFERENCES Incidencia(num); 
+ADD CONSTRAINT FK_Atraccio_Incidencia FOREIGN KEY (incidencia) REFERENCES Incidencia(num); 
 
 CREATE TABLE Preus
 (

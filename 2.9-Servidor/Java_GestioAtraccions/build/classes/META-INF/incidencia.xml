@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="http://xmlns.jcp.org/xml/ns/persistence/orm"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence/orm
+          http://xmlns.jcp.org/xml/ns/persistence/orm_2_2.xsd"
+                 version="2.2">
+    <entity class="info.infomila.portaventura.classes.Incidencia" access="FIELD" metadata-complete="true">
+        <attributes>
+            <id name="num">
+                <column precision="6"/>
+            </id>
+            <basic name="dataInici" optional="false">
+                <column name="DATA_INICI" nullable="false"/>
+                <temporal>DATE</temporal>
+            </basic>
+            <basic name="dataFi" optional="false">
+                <column name="DATA_FI" nullable="false"/>
+                <temporal>DATE</temporal>
+            </basic>
+            <basic name="missatgeEstat" optional="false">
+                <column name="MISSATGE_ESTAT" length="200" nullable="false"/>
+            </basic>
+            <basic name="dataFiPrevista" optional="false">
+                <column name="DATA_FI_PREVISTA" nullable="false"/>
+                <temporal>DATE</temporal>
+            </basic>
+        </attributes>
+    </entity>
+
+</entity-mappings>

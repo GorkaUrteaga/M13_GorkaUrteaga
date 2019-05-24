@@ -24,24 +24,36 @@ INSERT INTO Zona
 VALUES(1,1,'Far Werst');
 
 INSERT INTO Zona
-VALUES(1,2,'Mexico');
+VALUES(2,1,'Mexico');
 
 INSERT INTO Zona
-VALUES(1,3,'Mediterrania');
+VALUES(3,1,'Mediterrania');
 
 INSERT INTO Zona
-VALUES(1,4,'Polynesia');
+VALUES(4,1,'Polynesia');
 
 /* ATRACCIONS */
 
 INSERT INTO Atraccio
-VALUES(1,1,1,10,null,'Buffalo Rodeo',5,'https://s3-eu-west-1.amazonaws.com/portaventura-world-production-files/wilson_cms/images/images/000/000/725/landscape_small/PA21707i_LR.jpg',10,140,150,'OPERATIVA');
+VALUES(1,1,10,'descripHTML','Buffalo Rodeo',2,'https://s3-eu-west-1.amazonaws.com/portaventura-world-production-files/wilson_cms/images/images/000/000/725/landscape_small/PA21707i_LR.jpg',200,140,150,'OPERATIVA',null);
 
 INSERT INTO Atraccio
-VALUES(2,1,2,20,null,'Hurakan Condor',10,'https://s3-eu-west-1.amazonaws.com/portaventura-world-production-files/wilson_cms/images/images/000/000/496/landscape_small/Generales-M%C3%A9xico_0713.jpg',55,155,155,'ATURADA_TEMPORALMENT');
+VALUES(2,1,20,'descripHTML','Hurakan Condor',1,'https://s3-eu-west-1.amazonaws.com/portaventura-world-production-files/wilson_cms/images/images/000/000/496/landscape_small/Generales-M%C3%A9xico_0713.jpg',150,155,155,'ATURADA_TEMPORALMENT',null);
 
 INSERT INTO Atraccio
-VALUES(3,1,2,15,null,'Tren de la Mina',5,'https://s3-eu-west-1.amazonaws.com/portaventura-world-production-files/wilson_cms/images/images/000/001/765/landscape_small/PAP-MEX_ATR_DIAB_ONR_0615_010.jpg',100,140,145,'ATURADA_TEMPORALMENT');
+VALUES(3,1,15,'descripHTML','Tren de la Mina',3,'https://s3-eu-west-1.amazonaws.com/portaventura-world-production-files/wilson_cms/images/images/000/001/765/landscape_small/PAP-MEX_ATR_DIAB_ONR_0615_010.jpg',320,140,145,'ATURADA_TEMPORALMENT',null);
+
+/* INCIDENCIES */
+
+INSERT INTO Incidencia
+VALUES(1,1,NOW(), NOW(),'Falta un cargol com sempre...', NOW());
+
+INSERT INTO Incidencia
+VALUES(2,2,null, NOW(),'Netejar vomit...', NOW());
+
+UPDATE Atraccio
+set incidencia = 2
+where codi = 2;
 
 /* TIPUS ACCES */
 

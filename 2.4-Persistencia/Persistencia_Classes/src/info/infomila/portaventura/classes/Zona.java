@@ -21,15 +21,15 @@ import javax.persistence.Transient;
  * @author Gorka
  */
 @Entity
-@IdClass(ZonaParcFK.class)
+//@IdClass(ZonaParcFK.class)
 public class Zona implements Serializable{
 
     // ATRIBUTS
     // Fa referencia a la id del parc.
-    @Id
+    /*@Id
     @Column (name="PARC", columnDefinition="INT(6)")
     private int parcId;
-    
+    */
     @Id
     @Column (columnDefinition="INT(2)")
     private int numero;
@@ -43,8 +43,8 @@ public class Zona implements Serializable{
     @Column(length=40, nullable = false)
     private String nom;
     
-    //@OneToMany(mappedBy="zona")
-    @Transient
+    @OneToMany(mappedBy="zona")
+    //@Transient
     private List<Atraccio> atraccions; 
     
     // CONSTRUCTORS

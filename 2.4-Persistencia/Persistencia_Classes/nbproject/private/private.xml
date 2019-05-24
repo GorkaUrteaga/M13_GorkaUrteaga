@@ -5,8 +5,8 @@
         <group>
             <file>file:/F:/1.DAM2/M13(Projecte)/2.Projecte/2.4-Persistencia/Persistencia_Classes/src/info/infomila/portaventura/classes/Atraccio.java</file>
             <file>file:/F:/1.DAM2/M13(Projecte)/2.Projecte/2.4-Persistencia/Persistencia_Classes/src/info/infomila/portaventura/classes/Zona.java</file>
-            <file>file:/F:/1.DAM2/M13(Projecte)/2.Projecte/2.4-Persistencia/Persistencia_Classes/src/info/infomila/portaventura/classes/Parc.java</file>
-            <file>file:/F:/1.DAM2/M13(Projecte)/2.Projecte/2.4-Persistencia/Persistencia_Classes/src/info/infomila/portaventura/classes/ZonaParcFK.java</file>
+            <file>file:/F:/1.DAM2/M13(Projecte)/2.Projecte/2.4-Persistencia/Persistencia_Classes/src/info/infomila/portaventura/enums/EstatOperatiu.java</file>
+            <file>file:/F:/1.DAM2/M13(Projecte)/2.Projecte/2.4-Persistencia/Persistencia_Classes/src/info/infomila/portaventura/classes/AtraccioJDBC.java</file>
             <file>file:/F:/1.DAM2/M13(Projecte)/2.Projecte/2.4-Persistencia/Persistencia_Classes/src/info/infomila/portaventura/classes/Incidencia.java</file>
         </group>
     </open-files>

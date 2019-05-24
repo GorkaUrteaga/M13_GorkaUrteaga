@@ -2,6 +2,7 @@ package info.infomila.portaventura.classes;
 
 import info.infomila.portaventura.enums.EstatOperatiu;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import javax.persistence.Basic;
@@ -31,10 +32,9 @@ public class Atraccio implements Serializable{
     @Column (columnDefinition="INT(3)")
     private int codi;
     
-    /*@ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST})
+    @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST})
     @JoinColumn(name = "ZONA", insertable=false, updatable=false,
-            foreignKey = @ForeignKey(foreignKeyDefinition = "FOREIGN KEY (ZONA) REFERENCES ZONA(NUMERO)"))*/
-    @Transient
+            foreignKey = @ForeignKey(foreignKeyDefinition = "FOREIGN KEY (ZONA) REFERENCES ZONA(NUMERO)"))
     private Zona zona;
     
     /*@ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST})
@@ -76,14 +76,15 @@ public class Atraccio implements Serializable{
     
     @Basic
     @Enumerated(EnumType.STRING)
+    @Column(name="ESTAT_OPERATIU")
     private EstatOperatiu estatOperatiu;
     
-    @OneToMany(mappedBy="atraccio")
-    private List<Incidencia> incidencies;
+    @OneToMany(mappedBy="atraccio",cascade = {CascadeType.PERSIST})
+    private List<Incidencia> incidencies = new ArrayList<Incidencia>();
     
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST})
     @JoinColumn(name = "INCIDENCIA",
-            foreignKey = @ForeignKey(foreignKeyDefinition = "FOREIGN KEY (INCIDENCIA) REFERENCES INCIDENCIA(NUM)"))
+            foreignKey = @ForeignKey(name="FK_Atraccio_Incidencia",foreignKeyDefinition = "FOREIGN KEY (INCIDENCIA) REFERENCES INCIDENCIA(NUM)"))
     private Incidencia incidencia;
     
     //Falta potser algun atribut derivat d'una altre classe
@@ -98,8 +99,26 @@ public class Atraccio implements Serializable{
     
     // SETTERS
 
+    public Atraccio(int codi, Zona zona, int capacitatMaximaRonda, String descripcioHTML, String nom, int tempsPerRonda, String urlFoto, int clientsEnCua, int alsadaMinimaAmbAcompanyant, int alsadaMinima, EstatOperatiu estatOperatiu) {
+        setCodi(codi);
+        setZona(zona);
+        setCapacitatMaximaRonda(capacitatMaximaRonda);
+        setDescripcioHTML(descripcioHTML);
+        setNom(nom);
+        setTempsPerRonda(tempsPerRonda);
+        setUrlFoto(urlFoto);
+        setClientsEnCua(clientsEnCua);
+        setAlsadaMinimaAmbAcompanyant(alsadaMinimaAmbAcompanyant);
+        setAlsadaMinima(alsadaMinima);
+        setEstatOperatiu(estatOperatiu);
+        incidencies = new ArrayList<Incidencia>();
+    }
+    
     //incidencia actual
     public void setIncidencia(Incidencia incidencia) {
+        if(incidencia != null && !incidencia.getAtraccio().equals(this)){
+            incidencia.setAtraccio(this);
+        }
         this.incidencia = incidencia;
     }
     
@@ -177,8 +196,28 @@ public class Atraccio implements Serializable{
         this.estatOperatiu = estatOperatiu;
     }
     
+    // METODES LLISTA
+    public int getNumIncidencies(){
+        return incidencies.size();
+    }
+    
+    public Iterable<Incidencia> iteIncidencies(){
+        return incidencies;
+    }
+    
+    public Incidencia getIncidencia(int index){
+        return incidencies.get(index);
+    }
+    
+    public boolean removeIncidencia(Incidencia inc){
+        return incidencies.remove(inc);
+    }
+    
+    public boolean addIncidencia(Incidencia inc){
+        return incidencies.add(inc);
+    }
+    
     // GETTERS
-
     public Zona getZona() {
         return zona;
     }
