@@ -77,8 +77,9 @@ public class Atraccio implements Serializable{
     @Basic
     @Enumerated(EnumType.STRING)
     @Column(name="ESTAT_OPERATIU")
-    private EstatOperatiu estatOperatiu;
-    
+    //private EstatOperatiu estatOperatiu;
+    private String estatOperatiu;
+            
     @OneToMany(mappedBy="atraccio",cascade = {CascadeType.PERSIST})
     private List<Incidencia> incidencies = new ArrayList<Incidencia>();
     
@@ -99,7 +100,7 @@ public class Atraccio implements Serializable{
     
     // SETTERS
 
-    public Atraccio(int codi, Zona zona, int capacitatMaximaRonda, String descripcioHTML, String nom, int tempsPerRonda, String urlFoto, int clientsEnCua, int alsadaMinimaAmbAcompanyant, int alsadaMinima, EstatOperatiu estatOperatiu) {
+    public Atraccio(int codi, Zona zona, int capacitatMaximaRonda, String descripcioHTML, String nom, int tempsPerRonda, String urlFoto, int clientsEnCua, int alsadaMinimaAmbAcompanyant, int alsadaMinima, String estatOperatiu) {
         setCodi(codi);
         setZona(zona);
         setCapacitatMaximaRonda(capacitatMaximaRonda);
@@ -126,6 +127,7 @@ public class Atraccio implements Serializable{
         if(zona == null){
             throw new RuntimeException("La zona és obligatoria.");
         }
+        
         this.zona = zona;
     }
 
@@ -189,7 +191,7 @@ public class Atraccio implements Serializable{
         this.alsadaMinima = alsadaMinima;
     }
 
-    public void setEstatOperatiu(EstatOperatiu estatOperatiu) {
+    public void setEstatOperatiu(String estatOperatiu) {
         if(estatOperatiu == null){
             throw new RuntimeException("L'estat operatiu és obligatori.");
         }
@@ -258,7 +260,7 @@ public class Atraccio implements Serializable{
         return alsadaMinima;
     }
 
-    public EstatOperatiu getEstatOperatiu() {
+    public String getEstatOperatiu() {
         return estatOperatiu;
     }
     
@@ -297,7 +299,7 @@ public class Atraccio implements Serializable{
 
     @Override
     public String toString() {
-        return "Atraccio{" + "zona=" + zona + ", codi=" + codi + ", capacitatMaximaRonda=" + capacitatMaximaRonda + ", descripcioHTML=" + descripcioHTML + ", nom=" + nom + ", tempsPerRonda=" + tempsPerRonda + ", urlFoto=" + urlFoto + ", clientsEnCua=" + clientsEnCua + ", alsadaMinimaAmbAcompanyant=" + alsadaMinimaAmbAcompanyant + ", alsadaMinima=" + alsadaMinima + ", estatOperatiu=" + estatOperatiu + ", incidencies=" + incidencies + '}';
+        return "Atraccio{ codi=" + codi + ", capacitatMaximaRonda=" + capacitatMaximaRonda + ", descripcioHTML=" + descripcioHTML + ", nom=" + nom + ", tempsPerRonda=" + tempsPerRonda + ", urlFoto=" + urlFoto + ", clientsEnCua=" + clientsEnCua + ", alsadaMinimaAmbAcompanyant=" + alsadaMinimaAmbAcompanyant + ", alsadaMinima=" + alsadaMinima + ", estatOperatiu=" + estatOperatiu + ", incidencies=" + incidencies + '}';
     }
     
 }

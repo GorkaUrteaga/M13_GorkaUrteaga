@@ -28,7 +28,7 @@ public class Incidencia implements Serializable{
     private int num;
     
     @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST})
-    @JoinColumn(name = "ATRACCIO", insertable=false, updatable=false,
+    @JoinColumn(name = "ATRACCIO", updatable=false,
             foreignKey = @ForeignKey(foreignKeyDefinition = "FOREIGN KEY (ATRACCIO) REFERENCES ATRACCIO(CODI)"))
     private Atraccio atraccio;
     
@@ -183,9 +183,5 @@ public class Incidencia implements Serializable{
         }
         return str; 
     }
-
-
-
-    
     
 }

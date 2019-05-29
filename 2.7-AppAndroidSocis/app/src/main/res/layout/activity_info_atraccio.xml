@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="info.infomila.portaventura.InfoAtraccio">
+
+    <ImageView
+        android:id="@+id/imgAtraccio"
+        android:layout_width="346dp"
+        android:layout_height="146dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:src="@drawable/image_loading"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txvNom" />
+
+    <TextView
+        android:id="@+id/txvCodi"
+        android:textSize="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txvNom"
+        android:textStyle="bold"
+        android:textSize="24dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="Atraccio01"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/txvCapacitatMaximaRonda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Capacitat per ronda: 10 persones"
+        app:layout_constraintStart_toStartOf="@+id/txvTempsPerRonda"
+        app:layout_constraintTop_toBottomOf="@+id/imgAtraccio" />
+
+    <TextView
+        android:id="@+id/txvTempsPerRonda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Temps per ronda: 5min"
+        app:layout_constraintStart_toStartOf="@+id/txvClientsEnCua"
+        app:layout_constraintTop_toBottomOf="@+id/txvCapacitatMaximaRonda" />
+
+    <TextView
+        android:id="@+id/txvClientsEnCua"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Clients en cua: 10"
+        app:layout_constraintStart_toStartOf="@+id/txvAlsadaMinimaAcompanyant"
+        app:layout_constraintTop_toBottomOf="@+id/txvTempsPerRonda" />
+
+    <TextView
+        android:id="@+id/txvAlsadaMinimaAcompanyant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="Alsada minima amb acompanyant: 120 cm"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txvClientsEnCua" />
+
+    <TextView
+        android:id="@+id/txvAlsadaMinima"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Alsada minima: 150 cm"
+        app:layout_constraintStart_toStartOf="@+id/txvAlsadaMinimaAcompanyant"
+        app:layout_constraintTop_toBottomOf="@+id/txvAlsadaMinimaAcompanyant" />
+
+    <WebView
+        android:id="@+id/webView"
+        android:layout_width="match_parent"
+        android:layout_height="152dp"
+        android:layout_marginTop="8dp"
+        android:text="Hello World!"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txvAlsadaMinima" />
+
+
+</android.support.constraint.ConstraintLayout>

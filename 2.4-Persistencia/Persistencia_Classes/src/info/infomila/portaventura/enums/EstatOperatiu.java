@@ -1,10 +1,12 @@
 package info.infomila.portaventura.enums;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Gorka
  */
-public enum EstatOperatiu {
+public enum EstatOperatiu implements Serializable{
     OPERATIVA,
     AVARIADA,
     TACADA,

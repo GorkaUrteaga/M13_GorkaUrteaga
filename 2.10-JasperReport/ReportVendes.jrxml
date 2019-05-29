@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReportVendes" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     parc.`codi` AS parc_codi,
+     parc.`nom` AS parc_nom,
+     parc.`url_foto` AS parc_url_foto,
+     zona.`numero` AS zona_numero,
+     zona.`parc` AS zona_parc,
+     zona.`nom` AS zona_nom,
+     atraccio.`codi` AS atraccio_codi,
+     atraccio.`zona` AS atraccio_zona,
+     atraccio.`capacitat_maxima_ronda` AS atraccio_capacitat_maxima_ronda,
+     atraccio.`descripcio_html` AS atraccio_descripcio_html,
+     atraccio.`nom` AS atraccio_nom,
+     atraccio.`temps_per_ronda` AS atraccio_temps_per_ronda,
+     atraccio.`url_foto` AS atraccio_url_foto,
+     atraccio.`clients_en_cua` AS atraccio_clients_en_cua,
+     atraccio.`alsada_minima_amb_acompanyant` AS atraccio_alsada_minima_amb_acompanyant,
+     atraccio.`alsada_minima` AS atraccio_alsada_minima,
+     atraccio.`estat_operatiu` AS atraccio_estat_operatiu,
+     atraccio.`incidencia` AS atraccio_incidencia,
+     info_utilitzacio.`passi` AS info_utilitzacio_passi,
+     info_utilitzacio.`atraccio` AS info_utilitzacio_atraccio,
+     info_utilitzacio.`numero_usos` AS info_utilitzacio_numero_usos,
+     info_utilitzacio.`tipus_acces` AS info_utilitzacio_tipus_acces,
+     entrada_parc.`entrada` AS entrada_parc_entrada,
+     entrada_parc.`parc` AS entrada_parc_parc
+     entrada_adult.`id` AS entrada_adult_id
+     entrada_senior.`id` AS entrada_senior_id
+     entrada_discapacitat.`id` AS entrada_discapacitat_id
+FROM
+     `parc` parc LEFT OUTER JOIN `zona` zona ON parc.`codi` = zona.`parc`
+     LEFT OUTER JOIN `atraccio` atraccio ON zona.`numero` = atraccio.`zona`
+     LEFT OUTER JOIN `info_utilitzacio` info_utilitzacio ON atraccio.`codi` = info_utilitzacio.`atraccio`
+     LEFT OUTER JOIN `entrada_parc` entrada_parc ON parc.`codi` = entrada_parc.`parc`
+     LEFT OUTER JOIN `entrada` entrada_adult ON entrada_parc.`entrada` = entrada_adult.`id`
+     LEFT OUTER JOIN `entrada` entrada_senior ON entrada_parc.`entrada` = entrada_senior.`id`
+     LEFT OUTER JOIN `entrada` entrada_discapacitat ON entrada_parc.`entrada` = entrada_discapacitat.`id`
+WHERE entrada_adult.categoria = 'ADULT']]>
+	</queryString>
+	<field name="parc_codi" class="java.lang.Integer"/>
+	<field name="parc_nom" class="java.lang.String"/>
+	<field name="parc_url_foto" class="java.lang.String"/>
+	<field name="zona_numero" class="java.lang.Integer"/>
+	<field name="zona_parc" class="java.lang.Integer"/>
+	<field name="zona_nom" class="java.lang.String"/>
+	<field name="atraccio_codi" class="java.lang.Integer"/>
+	<field name="atraccio_zona" class="java.lang.Integer"/>
+	<field name="atraccio_capacitat_maxima_ronda" class="java.lang.Integer"/>
+	<field name="atraccio_descripcio_html" class="java.lang.String"/>
+	<field name="atraccio_nom" class="java.lang.String"/>
+	<field name="atraccio_temps_per_ronda" class="java.lang.Integer"/>
+	<field name="atraccio_url_foto" class="java.lang.String"/>
+	<field name="atraccio_clients_en_cua" class="java.lang.Integer"/>
+	<field name="atraccio_alsada_minima_amb_acompanyant" class="java.lang.Integer"/>
+	<field name="atraccio_alsada_minima" class="java.lang.Integer"/>
+	<field name="atraccio_estat_operatiu" class="java.lang.String"/>
+	<field name="atraccio_incidencia" class="java.lang.Integer"/>
+	<field name="info_utilitzacio_passi" class="java.lang.Integer"/>
+	<field name="info_utilitzacio_atraccio" class="java.lang.Integer"/>
+	<field name="info_utilitzacio_numero_usos" class="java.lang.Integer"/>
+	<field name="info_utilitzacio_tipus_acces" class="java.lang.Integer"/>
+	<field name="entrada_parc_entrada" class="java.lang.Integer"/>
+	<field name="entrada_parc_parc" class="java.lang.Integer"/>
+	<group name="GroupParc">
+		<groupExpression><![CDATA[$F{parc_codi}]]></groupExpression>
+		<groupHeader>
+			<band height="68">
+				<textField>
+					<reportElement x="117" y="0" width="290" height="31"/>
+					<textElement>
+						<font size="18"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{parc_nom}]]></textFieldExpression>
+				</textField>
+				<image>
+					<reportElement x="17" y="0" width="100" height="54"/>
+					<imageExpression class="java.lang.String"><![CDATA["F:\\1.DAM2\\M13(Projecte)\\2.Projecte\\2.10-JasperReport\\imgs\\"+$F{parc_nom}+".jpg"]]></imageExpression>
+				</image>
+				<staticText>
+					<reportElement x="170" y="44" width="46" height="20"/>
+					<textElement/>
+					<text><![CDATA[ADULT:]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="50"/>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="63" splitType="Stretch">
+			<staticText>
+				<reportElement x="105" y="1" width="286" height="46"/>
+				<textElement>
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Informe vendes PortAventura]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="0" width="59" height="47"/>
+				<imageExpression class="java.lang.String"><![CDATA["F:\\1.DAM2\\M13(Projecte)\\2.Projecte\\2.10-JasperReport\\imgs\\logo.png"]]></imageExpression>
+			</image>
+		</band>
+	</pageHeader>
+	<pageFooter>
+		<band height="24" splitType="Stretch">
+			<textField>
+				<reportElement x="435" y="0" width="80" height="20"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression class="java.lang.String"><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="515" y="0" width="40" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="5" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.util.Date"><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

@@ -432,6 +432,7 @@ public class FrameGestioAtraccions extends javax.swing.JFrame {
             
             //atraccioSeleccionada.addIncidencia(incidencia);
             atraccioSeleccionada.setIncidencia(incidencia);
+            atraccioSeleccionada.addIncidencia(incidencia);
             
         }else{
             

@@ -52,13 +52,24 @@ public class Zona implements Serializable{
     protected Zona(){
     }
 
-    public Zona(int numero, String nom) {
-        setNumero(numero);
-        setNom(nom);
+    public Zona(int numero, Parc parc, String nom) {
+        this.numero = numero;
+        this.parc = parc;
+        this.nom = nom;
         atraccions = new ArrayList<Atraccio>();
     }
     
     // SETTERS
+
+    public void setParc(Parc parc) {
+        if(parc == null){
+            throw new RuntimeException("El parc no pot ser null.");
+        }
+        
+        this.parc = parc;
+    }
+    
+    
     public void setNumero(int numero) {
         if(numero <= 0){
             throw new RuntimeException("El número ha de ser positiu.");
@@ -103,6 +114,10 @@ public class Zona implements Serializable{
 
     public String getNom() {
         return nom;
+    }
+
+    public Parc getParc() {
+        return parc;
     }
 
     @Override

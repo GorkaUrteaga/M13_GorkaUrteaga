@@ -5,66 +5,45 @@
  */
 package info.infomila.portaventura.servidor;
 
+import info.infomila.portaventura.classes.Atraccio;
+import info.infomila.portaventura.classes.Parc;
+import info.infomila.portaventura.classes.ParcJDBC;
+import info.infomila.portaventura.classes.Zona;
+import info.infomila.portaventura.enums.EstatOperatiu;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.Statement;
 import java.net.*;
 import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 /**
  *
  * @author Gorka
  */
-public class Servidor {
+public class Servidor extends Thread{
     
     private static Connection con = null;
     private static PreparedStatement pstm = null;
+    private static int port = 6666;
     
     public static void main(String[] args) {
-        ServerSocket serverSocket = null;
-
+        
         try {
-            serverSocket = new ServerSocket(4444);
-        } catch (IOException e) {
-            System.out.println("Could not listen on port: " + 4444 + ", " + e);
-            System.exit(1);
+            ServerSocket server = new ServerSocket(port);
+            
+            while(true){
+                
+                Socket client = server.accept();
+                Thread thread = new AtendreClient(client);
+                thread.start();
+            }
+            
+        } catch (IOException ex) {
+            System.out.println("Info: "+ex.getMessage());
         }
-
-        Socket clientSocket = null;
-        try {
-            clientSocket = serverSocket.accept();
-        } catch (IOException e) {
-            System.out.println("Accept failed: " + 4444 + ", " + e);
-            System.exit(1);
-        }
-
-        try {
-            BufferedReader br = new BufferedReader(
-                                 new InputStreamReader(clientSocket.getInputStream()));
-            PrintWriter pw = new PrintWriter(
-                             new BufferedOutputStream(clientSocket.getOutputStream(), 1024), false);
-            System.out.println(pw);
-            //KKState kks = new KKState();
-            String inputLine, outputLine;
-
-            //outputLine = kks.processInput(null);
-            //pw.println(outputLine);
-            pw.flush();
-            /*
-            while ((inputLine = br.readLine()) != null) {
-                 //outputLine = kks.processInput(inputLine);
-                 //pw.println(outputLine);
-                 pw.flush();
-                 if (outputLine.equals("Bye."))
-                    break;
-            }*/
-            pw.close();
-            br.close();
-            clientSocket.close();
-            serverSocket.close();
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        
     }
-    
 }

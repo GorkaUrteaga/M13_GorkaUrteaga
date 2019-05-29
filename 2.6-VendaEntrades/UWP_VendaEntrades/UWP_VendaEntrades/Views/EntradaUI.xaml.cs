@@ -205,7 +205,16 @@ namespace UWP_VendaEntrades.Views
             foreach(Entrada entrada in entradesUltimesGenerades)
             {
                 EntradaDB.InsertEntrada(entrada);
+                foreach(int codi in entrada.Parcs)
+                {
+                    if (codi != 0)
+                    {
+                        EntradaParcDB.InsertEntradaParc(entrada.Id, codi);
+                    }
+                    
+                }
             }
+
 
             //Un cop finalitzat vol dir que hem comprat totes les entrades.
             //Ho enunciem al venedor.

@@ -13,7 +13,7 @@ import info.infomila.portaventura.classes.AtraccioJDBC;
  */
 public interface IServidor {
     
-    public void crearConnexio();
+    public void establirConnexio();
     public void enviarAtraccions();
     public void enviarInfoUtilitzacio();
     public void tancarConnexio();

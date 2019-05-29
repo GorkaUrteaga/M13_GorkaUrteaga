@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--Hem de programar el onClick de cada un d'aquests menu items -->
+    <item android:id="@+id/mnuItemParcs"
+        android:icon="@drawable/parcs_menu"
+        android:title="Atraccions" />
+
+    <item android:id="@+id/mnuItemPassis"
+    android:icon="@drawable/ticket_menu"
+    android:title="Passis" />
+
+    <item android:id="@+id/mnuItemLogin"
+        android:icon="@drawable/login_menu"
+        android:title="Login" />
+
+</menu>

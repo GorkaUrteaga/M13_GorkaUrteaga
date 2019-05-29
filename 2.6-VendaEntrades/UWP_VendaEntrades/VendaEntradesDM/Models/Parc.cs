@@ -17,6 +17,8 @@ namespace VendaEntradesDM.Models
             UrlFoto = urlFoto;
         }
 
+
+
         public int Codi { get => codi; set => codi = value; }
         public string Nom { get => nom; set => nom = value; }
         public string UrlFoto { get => urlFoto; set => urlFoto = value; }

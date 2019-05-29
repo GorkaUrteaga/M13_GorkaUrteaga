@@ -1,13 +1,31 @@
 package info.infomila.portaventura.classes;
 
-public class AtraccioJDBC {
+import info.infomila.portaventura.enums.EstatOperatiu;
+import java.io.Serializable;
+
+public class AtraccioJDBC implements Serializable{
 
     private int codi;
     private int capacitatMaximaRonda;
     private String nom;
+    private String urlImatge;
+    private String estatOperatiu;
     private int tempsPerRonda;
     private int clientsEnCua;
 
+    public AtraccioJDBC(int codi, int capacitatMaximaRonda, String nom, String urlImatge, String estatOperatiu, int tempsPerRonda, int clientsEnCua) {
+        setCodi(codi);
+        setCapacitatMaximaRonda(capacitatMaximaRonda);
+        setNom(nom);
+        setTempsPerRonda(tempsPerRonda);
+        setClientsEnCua(clientsEnCua);
+        setUrlImatge(urlImatge);
+        setEstatOperatiu(estatOperatiu);
+
+    }
+
+    
+    
     public AtraccioJDBC(int codi, int capacitatMaximaRonda, String nom, int tempsPerRonda, int clientsEnCua) {
         setCodi(codi);
         setCapacitatMaximaRonda(capacitatMaximaRonda);
@@ -36,6 +54,22 @@ public class AtraccioJDBC {
         this.clientsEnCua = clientsEnCua;
     }
 
+    public void setUrlImatge(String urlImatge) {
+        this.urlImatge = urlImatge;
+    }
+
+    public void setEstatOperatiu(String estatOperatiu) {
+        this.estatOperatiu = estatOperatiu;
+    }
+    
+    public String getUrlImatge() {
+        return urlImatge;
+    }
+
+    public String getEstatOperatiu() {
+        return estatOperatiu;
+    }
+    
     public int getCodi() {
         return codi;
     }
@@ -83,7 +117,7 @@ public class AtraccioJDBC {
     
     @Override
     public String toString() {
-        return "AtraccioJDBC{" + "codi=" + codi + ", capacitatMaximaRonda=" + capacitatMaximaRonda + ", nom=" + nom + ", tempsPerRonda=" + tempsPerRonda + ", clientsEnCua=" + clientsEnCua + '}';
+        return "Atraccio{" + "codi=" + codi + ", capacitatMaximaRonda=" + capacitatMaximaRonda + ", nom=" + nom + ", tempsPerRonda=" + tempsPerRonda + ", clientsEnCua=" + clientsEnCua + '}';
     }
     
 }
