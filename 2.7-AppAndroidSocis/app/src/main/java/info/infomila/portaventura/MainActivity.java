@@ -22,6 +22,7 @@ import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import java.util.ArrayList;
 import java.util.List;
 
+import info.infomila.portaventura.classes.PassiExpress;
 import info.infomila.portaventura.classes.Zona;
 import info.infomila.portaventura.classes.Atraccio;
 import info.infomila.portaventura.classes.Parc;

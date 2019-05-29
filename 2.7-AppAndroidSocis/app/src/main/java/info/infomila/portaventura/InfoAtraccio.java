@@ -38,7 +38,7 @@ public class InfoAtraccio extends AppCompatActivity {
 
         //Obtenim l'intent.
         Intent i = getIntent();
-        mAtraccio = (Atraccio) i.getSerializableExtra(NEW_ACTIVITY_INTENT_PARAM___ATRACCIO);//ES NULL PER QUE?
+        mAtraccio = (Atraccio) i.getSerializableExtra(NEW_ACTIVITY_INTENT_PARAM___ATRACCIO);
 
         //Obtenim tots els camps a afegir.
         txvCodi = findViewById(R.id.txvCodi);

@@ -86,6 +86,8 @@ public class LoginUsuari extends AppCompatActivity {
                 SocketClient sock = new SocketClient(3,clientId);
                 sock.execute();
             }
+        }else{
+            txvUsuariConnectat.setText(clientLoginat.getNom()+", "+clientLoginat.getCognom1());
         }
 
     }

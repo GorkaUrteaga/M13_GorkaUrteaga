@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Objects;
 
 public class InfoUtilitzacio implements Serializable {
+
     private PassiExpress passi;
     private Atraccio atraccio;
     private int numUsos;
@@ -85,4 +86,5 @@ public class InfoUtilitzacio implements Serializable {
     public String toString() {
         return "InfoUtilitzacio{" + "atraccio=" + atraccio + ", numUsos=" + numUsos + ", TipusAcces=" + TipusAcces + '}';
     }
+
 }

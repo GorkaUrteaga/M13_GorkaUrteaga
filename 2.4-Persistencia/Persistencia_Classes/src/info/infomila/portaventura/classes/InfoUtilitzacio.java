@@ -5,13 +5,14 @@
  */
 package info.infomila.portaventura.classes;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  *
  * @author Gorka
  */
-public class InfoUtilitzacio {
+public class InfoUtilitzacio implements Serializable {
     
     private PassiExpress passi;
     private Atraccio atraccio;

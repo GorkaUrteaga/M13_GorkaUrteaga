@@ -124,9 +124,9 @@ public class Atraccio implements Serializable{
     }
     
     public void setZona(Zona zona) {
-        if(zona == null){
+        /*if(zona == null){
             throw new RuntimeException("La zona és obligatoria.");
-        }
+        }*/
         
         this.zona = zona;
     }

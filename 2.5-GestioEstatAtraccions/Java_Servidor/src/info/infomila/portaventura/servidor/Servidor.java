@@ -27,7 +27,7 @@ public class Servidor extends Thread{
     
     private static Connection con = null;
     private static PreparedStatement pstm = null;
-    private static int port = 6666;
+    private static int port = 666;
     
     public static void main(String[] args) {
         

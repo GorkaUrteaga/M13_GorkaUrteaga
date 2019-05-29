@@ -8,6 +8,7 @@ package info.infomila.portaventura.servidor;
 import info.infomila.portaventura.classes.Atraccio;
 import info.infomila.portaventura.classes.AtraccioJDBC;
 import info.infomila.portaventura.classes.Client;
+import info.infomila.portaventura.classes.InfoUtilitzacio;
 import info.infomila.portaventura.classes.Parc;
 import info.infomila.portaventura.classes.ParcJDBC;
 import info.infomila.portaventura.classes.PassiExpress;
@@ -75,13 +76,12 @@ public class AtendreClient extends Thread{
                     break;
                 case 2:
                     enviarClient();
+                    break;
                 case 3:
                     enviarClientRecuperatPerId();
+                    break;
                     
             }
-            
-            
-            
             client.close();
 
         } catch (IOException ex) {
@@ -89,6 +89,7 @@ public class AtendreClient extends Thread{
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(AtendreClient.class.getName()).log(Level.SEVERE, null, ex);
         }finally{
+            System.out.println("Moro... i tanco connexió.");
             tancarConnexio();
         }
     }
@@ -156,25 +157,9 @@ public class AtendreClient extends Thread{
                         System.exit(1);
                     }
 
-                    while(rs.next()){
 
-                        int numero = rs.getInt("CODI");
-                        int capacitatMaxRonda = rs.getInt("CAPACITAT_MAXIMA_RONDA");
-                        String descripcioHTML = rs.getString("DESCRIPCIO_HTML");
-                        String nom = rs.getString("NOM");
-                        int tempsPerRonda = rs.getInt("TEMPS_PER_RONDA");
-                        String urlFoto = rs.getString("URL_FOTO");
-                        int clientsEnCua = rs.getInt("CLIENTS_EN_CUA");
-                        int alsadaMinimaAmbAcompanyant = rs.getInt("ALSADA_MINIMA_AMB_ACOMPANYANT");
-                        int alsadaMinima = rs.getInt("ALSADA_MINIMA");
-                        String estatOperatiu = rs.getString("ESTAT_OPERATIU");
-                        
-                        Atraccio a = new Atraccio(numero,z,capacitatMaxRonda,descripcioHTML,nom,tempsPerRonda,urlFoto,clientsEnCua,alsadaMinimaAmbAcompanyant,alsadaMinima,estatOperatiu);
-                        
+                    for(Atraccio a :buscarAtraccions(rs)){
                         z.addAtraccio(a);
-                        
-                        //System.out.println("Zona num atraccions: "+z.getNumAtraccions());
-                        System.out.println("\t\tATRACCIO: "+a.getNom());
                     }
                     
                 }
@@ -359,17 +344,65 @@ public class AtendreClient extends Thread{
             System.out.println(cad);
             TipusPassiExpress tp = null;
             while(result.next()){
-                System.out.println("Result set");
+                //System.out.println("Result set");
                 String nomTipus  = result.getString("NOM");
                 BigDecimal preuTipus = result.getBigDecimal("PREU_PER_DIA");
 
                 tp = new TipusPassiExpress(tipusPassi,nomTipus,preuTipus);    
             }
-
+            
             PassiExpress pe = new PassiExpress(id,data,tp);
+            
+            //establirConnexio();
+            cad = "select inf.atraccio atraccio, inf.numero_usos numero_usos,tip.tipus tipus_acces from info_utilitzacio inf join tipus_acces tip on inf.tipus_acces = tip.id where passi="+id;
+            ResultSet resultat = stm.executeQuery(cad);
+            InfoUtilitzacio inf;
+            while(resultat.next()){
+                
+                int idAtraccio = resultat.getInt("ATRACCIO");
+                int numUsos = resultat.getInt("NUMERO_USOS");
+                String tipusAcces = resultat.getString("TIPUS_ACCES");
+                
+                Atraccio a = null;
+                //Anem a buscar la atracció.
+                establirConnexio();
+                cad = "select * from atraccio where codi ="+idAtraccio;
+                ResultSet res = stm.executeQuery(cad);
+                List<Atraccio> atraccions = buscarAtraccions(res);
+                Atraccio atraccio = atraccions.get(0);
+                
+                inf = new InfoUtilitzacio(pe,atraccio,numUsos,tipusAcces);
+                pe.addInfoUtilitzacio(inf);
+            }
+            
             cli.addPassi(pe);
         }
+        
         return cli;
+    }
+    
+    private List<Atraccio> buscarAtraccions(ResultSet rs) throws SQLException{
+        List<Atraccio> atraccions = new ArrayList<Atraccio>();
+        
+        while(rs.next()){
+
+            int numero = rs.getInt("CODI");
+            int capacitatMaxRonda = rs.getInt("CAPACITAT_MAXIMA_RONDA");
+            String descripcioHTML = rs.getString("DESCRIPCIO_HTML");
+            String nom = rs.getString("NOM");
+            int tempsPerRonda = rs.getInt("TEMPS_PER_RONDA");
+            String urlFoto = rs.getString("URL_FOTO");
+            int clientsEnCua = rs.getInt("CLIENTS_EN_CUA");
+            int alsadaMinimaAmbAcompanyant = rs.getInt("ALSADA_MINIMA_AMB_ACOMPANYANT");
+            int alsadaMinima = rs.getInt("ALSADA_MINIMA");
+            String estatOperatiu = rs.getString("ESTAT_OPERATIU");
+
+            Atraccio a = new Atraccio(numero,null,capacitatMaxRonda,descripcioHTML,nom,tempsPerRonda,urlFoto,clientsEnCua,alsadaMinimaAmbAcompanyant,alsadaMinima,estatOperatiu);
+            atraccions.add(a);
+            System.out.println("\t\tATRACCIO: "+a.getNom());
+        }
+        
+        return atraccions;
     }
     
 }

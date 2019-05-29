@@ -5,7 +5,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class PassiExpress implements Serializable {
+public class PassiExpress implements Serializable{
+
     private int id;
     private Date data;
 
@@ -40,6 +41,34 @@ public class PassiExpress implements Serializable {
             throw new RuntimeException("El tipus de passi és obligatori");
         }
         this.tipusPassi = tipusPassi;
+    }
+
+    public int getNumInfoUtilitzacions(){
+        return infoUtilitzacions.size();
+    }
+
+    public Iterable<InfoUtilitzacio> getInfoUtilitzacions(){
+        return infoUtilitzacions;
+    }
+
+    public InfoUtilitzacio getEntrada(int index){
+        return infoUtilitzacions.get(index);
+    }
+
+    public boolean removeInfoUtilitzacio(InfoUtilitzacio info){
+        boolean esborrat = infoUtilitzacions.remove(info);
+        if(esborrat){
+            info.setPassi(null);
+        }
+        return esborrat;
+    }
+
+    public boolean addInfoUtilitzacio(InfoUtilitzacio info){
+        boolean afegit = infoUtilitzacions.add(info);
+        if(afegit){
+            info.setPassi(this);
+        }
+        return afegit;
     }
 
     //GETTERS

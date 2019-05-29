@@ -20,8 +20,8 @@ import info.infomila.portaventura.MainActivity;
 public class SocketClient extends AsyncTask<Void,Void,Void> {
 
     private int opcio;
-    private static String hostName = "192.168.1.176";//"10.150.0.171";//"10.132.2.106";
-    private static int port = 6666;
+    private static String hostName = "10.150.0.171";//"192.168.1.176";//"10.150.0.171";//"10.132.2.106";
+    private static int port = 666;
     private ObjectOutputStream out = null;
     private ObjectInputStream in = null;
     private String login;
@@ -63,6 +63,7 @@ public class SocketClient extends AsyncTask<Void,Void,Void> {
                     break;
                 case 3:
                     recuperarClientViaId();
+                    break;
             }
 
         }catch (UnknownHostException e) {

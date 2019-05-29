@@ -13,6 +13,7 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 
 import java.util.List;
 
+import info.infomila.portaventura.classes.InfoUtilitzacio;
 import info.infomila.portaventura.classes.PassiExpress;
 
 public class PassisAdapter extends RecyclerView.Adapter<PassisAdapter.PassiViewHolder> {
@@ -51,7 +52,7 @@ public class PassisAdapter extends RecyclerView.Adapter<PassisAdapter.PassiViewH
 
         if(position == mSelectedPosition){
             //Avisem al PassisUsuari i fem un intent per mostrar el qr
-            //MainActivity.mostrarInformacioHTML(mPassis.get(mSelectedPosition));
+            PassisUsuari.mostrarInfoUtilitzacio(mPassis.get(mSelectedPosition));
         }else{
 
         }
