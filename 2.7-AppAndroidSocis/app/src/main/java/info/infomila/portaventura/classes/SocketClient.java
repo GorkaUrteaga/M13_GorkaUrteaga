@@ -1,5 +1,6 @@
 package info.infomila.portaventura.classes;
 
+import android.app.Activity;
 import android.os.AsyncTask;
 import android.util.Log;
 
@@ -27,20 +28,27 @@ public class SocketClient extends AsyncTask<Void,Void,Void> {
     private String login;
     private String password;
     private int clientId;
+    //private MainActivity mActivity;
+    private List<Parc> parcs = null;
+    private Activity mActivity;
+    private Client cli = null;
 
-    public SocketClient(int opcio){
+    public SocketClient(int opcio, Activity pActivity){
         this.opcio = opcio;
+        this.mActivity = pActivity;
     }
 
-    public SocketClient(int opcio,String login, String password){
+    public SocketClient(int opcio,String login, String password, Activity pActivity){
         this.opcio = opcio;
         this.login = login;
         this.password = password;
+        this.mActivity = pActivity;
     }
 
-    public SocketClient(int opcio,int clientId){
+    public SocketClient(int opcio,int clientId, Activity pActivity){
         this.opcio = opcio;
         this.clientId = clientId;
+        this.mActivity = pActivity;
     }
 
     @Override
@@ -82,7 +90,6 @@ public class SocketClient extends AsyncTask<Void,Void,Void> {
     }
 
     private void recuperarClientViaId() {
-        Client cli = null;
         try {
             out.writeObject(clientId);
 
@@ -96,7 +103,7 @@ public class SocketClient extends AsyncTask<Void,Void,Void> {
             Log.e("ERROR SOCKET",":",e);
         }
 
-        LoginUsuari.obtenirClient(cli);
+        //LoginUsuari.obtenirClient(cli);
 
     }
 
@@ -105,7 +112,7 @@ public class SocketClient extends AsyncTask<Void,Void,Void> {
         List<String> parametresLogin = new ArrayList<String>();
         parametresLogin.add(login);
         parametresLogin.add(password);
-        Client cli = null;
+
         try {
             out.writeObject(parametresLogin);
 
@@ -119,12 +126,12 @@ public class SocketClient extends AsyncTask<Void,Void,Void> {
             Log.e("ERROR SOCKET",":",e);
         }
 
-        LoginUsuari.obtenirClient(cli);
+        //LoginUsuari.obtenirClient(cli);
 
     }
 
     private void rebreLlistaParcs() {
-        List<Parc> parcs = null;
+
         try {
 
             parcs = (List<Parc>)in.readObject();
@@ -133,12 +140,22 @@ public class SocketClient extends AsyncTask<Void,Void,Void> {
             Log.e("ERROR SOCKET",":",e);
         }
 
-        MainActivity.afegirParcsSpinner(parcs);
+        //MainActivity.afegirParcsSpinner(parcs);
     }
 
     @Override
     protected void onPostExecute(Void v) {
         super.onPostExecute(v);
+
+        switch (opcio){
+            case 1:
+                ((MainActivity)mActivity).afegirParcsSpinner(parcs);
+                break;
+            default:
+                ((LoginUsuari)mActivity).obtenirClient(cli);
+                break;
+
+        }
 
     }
 }

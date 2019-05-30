@@ -95,6 +95,9 @@ public class PassisUsuari extends AppCompatActivity {
 
         if(LoginUsuari.clientLoginat==null){
             Toast.makeText(this, "Primer t'has de loginar", Toast.LENGTH_LONG).show();
+
+            Intent x = new Intent( mPassis,LoginUsuari.class);
+            startActivity(x);
         }else{
             mAdapter = new PassisAdapter((List<PassiExpress>)LoginUsuari.clientLoginat.getPassisExpres(),mPassis);
             rcvPassis.setLayoutManager(new LinearLayoutManager(this, LinearLayout.HORIZONTAL,false));

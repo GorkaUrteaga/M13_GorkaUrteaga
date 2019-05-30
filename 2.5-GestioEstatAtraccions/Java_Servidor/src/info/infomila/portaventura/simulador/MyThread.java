@@ -30,8 +30,8 @@ public class MyThread extends Thread{
     public MyThread(AtraccioJDBC atraccio){
         this.atraccio = atraccio;
         try {
-            String url = "jdbc:mysql://127.0.0.1:3306/projecte?serverTimezone=UTC";
-            con = DriverManager.getConnection(url, "root", "root");
+            String url = "jdbc:mysql://92.222.27.83:3306/m2_gurteaga?serverTimezone=UTC";
+            con = DriverManager.getConnection(url, "m2-gurteaga", "47129014J");
             System.out.println("Connectat");
             String cad = "update Atraccio set clients_en_cua = ? where codi = ?";
             stm = con.prepareStatement(cad);

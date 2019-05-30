@@ -1,6 +1,7 @@
 package info.infomila.portaventura;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v7.app.AppCompatActivity;
@@ -27,6 +28,8 @@ import info.infomila.portaventura.classes.Zona;
 import info.infomila.portaventura.classes.Atraccio;
 import info.infomila.portaventura.classes.Parc;
 import info.infomila.portaventura.classes.SocketClient;
+
+import static info.infomila.portaventura.LoginUsuari.CLIENT_ID;
 
 public class MainActivity extends AppCompatActivity {
     public static final String NEW_ACTIVITY_INTENT_PARAM___ATRACCIO = "Atraccio";
@@ -90,7 +93,6 @@ public class MainActivity extends AppCompatActivity {
         //Inicialitzem el ImageLoader
         ImageLoader imageLoader = ImageLoader.getInstance();
         imageLoader.init(ImageLoaderConfiguration.createDefault(this));
-
     }
 
     public void btnFitlreClick(View v)
@@ -102,7 +104,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart()
     {
-        // TODO Auto-generated method stub
         super.onStart();
 
         obtenirParcs();
@@ -128,16 +129,15 @@ public class MainActivity extends AppCompatActivity {
 
     private void obtenirParcs() {
         //Opcio 1 es per obtenir els parcs amb les zones i les atraccions
-        SocketClient sc = new SocketClient(1);
+        SocketClient sc = new SocketClient(1,mActivity);
         sc.execute();
     }
 
-    public static void afegirParcsSpinner(List<Parc> parcs) {
+    public void afegirParcsSpinner(List<Parc> parcs) {
 
         mParcs = parcs;
-        //Log.d("PARCs",parcs.toString());
+
         List<String> llParcs = new ArrayList<String>();
-        List<Atraccio> llAtraccions = new ArrayList<Atraccio>();
         for(Parc p : parcs){
             llParcs.add(p.getNom());
             Log.d("PARCS",p.getNom());
@@ -151,7 +151,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    private static void afegirAtraccionsLlista(Boolean filtre) {
+    private void afegirAtraccionsLlista(Boolean filtre) {
 
         if(parcSeleccionat == null) return;
 

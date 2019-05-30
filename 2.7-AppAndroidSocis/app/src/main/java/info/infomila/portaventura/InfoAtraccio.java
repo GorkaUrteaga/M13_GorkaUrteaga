@@ -29,8 +29,6 @@ public class InfoAtraccio extends AppCompatActivity {
 
     private WebView webView;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

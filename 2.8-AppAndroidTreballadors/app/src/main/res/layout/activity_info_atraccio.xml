@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="info.infomila.portaventura.InfoAtraccio">
+
+    <TextView
+        android:id="@+id/txvNom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Atraccio"
+        android:textSize="32dp"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgAtraccio"
+        android:layout_width="match_parent"
+        android:layout_height="207dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:src="@drawable/loading_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txvNom" />
+
+    <Button
+        android:id="@+id/btnScanQr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="SCAN QR PASS"
+        android:textSize="32dp"
+        app:layout_constraintTop_toBottomOf="@+id/imgAtraccio"
+        android:onClick="btnScanQrClick"/>
+
+
+    <TextView
+        android:id="@+id/txvAccesConcedit"
+        android:layout_width="match_parent"
+        android:layout_height="81dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="ACCES"
+        android:textAlignment="center"
+        android:textSize="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnConfirmarPujat"
+        app:layout_constraintTop_toBottomOf="@+id/btnScanQr" />
+
+    <Button
+        android:id="@+id/btnConfirmarPujat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:onClick="btnConfirmarPujatClick"
+        android:text="CONFIRMAR"
+        android:textSize="24dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

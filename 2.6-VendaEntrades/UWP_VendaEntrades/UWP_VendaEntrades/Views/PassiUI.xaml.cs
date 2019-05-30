@@ -232,13 +232,16 @@ namespace UWP_VendaEntrades.Views
                 {
                     ClientDB.InsertClient(cli);
                 }
-                
-                foreach(Passi p in cli.GetPassis())
+
+                IEnumerable<TipusPassiAtraccio> tipusPassiAtraccio;
+
+                foreach (Passi p in cli.GetPassis())
                 {
                     //A part també hem d'inserir a la taula de Info_Utilitzacio
                     PassiDB.InsertPassi(cli.Id, p);
-                    TipusPassi tp = llTipusPassi.ElementAt(cboTipusPassi.SelectedIndex);
-                    foreach(TipusPassiAtraccio tpa in llTipusPassiAtraccio)
+                    //TipusPassi tp = llTipusPassi.ElementAt(cboTipusPassi.SelectedIndex);
+                    tipusPassiAtraccio = TipusPassiAtraccioDB.GetTipusPassiAtraccio(p.IdTipusPassi);
+                    foreach (TipusPassiAtraccio tpa in tipusPassiAtraccio)
                     {
                         TipusAcces ta = TipusAccesDB.GetUnTipusAccesPerNom(tpa.TipusAcces);
                         InfoUtilitzacio iu = new InfoUtilitzacio(p.Id, tpa.IdAtraccio, 0,ta.Id);

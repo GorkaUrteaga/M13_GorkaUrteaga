@@ -8,6 +8,8 @@ VALUES(2,'47999999K','Quim','Marsal');
 
 /* PARCS */
 
+USE m2_gurteaga;
+
 INSERT INTO Parc
 VALUES(1,'PortAventura Park','https://s3-eu-west-1.amazonaws.com/portaventura-world-production-files/wilson_cms/images/images/000/001/758/small_square/CCPA_0112.jpg');
 

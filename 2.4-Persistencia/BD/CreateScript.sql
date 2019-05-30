@@ -1,5 +1,7 @@
 /* CREATE TABLE */
 
+USE m2_gurteaga;
+
 CREATE TABLE Client
 (
     id int(6) primary key,

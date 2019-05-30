@@ -31,13 +31,13 @@
     <AppXManifest Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2019-05-27T10:45:07.218</Modified>
+      <Modified>2019-05-30T09:41:24.925</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\bin\x86\Debug\UWP_VendaEntrades.exe">
       <PackagePath>entrypoint\UWP_VendaEntrades.exe</PackagePath>
-      <Modified>2019-05-27T10:45:06.460</Modified>
+      <Modified>2019-05-30T09:41:24.195</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Gorka\.nuget\packages\bouncycastle.netcore\1.8.3\lib\netstandard2.0\BouncyCastle.Crypto.dll">
       <PackagePath>BouncyCastle.Crypto.dll</PackagePath>
@@ -1046,43 +1046,43 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2019-05-27T10:45:06.181</Modified>
+      <Modified>2019-05-30T09:41:23.872</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\bin\x86\Debug\CDs\AfegirClientCD.xbf">
       <PackagePath>CDs\AfegirClientCD.xbf</PackagePath>
-      <Modified>2019-05-27T10:45:06.194</Modified>
+      <Modified>2019-05-30T09:41:23.910</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\bin\x86\Debug\VentesPage.xbf">
       <PackagePath>VentesPage.xbf</PackagePath>
-      <Modified>2019-05-27T10:45:06.196</Modified>
+      <Modified>2019-05-30T09:41:23.911</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2019-05-27T10:45:06.198</Modified>
+      <Modified>2019-05-30T09:41:23.913</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\bin\x86\Debug\TipusPassisPage.xbf">
       <PackagePath>TipusPassisPage.xbf</PackagePath>
-      <Modified>2019-05-27T10:45:06.198</Modified>
+      <Modified>2019-05-30T09:41:23.915</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\bin\x86\Debug\Views\EntradaUI.xbf">
       <PackagePath>Views\EntradaUI.xbf</PackagePath>
-      <Modified>2019-05-27T10:45:06.176</Modified>
+      <Modified>2019-05-30T09:41:23.866</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\bin\x86\Debug\Views\ModificacioTipusPassiUI.xbf">
       <PackagePath>Views\ModificacioTipusPassiUI.xbf</PackagePath>
-      <Modified>2019-05-27T10:45:06.201</Modified>
+      <Modified>2019-05-30T09:41:23.918</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\bin\x86\Debug\Views\ParcUI.xbf">
       <PackagePath>Views\ParcUI.xbf</PackagePath>
-      <Modified>2019-05-27T10:45:06.203</Modified>
+      <Modified>2019-05-30T09:41:23.920</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\bin\x86\Debug\Views\PassiUI.xbf">
       <PackagePath>Views\PassiUI.xbf</PackagePath>
-      <Modified>2019-05-27T10:45:06.204</Modified>
+      <Modified>2019-05-30T09:41:23.922</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\bin\x86\Debug\Views\TipusPassiAtraccioUI.xbf">
       <PackagePath>Views\TipusPassiAtraccioUI.xbf</PackagePath>
-      <Modified>2019-05-27T10:45:06.206</Modified>
+      <Modified>2019-05-30T09:41:23.924</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.17134.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -1107,7 +1107,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\bin\x86\Debug\Core\UWP_VendaEntrades.exe">
       <PackagePath>UWP_VendaEntrades.exe</PackagePath>
-      <Modified>2019-05-27T10:45:07.209</Modified>
+      <Modified>2019-05-30T09:41:24.915</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

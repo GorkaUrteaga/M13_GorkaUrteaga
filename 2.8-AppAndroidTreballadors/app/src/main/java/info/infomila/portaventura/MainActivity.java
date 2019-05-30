@@ -1,5 +1,6 @@
 package info.infomila.portaventura;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
@@ -24,16 +25,24 @@ public class MainActivity extends AppCompatActivity {
     private static RecyclerView rcvAtraccions;
     private static AtraccionsAdapter mAdapter;
     private static MainActivity mActivity;
+    public static final String NEW_ACTIVITY_INTENT_PARAM___ATRACCIO="Atraccio";
 
-    public static void mostrarInfoEscanejar(Atraccio atraccio) {
+    public void mostrarInfoEscanejar(Atraccio atraccio) {
+
+        mActivity.intentInfoAtraccio(atraccio);
 
     }
 
-    public static void afegirParcsLlista(List<Parc> parcs) {
+    private void intentInfoAtraccio(Atraccio atraccio) {
+        Intent i = new Intent( this, InfoAtraccio.class);
+        i.putExtra(NEW_ACTIVITY_INTENT_PARAM___ATRACCIO, atraccio);
+        startActivity(i);
+    }
+
+    public void afegirParcsLlista(List<Parc> parcs) {
 
         List<Atraccio> atraccions = new ArrayList<Atraccio>();
-        String atraccioFiltrada = "";
-
+        if(parcs == null) return;
         for(Parc parc:parcs){
             for(Zona z:parc.getZones()){
                 for(Atraccio a:z.getAtraccions()){
@@ -74,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void obtenirParcs() {
         //Opcio 1 es per obtenir els parcs amb les zones i les atraccions
-        SocketClient sc = new SocketClient(1);
+        SocketClient sc = new SocketClient(1,mActivity);
         sc.execute();
     }
 

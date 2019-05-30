@@ -54,7 +54,7 @@ public class InfoUtilitzacioAdapter extends RecyclerView.Adapter<InfoUtilitzacio
         if(f.getNumUsos()>0 && f.getTipusAcces() != "ILIMITAT"){
             holder.llyInnerRow.setBackgroundColor(Color.RED);
         }else{
-            holder.llyInnerRow.setBackgroundColor(Color.WHITE);
+            holder.llyInnerRow.setBackgroundColor(Color.TRANSPARENT);
         }
         ImageLoader imageLoader = ImageLoader.getInstance(); // Get singleton instance
         imageLoader.displayImage(f.getAtraccio().getUrlFoto(),holder.imgAtraccio);

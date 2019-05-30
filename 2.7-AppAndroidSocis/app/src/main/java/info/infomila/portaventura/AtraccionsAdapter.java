@@ -52,7 +52,11 @@ public class AtraccionsAdapter extends RecyclerView.Adapter<AtraccionsAdapter.At
 
         holder.txvNom.setText( f.getNom() );
         holder.txvEstat.setText( ""+f.getEstatOperatiu() );
-        holder.txvTempsEspera.setText("Temps espera: 50 min");
+
+        int tempsEspera =  f.getClientsEnCua()/f.getCapacitatMaximaRonda()*f.getTempsPerRonda();
+
+
+        holder.txvTempsEspera.setText("Temps espera: "+tempsEspera+"min");
 
         ImageLoader imageLoader = ImageLoader.getInstance(); // Get singleton instance
         imageLoader.displayImage(f.getUrlFoto(),holder.imgAtraccio);

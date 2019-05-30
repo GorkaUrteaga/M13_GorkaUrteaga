@@ -25,7 +25,7 @@ public class LoginUsuari extends AppCompatActivity {
     private static TextView txvUsuariConnectat;
     public static Client clientLoginat;
 
-    public static void obtenirClient(Client cli) {
+    public void obtenirClient(Client cli) {
         //Aquí obtenim o no el client.
 
         if(cli == null){
@@ -83,7 +83,7 @@ public class LoginUsuari extends AppCompatActivity {
             if(clientId!=0){
                 //Anem a buscar a aquest client i el carreguem com client actual
 
-                SocketClient sock = new SocketClient(3,clientId);
+                SocketClient sock = new SocketClient(3,clientId,mLogin);
                 sock.execute();
             }
         }else{
@@ -100,7 +100,7 @@ public class LoginUsuari extends AppCompatActivity {
 
     private void intentarLoginar() {
 
-        SocketClient sc = new SocketClient(2, edtUser.getText().toString(), edtPassword.getText().toString());
+        SocketClient sc = new SocketClient(2, edtUser.getText().toString(), edtPassword.getText().toString(),mLogin);
         sc.execute();
     }
 }

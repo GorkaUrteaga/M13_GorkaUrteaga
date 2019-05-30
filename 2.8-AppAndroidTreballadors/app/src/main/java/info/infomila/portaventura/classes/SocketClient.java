@@ -1,5 +1,6 @@
 package info.infomila.portaventura.classes;
 
+import android.app.Activity;
 import android.os.AsyncTask;
 import android.util.Log;
 
@@ -11,32 +12,36 @@ import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.List;
 
+import info.infomila.portaventura.InfoAtraccio;
 import info.infomila.portaventura.MainActivity;
 
 public class SocketClient extends AsyncTask<Void,Void,Void> {
 
     private int opcio;
-    private static String hostName = "10.150.0.171";//"192.168.1.176";//"10.150.0.171";//"10.132.2.106";
+    private static String hostName = "192.168.1.176";//"10.150.0.171";//"192.168.1.176";//"10.132.2.106";
     private static int port = 666;
     private ObjectOutputStream out = null;
     private ObjectInputStream in = null;
-    private String login;
-    private String password;
-    private int clientId;
+    private int idPassi;
+    private int idAtraccio;
+    private Activity mActivity;
+    private List<Parc> parcs = null;
 
-    public SocketClient(int opcio){
+    private int potAccedir = 0;
+    private String motiu = "";
+    private Boolean potPrimeraFila = false;
+
+    public SocketClient(int opcio, Activity pActivity){
         this.opcio = opcio;
+        this.mActivity = pActivity;
     }
 
-    public SocketClient(int opcio, String login, String password){
-        this.opcio = opcio;
-        this.login = login;
-        this.password = password;
-    }
 
-    public SocketClient(int opcio, int clientId){
+    public SocketClient(int opcio, int idPassi, int idAtraccio, Activity pActivity){
         this.opcio = opcio;
-        this.clientId = clientId;
+        this.idPassi = idPassi;
+        this.idAtraccio = idAtraccio;
+        this.mActivity = pActivity;
     }
 
     @Override
@@ -54,6 +59,12 @@ public class SocketClient extends AsyncTask<Void,Void,Void> {
                 case 1:
                     rebreLlistaParcs();
                     break;
+                case 4:
+                    rebrePotAccedir();
+                    break;
+                case 5:
+                    confirmarAcces();
+
             }
 
         }catch (UnknownHostException e) {
@@ -71,8 +82,39 @@ public class SocketClient extends AsyncTask<Void,Void,Void> {
         }
     }
 
+    private void confirmarAcces() {
+
+        try {
+
+            out.writeObject(idPassi);
+            out.writeObject(idAtraccio);
+
+        } catch (Exception e) {
+            Log.e("ERROR SOCKET",":",e);
+        }
+
+    }
+
+    private void rebrePotAccedir() {
+
+        try {
+
+            out.writeObject(idPassi);
+            out.writeObject(idAtraccio);
+
+            potAccedir = (int) in.readObject();
+            potPrimeraFila = (Boolean) in.readObject();
+            motiu = (String) in.readObject();
+
+        } catch (Exception e) {
+            Log.e("ERROR SOCKET",":",e);
+        }
+
+        //InfoAtraccio.potAccedirUsuari(potAccedir,motiu, potPrimeraFila);
+    }
+
     private void rebreLlistaParcs() {
-        List<Parc> parcs = null;
+
         try {
 
             parcs = (List<Parc>)in.readObject();
@@ -81,12 +123,22 @@ public class SocketClient extends AsyncTask<Void,Void,Void> {
             Log.e("ERROR SOCKET",":",e);
         }
 
-        MainActivity.afegirParcsLlista(parcs);
+        //MainActivity.afegirParcsLlista(parcs);
     }
 
     @Override
     protected void onPostExecute(Void v) {
         super.onPostExecute(v);
+
+        switch (opcio){
+            case 1:
+                ((MainActivity)mActivity).afegirParcsLlista(parcs);
+                break;
+            case 4:
+                ((InfoAtraccio)mActivity).potAccedirUsuari(potAccedir,motiu, potPrimeraFila);
+                break;
+
+        }
 
     }
 }

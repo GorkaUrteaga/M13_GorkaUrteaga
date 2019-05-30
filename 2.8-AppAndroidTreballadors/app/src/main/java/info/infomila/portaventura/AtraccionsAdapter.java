@@ -47,16 +47,16 @@ public class AtraccionsAdapter extends RecyclerView.Adapter<AtraccionsAdapter.At
 
         holder.txvNom.setText( f.getNom());
 
-        ImageLoader imageLoader = ImageLoader.getInstance(); // Get singleton instance
-        imageLoader.displayImage(f.getUrlFoto(),holder.imgAtraccio);
-
         if(position == mSelectedPosition ){
             //Avisem al mainActivity per a que fagi un intent i mostri la info de l'atracció.
+            mActivity.mostrarInfoEscanejar(mAtraccions.get(mSelectedPosition));
 
-            MainActivity.mostrarInfoEscanejar(mAtraccions.get(mSelectedPosition));
         }else{
 
         }
+
+        ImageLoader imageLoader = ImageLoader.getInstance(); // Get singleton instance
+        imageLoader.displayImage(f.getUrlFoto(),holder.imgAtraccio);
     }
 
     @Override

@@ -28,8 +28,8 @@ public class SimulacioAtraccions {
         //Connexió JDBC per agafar les atraccions de la BD.
 
         try {
-            String url = "jdbc:mysql://127.0.0.1:3306/projecte?serverTimezone=UTC";
-            con = DriverManager.getConnection(url, "root", "root");
+            String url = "jdbc:mysql://92.222.27.83:3306/m2_gurteaga?serverTimezone=UTC";
+            con = DriverManager.getConnection(url, "m2-gurteaga", "47129014J");
             System.out.println("Connectat");
             
             stm = con.createStatement();

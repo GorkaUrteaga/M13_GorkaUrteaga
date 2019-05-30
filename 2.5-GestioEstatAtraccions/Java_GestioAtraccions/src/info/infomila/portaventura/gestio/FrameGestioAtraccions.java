@@ -23,7 +23,7 @@ import javax.swing.ListModel;
  */
 public class FrameGestioAtraccions extends javax.swing.JFrame {
 
-    private List<Atraccio> llAtraccions;
+    private List<Atraccio> llAtraccions = new ArrayList<Atraccio>();
     private List<Incidencia> llIncidencies = new ArrayList<Incidencia>();
     private int posAtraccioSeleccionada;
     private Atraccio atraccioSeleccionada;
@@ -526,13 +526,14 @@ public class FrameGestioAtraccions extends javax.swing.JFrame {
             String cad = "select p from Atraccio p";
             Query q = em.createQuery(cad);
             llAtraccions = q.getResultList();
+            System.out.println("Connectat!");
             
-            //jList1.setModel((ListModel<String>) llista);
             
         } catch (Exception ex) {
             System.out.println("Exception: " + ex.getMessage());
             System.out.print(ex.getCause() != null ? "Caused by:" + ex.getCause().getMessage() + "\n" : "");
             StackTraceElement [] st = ex.getStackTrace();
+            
             /*for(int i=0;i<st.length;i++){
                 System.out.println(st[i]);
             }*/

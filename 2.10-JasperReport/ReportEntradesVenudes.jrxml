@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReportEntradesVenudes" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.6105100000000014"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="ireport.jasperserver.reportUnit" value="/m2-gurteaga/projecte_parcs/parcs_report"/>
+	<property name="ireport.jasperserver.url" value="http://92.222.27.83:8080/jasperserver/services/repository"/>
+	<parameter name="parc" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     parc.`codi` AS parc_codi,
+     parc.`nom` AS parc_nom,
+     parc.`url_foto` AS parc_url_foto,
+     entrada_parc.`entrada` AS entrada_parc_entrada,
+     entrada_parc.`parc` AS entrada_parc_parc,
+     (select count(*) from entrada where id = entrada_parc_entrada and categoria = 'ADULT') qAdults,
+     (select count(*) from entrada where id = entrada_parc_entrada and categoria = 'SENIOR') qSeniors,
+     (select count(*) from entrada where id = entrada_parc_entrada and categoria = 'DISCAPACITAT') qDiscapacitats
+FROM
+     `parc` parc INNER JOIN `entrada_parc` entrada_parc ON parc.`codi` = entrada_parc.`parc`
+where ($P{parc} is null or parc.codi = $P{parc})]]>
+	</queryString>
+	<field name="parc_codi" class="java.lang.Integer"/>
+	<field name="parc_nom" class="java.lang.String"/>
+	<field name="parc_url_foto" class="java.lang.String"/>
+	<field name="entrada_parc_entrada" class="java.lang.Integer"/>
+	<field name="entrada_parc_parc" class="java.lang.Integer"/>
+	<field name="qAdults" class="java.lang.Long"/>
+	<field name="qSeniors" class="java.lang.Long"/>
+	<field name="qDiscapacitats" class="java.lang.Long"/>
+	<variable name="entrada_B_id_1" class="java.lang.Integer" resetType="Group" resetGroup="ParcGroup" calculation="Count">
+		<variableExpression><![CDATA[]]></variableExpression>
+	</variable>
+	<variable name="entrada_A_id_1" class="java.lang.Integer" resetType="Group" resetGroup="ParcGroup" calculation="Count">
+		<variableExpression><![CDATA[]]></variableExpression>
+	</variable>
+	<variable name="entrada_id_1" class="java.lang.Integer" resetType="Group" resetGroup="ParcGroup" calculation="Count">
+		<variableExpression><![CDATA[]]></variableExpression>
+	</variable>
+	<variable name="qAdults_1" class="java.lang.Long" resetType="Group" resetGroup="ParcGroup" calculation="Sum">
+		<variableExpression><![CDATA[]]></variableExpression>
+	</variable>
+	<variable name="qAdults_2" class="java.lang.Long" resetType="Group" resetGroup="ParcGroup" calculation="Sum">
+		<variableExpression><![CDATA[]]></variableExpression>
+	</variable>
+	<variable name="qAdults_3" class="java.lang.Long" resetType="Group" resetGroup="ParcGroup" calculation="Sum">
+		<variableExpression><![CDATA[$F{qAdults}]]></variableExpression>
+	</variable>
+	<variable name="qSeniors_1" class="java.lang.Long" resetType="Group" resetGroup="ParcGroup" calculation="Sum">
+		<variableExpression><![CDATA[$F{qSeniors}]]></variableExpression>
+	</variable>
+	<variable name="qDiscapacitats_1" class="java.lang.Long" resetType="Group" resetGroup="ParcGroup" calculation="Sum">
+		<variableExpression><![CDATA[$F{qDiscapacitats}]]></variableExpression>
+	</variable>
+	<variable name="qTotals_1" class="java.lang.Integer" resetType="Column" calculation="Count">
+		<variableExpression><![CDATA[]]></variableExpression>
+	</variable>
+	<variable name="qTotals_2" class="java.lang.Integer" resetType="Group" resetGroup="ParcGroup" calculation="Count">
+		<variableExpression><![CDATA[]]></variableExpression>
+	</variable>
+	<variable name="qTotals_3" class="java.lang.Integer" resetType="Group" resetGroup="ParcGroup" calculation="Count">
+		<variableExpression><![CDATA[]]></variableExpression>
+	</variable>
+	<variable name="qAdults_4" class="java.lang.Long" resetType="Group" resetGroup="ParcGroup" calculation="Sum">
+		<variableExpression><![CDATA[$F{qAdults}]]></variableExpression>
+	</variable>
+	<variable name="qSeniors_2" class="java.lang.Long" resetType="Group" resetGroup="ParcGroup" calculation="Sum">
+		<variableExpression><![CDATA[$F{qSeniors}]]></variableExpression>
+	</variable>
+	<variable name="qDiscapacitats_2" class="java.lang.Long" resetType="Group" resetGroup="ParcGroup" calculation="Sum">
+		<variableExpression><![CDATA[$F{qDiscapacitats}]]></variableExpression>
+	</variable>
+	<group name="ParcGroup">
+		<groupExpression><![CDATA[$F{parc_codi}]]></groupExpression>
+		<groupHeader>
+			<band height="127">
+				<image>
+					<reportElement x="2" y="0" width="195" height="115"/>
+					<imageExpression class="java.lang.String"><![CDATA["F:\\1.DAM2\\M13(Projecte)\\2.Projecte\\2.10-JasperReport\\imgs\\PortAventura Park.jpg"]]></imageExpression>
+				</image>
+				<textField evaluationTime="Group" evaluationGroup="ParcGroup">
+					<reportElement x="293" y="45" width="100" height="20"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression class="java.lang.Long"><![CDATA[$V{qAdults_3}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="213" y="0" width="237" height="32"/>
+					<textElement>
+						<font size="22"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{parc_nom}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="213" y="45" width="64" height="20"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<text><![CDATA[Adults:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="213" y="65" width="64" height="20"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<text><![CDATA[Senior/nen:]]></text>
+				</staticText>
+				<textField evaluationTime="Group" evaluationGroup="ParcGroup">
+					<reportElement x="293" y="65" width="100" height="20"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression class="java.lang.Long"><![CDATA[$V{qSeniors_1}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="213" y="85" width="78" height="20"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<text><![CDATA[Discapacitats:]]></text>
+				</staticText>
+				<textField evaluationTime="Group" evaluationGroup="ParcGroup">
+					<reportElement x="293" y="85" width="116" height="20"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression class="java.lang.Long"><![CDATA[$V{qDiscapacitats_1}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement x="197" y="0" width="1" height="127"/>
+				</line>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="50">
+				<textField>
+					<reportElement x="524" y="0" width="31" height="25"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression class="java.lang.Long"><![CDATA[$V{qAdults_4}+$V{qSeniors_2}+$V{qDiscapacitats_2}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="409" y="0" width="115" height="25"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<text><![CDATA[Visitants totals:]]></text>
+				</staticText>
+			</band>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="54" splitType="Stretch">
+			<image>
+				<reportElement x="2" y="-1" width="59" height="47"/>
+				<imageExpression class="java.lang.String"><![CDATA["F:\\1.DAM2\\M13(Projecte)\\2.Projecte\\2.10-JasperReport\\imgs\\logo.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="107" y="0" width="286" height="46"/>
+				<textElement>
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Informe vendes PortAventura]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="32" splitType="Stretch">
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="0" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.util.Date"><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="515" y="0" width="40" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="435" y="0" width="80" height="20"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression class="java.lang.String"><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

@@ -10,9 +10,9 @@
         <class>info.infomila.portaventura.classes.Zona</class>
         <properties>
             <property name="javax.persistence.jdbc.url" 
-                      value="jdbc:mysql://127.0.0.1:3306/projecte?serverTimezone=UTC"/>
-            <property name="javax.persistence.jdbc.user" value="root"/>
-            <property name="javax.persistence.jdbc.password" value="root"/>
+                      value="jdbc:mysql://92.222.27.83:3306/m2_gurteaga?serverTimezone=UTC"/>
+            <property name="javax.persistence.jdbc.user" value="m2-gurteaga"/>
+            <property name="javax.persistence.jdbc.password" value="47129014J"/>
             <property name="javax.persistence.jdbc.driver" 
                       value="com.mysql.cj.jdbc.Driver"/>
             <!--<property name="javax.persistence.schema-generation.database.action" 

@@ -75,7 +75,7 @@ public class Atraccio implements Serializable{
     private int alsadaMinima;
     
     @Basic
-    @Enumerated(EnumType.STRING)
+    //@Enumerated(EnumType.STRING)
     @Column(name="ESTAT_OPERATIU")
     //private EstatOperatiu estatOperatiu;
     private String estatOperatiu;

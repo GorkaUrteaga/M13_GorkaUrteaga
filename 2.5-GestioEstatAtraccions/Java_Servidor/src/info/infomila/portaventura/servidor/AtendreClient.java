@@ -80,6 +80,11 @@ public class AtendreClient extends Thread{
                 case 3:
                     enviarClientRecuperatPerId();
                     break;
+                case 4:
+                    potAccedirClient();
+                    break;
+                case 5:
+                    pujaAtraccioPassi();
                     
             }
             client.close();
@@ -157,11 +162,9 @@ public class AtendreClient extends Thread{
                         System.exit(1);
                     }
 
-
                     for(Atraccio a :buscarAtraccions(rs)){
                         z.addAtraccio(a);
                     }
-                    
                 }
             }
         }
@@ -179,8 +182,8 @@ public class AtendreClient extends Thread{
 
     private void establirConnexio() {
         try {
-            String url = "jdbc:mysql://127.0.0.1:3306/projecte?serverTimezone=UTC";
-            con = DriverManager.getConnection(url, "root", "root");
+            String url = "jdbc:mysql://92.222.27.83:3306/m2_gurteaga?serverTimezone=UTC";
+            con = DriverManager.getConnection(url, "m2-gurteaga", "47129014J");
             System.out.println("Connectat");
             
             stm = con.createStatement();
@@ -403,6 +406,76 @@ public class AtendreClient extends Thread{
         }
         
         return atraccions;
+    }
+
+    private void potAccedirClient() {
+        System.out.println("POT ACCEDIR?");
+        try {
+            int idPassi = (int) in.readObject();
+            int idAtraccio = (int) in.readObject();
+            
+            String cad = "select numero_usos,tip.tipus tipus_acces from info_utilitzacio info left join tipus_acces tip on info.tipus_acces = tip.id where passi ="+idPassi+ " and atraccio = "+idAtraccio;
+            System.out.println(cad);
+            
+            ResultSet resultat = stm.executeQuery(cad);
+            int numUsos = 0;
+            String tipusAcces = "";
+            Boolean potPrimeraFila = true;
+            while(resultat.next()){
+                numUsos = resultat.getInt("NUMERO_USOS");
+                tipusAcces = resultat.getString("TIPUS_ACCES");
+            }
+            String motiu = tipusAcces;
+            int entra = 0;
+            
+            if(numUsos == 0){
+                entra = 1;
+            }else if(tipusAcces.equals("ILIMITAT_UN_SOL_US_1aFila")){
+                entra = 1;
+                potPrimeraFila = false;
+            }else{
+                motiu = "Atraccio consumida";
+            }
+            
+            out.writeObject(entra);
+            out.writeObject(potPrimeraFila);
+            System.out.println(motiu);
+            out.writeObject(motiu);
+            
+        } catch (IOException ex) {
+            Logger.getLogger(AtendreClient.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(AtendreClient.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            System.out.println("Info: "+ex.getMessage());
+            tancarConnexio();
+            System.exit(1);
+        }
+        
+    }
+
+    private void pujaAtraccioPassi() {
+        
+        System.out.println("HA PUJAT");
+        try {
+            int idPassi = (int) in.readObject();
+            int idAtraccio = (int) in.readObject();
+            
+            String cad = "update info_utilitzacio set numero_usos = 1 where passi ="+idPassi+ " and atraccio = "+idAtraccio+ " and tipus_acces != 2";
+            System.out.println(cad);
+            
+            stm.executeUpdate(cad);
+            
+        } catch (IOException ex) {
+            Logger.getLogger(AtendreClient.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(AtendreClient.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            System.out.println("Info: "+ex.getMessage());
+            tancarConnexio();
+            System.exit(1);
+        }
+        
     }
     
 }
