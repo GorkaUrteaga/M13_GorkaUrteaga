@@ -41,7 +41,7 @@
                 <Button x:Name="btnAfegirClient" Content="Afegir Client" HorizontalAlignment="Center" Click="btnAfegirClient_Click"/>
                 <Button x:Name="btnEliminarClient" Content="Esborrar Client" HorizontalAlignment="Center" Click="btnEliminarClient_Click"/>
             </StackPanel>
-            <controls:DataGrid x:Name="dgrClients" IsReadOnly="True" HorizontalAlignment="Stretch" AutoGenerateColumns="False">
+            <controls:DataGrid x:Name="dgrClients" IsReadOnly="True" HorizontalAlignment="Stretch" AutoGenerateColumns="False" SelectionChanged="dgrClients_SelectionChanged">
                 <controls:DataGrid.Columns >
                     <controls:DataGridTextColumn
                         Header="Id" 

@@ -59,7 +59,7 @@ namespace VendaEntradesDM.DB
 
                         DBUtils.CrearParametre("IdParam", id, consulta);
 
-                        consulta.CommandText = @"update tipus_passi_express set arxivat = true where id = @IdParam";
+                        consulta.CommandText = @"update Tipus_Passi_Express set arxivat = true where id = @IdParam";
 
                         int actualitzades = consulta.ExecuteNonQuery();
                         if (actualitzades != 1)
@@ -89,7 +89,7 @@ namespace VendaEntradesDM.DB
 
                         DBUtils.CrearParametre("IdParam", id, consulta);
 
-                        consulta.CommandText = @"select count(*) from tipus_passi_express where id = @IdParam";
+                        consulta.CommandText = @"select count(*) from Tipus_Passi_Express where id = @IdParam";
 
                         existeix = Convert.ToInt32(consulta.ExecuteScalar()) == 1;
                     }
@@ -112,7 +112,7 @@ namespace VendaEntradesDM.DB
                     using (var consulta = connexio.CreateCommand())
                     {
 
-                        consulta.CommandText = @"select ifnull(max(id),0)+1 from tipus_passi_express";
+                        consulta.CommandText = @"select ifnull(max(id),0)+1 from Tipus_Passi_Express";
 
                         id = Convert.ToInt32(consulta.ExecuteScalar());
                     }
@@ -137,7 +137,7 @@ namespace VendaEntradesDM.DB
                         DBUtils.CrearParametre("NomParam", tipusPassi.Nom, consulta);
                         DBUtils.CrearParametre("PreuParam", tipusPassi.PreuPerDia, consulta);
 
-                        consulta.CommandText = @"update tipus_passi_express set nom = @NomParam, preu_per_dia = @PreuParam where id = @IdParam";
+                        consulta.CommandText = @"update Tipus_Passi_Express set nom = @NomParam, preu_per_dia = @PreuParam where id = @IdParam";
 
                         int actualitzades = consulta.ExecuteNonQuery();
                         if (actualitzades != 1)
@@ -166,7 +166,7 @@ namespace VendaEntradesDM.DB
                         DBUtils.CrearParametre("NomParam", tp.Nom, consulta);
                         DBUtils.CrearParametre("PreuPerDiaParam", tp.PreuPerDia, consulta);
 
-                        consulta.CommandText = @"insert into tipus_passi_express 
+                        consulta.CommandText = @"insert into Tipus_Passi_Express 
                                                 values(@IdParam,@NomParam,@PreuPerDiaParam,false)";
 
                         int filesInserides = consulta.ExecuteNonQuery();

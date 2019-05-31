@@ -24,7 +24,7 @@ namespace VendaEntradesDM.DB
                     using (var consulta = connexio.CreateCommand())
                     {
 
-                        consulta.CommandText = "select * from parc";
+                        consulta.CommandText = "select * from Parc";
 
                         var reader = consulta.ExecuteReader();
                         while (reader.Read()) // per cada Read() avancem una fila en els resultats de la consulta.
@@ -57,7 +57,7 @@ namespace VendaEntradesDM.DB
                     using (var consulta = connexio.CreateCommand())
                     {
 
-                        consulta.CommandText = "select count(*) from parc";
+                        consulta.CommandText = "select count(*) from Parc";
 
                         numParcs = Convert.ToInt32(consulta.ExecuteScalar());
                     }
@@ -79,7 +79,7 @@ namespace VendaEntradesDM.DB
                     using (var consulta = connexio.CreateCommand())
                     {
                         DBUtils.CrearParametre("CodiParam", codi, consulta);
-                        consulta.CommandText = "select nom from parc where codi = @CodiParam";
+                        consulta.CommandText = "select nom from Parc where codi = @CodiParam";
 
                         return Convert.ToString(consulta.ExecuteScalar());
                     }

@@ -799,6 +799,9 @@
     <AppxPackagedFile Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\bin\x86\Debug\CDs\AfegirClientCD.xbf">
       <PackagePath>CDs\AfegirClientCD.xbf</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\bin\x86\Debug\CDs\EntradesCompradesCD.xbf">
+      <PackagePath>CDs\EntradesCompradesCD.xbf</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="F:\1.DAM2\M13%28Projecte%29\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\bin\x86\Debug\VentesPage.xbf">
       <PackagePath>VentesPage.xbf</PackagePath>
     </AppxPackagedFile>

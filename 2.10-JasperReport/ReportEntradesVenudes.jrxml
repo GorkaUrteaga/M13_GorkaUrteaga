@@ -3,7 +3,7 @@
 	<property name="ireport.zoom" value="1.6105100000000014"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
-	<property name="ireport.jasperserver.reportUnit" value="/m2-gurteaga/projecte_parcs/parcs_report"/>
+	<property name="ireport.jasperserver.reportUnit" value="/m2-gurteaga/EntradesVenudesPerParcs"/>
 	<property name="ireport.jasperserver.url" value="http://92.222.27.83:8080/jasperserver/services/repository"/>
 	<parameter name="parc" class="java.lang.Integer">
 		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
@@ -15,11 +15,11 @@
      parc.`url_foto` AS parc_url_foto,
      entrada_parc.`entrada` AS entrada_parc_entrada,
      entrada_parc.`parc` AS entrada_parc_parc,
-     (select count(*) from entrada where id = entrada_parc_entrada and categoria = 'ADULT') qAdults,
-     (select count(*) from entrada where id = entrada_parc_entrada and categoria = 'SENIOR') qSeniors,
-     (select count(*) from entrada where id = entrada_parc_entrada and categoria = 'DISCAPACITAT') qDiscapacitats
+     ifnull((select count(*) from Entrada where id = Entrada_Parc_Entrada and categoria = 'ADULT'),0) qAdults,
+     ifnull((select count(*) from Entrada where id = Entrada_Parc_Entrada and categoria = 'SENIOR'),0) qSeniors,
+     ifnull((select count(*) from Entrada where id = Entrada_Parc_Entrada and categoria = 'DISCAPACITAT'),0) qDiscapacitats
 FROM
-     `parc` parc INNER JOIN `entrada_parc` entrada_parc ON parc.`codi` = entrada_parc.`parc`
+     `Parc` parc LEFT OUTER JOIN `Entrada_Parc` entrada_parc ON parc.`codi` = entrada_parc.`parc`
 where ($P{parc} is null or parc.codi = $P{parc})]]>
 	</queryString>
 	<field name="parc_codi" class="java.lang.Integer"/>
@@ -78,7 +78,7 @@ where ($P{parc} is null or parc.codi = $P{parc})]]>
 			<band height="127">
 				<image>
 					<reportElement x="2" y="0" width="195" height="115"/>
-					<imageExpression class="java.lang.String"><![CDATA["F:\\1.DAM2\\M13(Projecte)\\2.Projecte\\2.10-JasperReport\\imgs\\PortAventura Park.jpg"]]></imageExpression>
+					<imageExpression class="java.lang.String"><![CDATA[new URL($F{parc_url_foto})]]></imageExpression>
 				</image>
 				<textField evaluationTime="Group" evaluationGroup="ParcGroup">
 					<reportElement x="293" y="45" width="100" height="20"/>
@@ -158,10 +158,6 @@ where ($P{parc} is null or parc.codi = $P{parc})]]>
 	</background>
 	<pageHeader>
 		<band height="54" splitType="Stretch">
-			<image>
-				<reportElement x="2" y="-1" width="59" height="47"/>
-				<imageExpression class="java.lang.String"><![CDATA["F:\\1.DAM2\\M13(Projecte)\\2.Projecte\\2.10-JasperReport\\imgs\\logo.png"]]></imageExpression>
-			</image>
 			<staticText>
 				<reportElement x="107" y="0" width="286" height="46"/>
 				<textElement>
@@ -169,6 +165,10 @@ where ($P{parc} is null or parc.codi = $P{parc})]]>
 				</textElement>
 				<text><![CDATA[Informe vendes PortAventura]]></text>
 			</staticText>
+			<image>
+				<reportElement x="15" y="4" width="55" height="50"/>
+				<imageExpression class="java.lang.String"><![CDATA["repo:logo.jpg"]]></imageExpression>
+			</image>
 		</band>
 	</pageHeader>
 	<columnFooter>

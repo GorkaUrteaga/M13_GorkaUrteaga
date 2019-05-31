@@ -22,7 +22,7 @@ namespace VendaEntradesDM.DB
                     // Crear una consulta SQL
                     using (var consulta = connexio.CreateCommand())
                     {
-                        consulta.CommandText = "select ifnull(max(id),0)+1 from passi_express";
+                        consulta.CommandText = "select ifnull(max(id),0)+1 from Passi_Express";
                         codi = Convert.ToInt32(consulta.ExecuteScalar());
 
                     }
@@ -49,7 +49,7 @@ namespace VendaEntradesDM.DB
                         DBUtils.CrearParametre("IdTipusPassiParam", p.IdTipusPassi, consulta);
                         DBUtils.CrearParametre("DataParam", p.Data, consulta);
 
-                        consulta.CommandText = @"insert into passi_express values 
+                        consulta.CommandText = @"insert into Passi_Express values 
                                                 (@IdParam,
                                                 @IdClientParam,
                                                 @IdTipusPassiParam,

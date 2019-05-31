@@ -26,8 +26,8 @@ namespace VendaEntradesDM.DB
                     {
                         DBUtils.CrearParametre("TipusPassiParam", tipusPassi, consulta);
                         consulta.CommandText = @"select tpa.tipus_passi_express tipus_passi, tpa.atraccio atraccio, ta.tipus tipus_acces, a.nom nom_atraccio, a.url_foto foto_atraccio
-                                                from Tipus_Passi_Atraccio tpa join atraccio a on tpa.atraccio = a.codi 
-                                                join tipus_acces ta on tpa.tipus_acces = ta.id where tipus_passi_express = @TipusPassiParam";//where Tipus_passi_express = @TipusPassiParam
+                                                from Tipus_Passi_Atraccio tpa join Atraccio a on tpa.atraccio = a.codi 
+                                                join Tipus_Acces ta on tpa.tipus_acces = ta.id where tipus_passi_express = @TipusPassiParam";//where Tipus_passi_express = @TipusPassiParam
 
                         var reader = consulta.ExecuteReader();
                         while (reader.Read()) // per cada Read() avancem una fila en els resultats de la consulta.
@@ -64,7 +64,7 @@ namespace VendaEntradesDM.DB
                         DBUtils.CrearParametre("IdAtraccioParam", tpa.IdAtraccio, consulta);
                         DBUtils.CrearParametre("TipusAccesParam", IdTipusAcces, consulta);
 
-                        consulta.CommandText = @"update tipus_passi_atraccio set tipus_acces = @TipusAccesParam where tipus_passi_express = @IdTipusPassiParam and atraccio = @IdAtraccioParam";
+                        consulta.CommandText = @"update Tipus_Passi_Atraccio set tipus_acces = @TipusAccesParam where tipus_passi_express = @IdTipusPassiParam and atraccio = @IdAtraccioParam";
 
                         int actualitzades = consulta.ExecuteNonQuery();
                         if (actualitzades != 1)
@@ -93,7 +93,7 @@ namespace VendaEntradesDM.DB
                         DBUtils.CrearParametre("IdAtraccioParam", tpa.IdAtraccio, consulta);
                         DBUtils.CrearParametre("IdTipusAccesParam", IdTipusAcces, consulta);
 
-                        consulta.CommandText = @"insert into tipus_passi_atraccio 
+                        consulta.CommandText = @"insert into Tipus_Passi_Atraccio 
                                                 values(@IdTipusPassiParam,@IdAtraccioParam,@IdTipusAccesParam)";
 
                         int filesInserides = consulta.ExecuteNonQuery();

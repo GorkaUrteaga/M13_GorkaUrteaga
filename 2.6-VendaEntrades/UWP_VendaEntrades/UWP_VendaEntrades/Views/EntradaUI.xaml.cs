@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using UWP_VendaEntrades.CDs;
 using VendaEntradesDM.DB;
 using VendaEntradesDM.Models;
 using Windows.Foundation;
@@ -218,14 +219,21 @@ namespace UWP_VendaEntrades.Views
 
             //Un cop finalitzat vol dir que hem comprat totes les entrades.
             //Ho enunciem al venedor.
-            EntradesCompradesDialog();
-
-            RegenerarEntradesUltimes();
+            if (entradesUltimesGenerades.Count > 0)
+            {
+                EntradesCompradesDialog();
+                RegenerarEntradesUltimes();
+            }
 
         }
 
         private async void EntradesCompradesDialog()
         {
+
+            EntradesCompradesCD compraEntradesDialog = new EntradesCompradesCD(entradesUltimesGenerades);
+            compraEntradesDialog.FullSizeDesired = true;
+            await compraEntradesDialog.ShowAsync();
+            /*
             ContentDialog CompraEntradesDialog = new ContentDialog()
             {
                 Title = "Entrades",
@@ -234,6 +242,7 @@ namespace UWP_VendaEntrades.Views
             };
 
             await CompraEntradesDialog.ShowAsync();
+            */
         }
 
         private void btnEliminarEntrada_Click(object sender, RoutedEventArgs e)

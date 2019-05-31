@@ -140,7 +140,7 @@ namespace UWP_VendaEntrades.Views
             idTipusPassiSeleccionat = cboTipusPassi.SelectedIndex+1;
 
             llTipusPassiAtraccio = TipusPassiAtraccioDB.GetTipusPassiAtraccio(idTipusPassiSeleccionat);
-
+            lsvAtraccions.Items.Clear();
             foreach (TipusPassiAtraccio tp in llTipusPassiAtraccio)
             {
                 TipusPassiAtraccioUI tpa = new TipusPassiAtraccioUI();
@@ -253,6 +253,12 @@ namespace UWP_VendaEntrades.Views
 
             
             RegenerarClients();
+            RefrescarDataGridPassisClient();
+        }
+
+        private void dgrClients_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            clientSeleccionat = (Client)dgrClients.SelectedItem;
             RefrescarDataGridPassisClient();
         }
     }

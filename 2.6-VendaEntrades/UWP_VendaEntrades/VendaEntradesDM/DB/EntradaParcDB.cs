@@ -24,7 +24,7 @@ namespace VendaEntradesDM.DB
                         DBUtils.CrearParametre("EntradaParam", entrada, consulta);
                         DBUtils.CrearParametre("ParcParam", parc, consulta);
 
-                        consulta.CommandText = @"insert into entrada_parc
+                        consulta.CommandText = @"insert into Entrada_Parc
                                                 values(@EntradaParam,@ParcParam)";
 
                         int filesInserides = consulta.ExecuteNonQuery();

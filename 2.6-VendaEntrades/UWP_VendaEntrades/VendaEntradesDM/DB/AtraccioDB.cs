@@ -24,7 +24,7 @@ namespace VendaEntradesDM.DB
                     using (var consulta = connexio.CreateCommand())
                     {
 
-                        consulta.CommandText = "select codi,nom,url_foto from atraccio";
+                        consulta.CommandText = "select codi,nom,url_foto from Atraccio";
 
                         var reader = consulta.ExecuteReader();
                         while (reader.Read()) // per cada Read() avancem una fila en els resultats de la consulta.

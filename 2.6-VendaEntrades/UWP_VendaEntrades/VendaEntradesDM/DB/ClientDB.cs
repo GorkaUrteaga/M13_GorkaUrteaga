@@ -22,7 +22,7 @@ namespace VendaEntradesDM.DB
                     // Crear una consulta SQL
                     using (var consulta = connexio.CreateCommand())
                     {
-                        consulta.CommandText = "select ifnull(max(id),0)+1 from client";
+                        consulta.CommandText = "select ifnull(max(id),0)+1 from Client";
                         codi = Convert.ToInt32(consulta.ExecuteScalar());
 
                     }
@@ -46,7 +46,7 @@ namespace VendaEntradesDM.DB
                     {
                         DBUtils.CrearParametre("NifParam", nif, consulta);
 
-                        consulta.CommandText = @"select Id,Nom,Cognom1,Cognom2, password from client where nif =@NifParam";
+                        consulta.CommandText = @"select Id,Nom,Cognom1,Cognom2, password from Client where nif =@NifParam";
 
                         var reader = consulta.ExecuteReader();
                         while (reader.Read())
@@ -99,7 +99,7 @@ namespace VendaEntradesDM.DB
                         DBUtils.CrearParametre("Cognom2Param", c.Cognom2, consulta);
                         DBUtils.CrearParametre("PasswordParam", c.Password, consulta);
 
-                        consulta.CommandText = @"insert into client values 
+                        consulta.CommandText = @"insert into Client values 
                                                 (@IdParam,
                                                 @NifParam,
 												@NomParam,
@@ -134,7 +134,7 @@ namespace VendaEntradesDM.DB
 
                         DBUtils.CrearParametre("IdParam", id, consulta);
 
-                        consulta.CommandText = @"select count(*) from client where id = @IdParam";
+                        consulta.CommandText = @"select count(*) from Client where id = @IdParam";
 
                         existeix = Convert.ToInt32(consulta.ExecuteScalar())==1;
                     }

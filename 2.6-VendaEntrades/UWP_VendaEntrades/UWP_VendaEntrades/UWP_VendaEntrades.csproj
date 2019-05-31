@@ -98,6 +98,9 @@
     <Compile Include="CDs\AfegirClientCD.xaml.cs">
       <DependentUpon>AfegirClientCD.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CDs\EntradesCompradesCD.xaml.cs">
+      <DependentUpon>EntradesCompradesCD.xaml</DependentUpon>
+    </Compile>
     <Compile Include="VentesPage.xaml.cs">
       <DependentUpon>VentesPage.xaml</DependentUpon>
     </Compile>
@@ -185,6 +188,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Page Include="CDs\AfegirClientCD.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CDs\EntradesCompradesCD.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

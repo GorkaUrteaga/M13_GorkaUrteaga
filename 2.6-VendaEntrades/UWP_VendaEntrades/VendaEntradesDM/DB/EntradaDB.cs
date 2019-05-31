@@ -22,7 +22,7 @@ namespace VendaEntradesDM.DB
                     // Crear una consulta SQL
                     using (var consulta = connexio.CreateCommand())
                     {
-                        consulta.CommandText = "select ifnull(max(id),0)+1 from entrada";
+                        consulta.CommandText = "select ifnull(max(id),0)+1 from Entrada";
 
                         codi = Convert.ToInt32(consulta.ExecuteScalar());
                     }
@@ -50,7 +50,7 @@ namespace VendaEntradesDM.DB
                         DBUtils.CrearParametre("PreuParam", e.Preu, consulta);
                         DBUtils.CrearParametre("CategoriaParam", e.Categoria.ToString(), consulta);
 
-                        consulta.CommandText = "insert into entrada values (@IdParam, null, @DataParam, @DiesValidesaParam, @PreuParam, @CategoriaParam )";
+                        consulta.CommandText = "insert into Entrada values (@IdParam, null, @DataParam, @DiesValidesaParam, @PreuParam, @CategoriaParam )";
                         int filesInserides = consulta.ExecuteNonQuery();
                         if (filesInserides != 1) totOk = false;
 

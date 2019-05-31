@@ -29,7 +29,7 @@ namespace VendaEntradesDM.DB
                         DBUtils.CrearParametre("Parc2Param", parcIds[1], consulta);
                         DBUtils.CrearParametre("Parc3Param", parcIds[2], consulta);
 
-                        consulta.CommandText = @"select Preu_Adult, Preu_Nen_Senior, Preu_Discapacitat from preus where parc1_id = @Parc1Param and parc2_id = @Parc2Param and parc3_id = @Parc3Param and Num_Dies = @NumDiesParam";
+                        consulta.CommandText = @"select Preu_Adult, Preu_Nen_Senior, Preu_Discapacitat from Preus where parc1_id = @Parc1Param and parc2_id = @Parc2Param and parc3_id = @Parc3Param and Num_Dies = @NumDiesParam";
                         DbDataReader r = consulta.ExecuteReader();
                         r.Read();
                         

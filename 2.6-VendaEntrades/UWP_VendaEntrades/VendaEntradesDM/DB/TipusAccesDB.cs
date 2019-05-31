@@ -23,7 +23,7 @@ namespace VendaEntradesDM.DB
                     // Crear una consulta SQL
                     using (var consulta = connexio.CreateCommand())
                     {
-                        consulta.CommandText = "select * from tipus_acces";
+                        consulta.CommandText = "select * from Tipus_Acces";
 
                         var reader = consulta.ExecuteReader();
                         while (reader.Read()) // per cada Read() avancem una fila en els resultats de la consulta.
@@ -57,7 +57,7 @@ namespace VendaEntradesDM.DB
                     using (var consulta = connexio.CreateCommand())
                     {
                         DBUtils.CrearParametre("TipusParam", tipusAcces, consulta);
-                        consulta.CommandText = "select * from tipus_acces where tipus = @TipusParam";
+                        consulta.CommandText = "select * from Tipus_Acces where tipus = @TipusParam";
 
                         var reader = consulta.ExecuteReader();
                         while (reader.Read()) // per cada Read() avancem una fila en els resultats de la consulta.

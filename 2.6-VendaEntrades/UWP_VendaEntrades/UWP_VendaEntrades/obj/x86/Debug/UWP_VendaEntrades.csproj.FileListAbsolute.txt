@@ -380,3 +380,8 @@ F:\1.DAM2\M13(Projecte)\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_Venda
 F:\1.DAM2\M13(Projecte)\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\obj\x86\Debug\resources.en-us.resfiles.intermediate
 F:\1.DAM2\M13(Projecte)\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\obj\x86\Debug\Microsoft.Toolkit.Uwp.UI.Controls.DataGrid.pri.xml
 F:\1.DAM2\M13(Projecte)\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\obj\x86\Debug\ProjectArchitectures.txt
+F:\1.DAM2\M13(Projecte)\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\bin\x86\Debug\CDs\EntradesCompradesCD.xbf
+F:\1.DAM2\M13(Projecte)\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\obj\x86\Debug\CDs\EntradesCompradesCD.g.i.cs
+F:\1.DAM2\M13(Projecte)\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\obj\x86\Debug\CDs\EntradesCompradesCD.g.cs
+F:\1.DAM2\M13(Projecte)\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\obj\x86\Debug\CDs\EntradesCompradesCD.xaml
+F:\1.DAM2\M13(Projecte)\2.Projecte\2.6-VendaEntrades\UWP_VendaEntrades\UWP_VendaEntrades\obj\x86\Debug\CDs\EntradesCompradesCD.xbf
